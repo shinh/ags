@@ -4,6 +4,6 @@ cd /golf/test
 #ulimit -v 100000
 for i in `seq 1 100`; do
   echo $i
-  ruby ../local/testsrv.rb
+  ruby ../testsrv.rb
 done
 
