@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ruby-1.8.7 $1
+exec ruby $1
