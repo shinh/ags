@@ -1,0 +1,11 @@
+xen-hypervisor-3.4-i386
+xen-tools
+libc6-xen
+bridge-utils
+lighttpd
+ruby
+lv
+psmisc
+strace
+xenwatch
+xen-shell
