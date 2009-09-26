@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ruby1.9 /golf/local/golfscript.rb $1

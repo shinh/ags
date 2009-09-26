@@ -1,0 +1,2 @@
+#!/bin/sh
+gpc -g -O $1

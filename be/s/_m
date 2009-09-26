@@ -1,0 +1,2 @@
+#!/bin/sh
+gcc -g -O -lm $1

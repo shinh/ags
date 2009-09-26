@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/lmntal-20080828/bin/lmnr `basename $1 .lmn`.jar -v0

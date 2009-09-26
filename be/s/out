@@ -1,0 +1,4 @@
+#!/bin/sh
+export LD_PRELOAD=$LD_PRELOAD:/lib/libSegFault.so
+chmod 755 $1
+exec ./$1

@@ -1,0 +1,5 @@
+#!/bin/sh
+mv $1 $2
+ghdl -a $2
+ghdl -e `basename $2 .vhdl`
+

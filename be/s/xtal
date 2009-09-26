@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ../local/xtal.exe $1

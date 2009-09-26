@@ -1,0 +1,2 @@
+#!/bin/sh
+exec xgawk -f $1

@@ -1,0 +1,3 @@
+#!/bin/sh
+/golf/local/dmd/bin/dmd -L-L/golf/local/dmd/lib -I/golf/local/dmd/src/phobos -g -O -ofa.out $1
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+#export LD_PRELOAD=/lib/libSegFault.so
+#exec ./a.out
+
+m=`basename $2 .java`
+mv $1 $m.class
+exec java $m
+
