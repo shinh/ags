@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+ <title>create new problem</title>
+ <link rev="MADE" href="mailto:shinichiro.hamaji _at_ gmail.com">
+ <link rel="INDEX" href=".">
+ <link rel="stylesheet" type="text/css" href="/site.css">
+</head>
+
+<body>
+<h1>create new problem</h1>
+
+<form action="mkprob.rb" method="POST">
+<table>
+
+<tr>
+<td>title:</td>
+<td><input name="title"></td>
+</tr>
+<tr>
+<td>deny exec:</td>
+<td><select name="dexec">
+<option value="0">allow
+<option value="1" selected>deny
+<!--<option value="2">too strictly deny-->
+</select>
+<!--<input type="checkbox" name="dexec" checked>-->
+</td>
+</tr>
+<tr>
+<td>deadline:</td>
+<td><select name="deadline">
+<option value="0">none
+<option value="1">1 hour
+<option value="24">1 day
+<option value="72">3 days
+<option value="168">1 week
+<option value="336" selected>2 weeks
+<option value="672">4 weeks
+<!-- <option value="kaigi">ruby kaigi (please don't use this) -->
+</select>
+</td>
+</tr>
+
+</table>
+description:<br>
+<textarea name="desc" rows="10" cols="60"></textarea>
+<br>
+input:<br>
+<textarea name="input" rows="10" cols="60"></textarea>
+<br>
+output:<br>
+<textarea name="output" rows="10" cols="60"></textarea>
+<br>
+input2:<br>
+<textarea name="input2" rows="10" cols="60"></textarea>
+<br>
+output2:<br>
+<textarea name="output2" rows="10" cols="60"></textarea>
+<br>
+input3:<br>
+<textarea name="input3" rows="10" cols="60"></textarea>
+<br>
+output3:<br>
+<textarea name="output3" rows="10" cols="60"></textarea>
+<br>
+To protect the system from spam, please input your favorite sport (hint: I believe its name must start with 'g', case insensitive) <input name="sport">
+<br>
+<input type="submit">
+</form>
+
+</body></html>

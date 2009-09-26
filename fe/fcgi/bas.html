@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+ <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+ <title>binary, alnum, symbol</title>
+ <link rev="MADE" href="mailto:shinichiro.hamaji _at_ gmail.com">
+ <link rel="INDEX" href=".">
+ <link rel="stylesheet" type="text/css" href="/site.css">
+</head>
+
+<body>
+<h1>binary, alnum, symbol</h1>
+
+<p>
+The size of non printable characters is opened by default. And you can choose to open the size of alnum ([0-9A-Za-z]) and symbols. When you want to appeal that you challenged exotic golf such as symbolic golf, open your code statistics and change your name like "shinh(symbol)".
+<p>
+You will see Binary / Alnum / Symbol in statistics column.
+<p>
+Binary is 0-9 or 11-31 or 127-255.
+<p>
+Alnum is [0-9A-Za-z].
+<p>
+Symbol is [!\"\#$%&'()*+,-./:;<=>?@[\\]^_`{|}~].
+<p>
+Note whitespaces ([ \t\n]) does not belong to any classes.
+
+<p>
+The following code is used for this system.
+
+<pre>
+  def get_statistics(s)
+    a=[0,0,0,0]
+    an=/[a-zA-Z0-9]/
+    ws=/[ \t\n]/
+    s.each_byte{|x|
+      s=x.chr
+      a[an=~s ?2:ws=~s ?1: x<127&&x>32?3:0]+=1
+    }
+    a
+  end
+</pre>
+
+</body></html>
