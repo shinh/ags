@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ../local/wspace $1

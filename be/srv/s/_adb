@@ -1,0 +1,2 @@
+#!/bin/sh
+gnat make -gnat05 -g -O $1 -o a.out

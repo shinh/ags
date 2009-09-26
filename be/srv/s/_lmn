@@ -1,0 +1,2 @@
+#!/bin/sh
+/golf/local/lmntal-20080828/bin/lmnc $1

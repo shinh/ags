@@ -1,0 +1,2 @@
+#!/bin/sh
+cobc -free $1 -o a.out

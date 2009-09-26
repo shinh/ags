@@ -1,0 +1,6 @@
+#!/bin/sh
+export HOME=/home/golf
+#dosemu -quiet -dumb $1 > log
+exec dosemu -quiet -dumb $1
+#exec dosemu.bin $1
+#cat log

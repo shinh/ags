@@ -1,0 +1,4 @@
+#!/bin/sh
+cat > /tmp/out
+vi -s $1 /tmp/out > /dev/null 2>&1
+cat /tmp/out

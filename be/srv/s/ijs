@@ -1,0 +1,4 @@
+#!/bin/sh
+export HOME=/home/golf
+export LD_LIBRARY_PATH=$HOME/j601
+exec $HOME/j601/jconsole $1

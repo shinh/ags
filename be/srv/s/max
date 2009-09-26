@@ -1,0 +1,2 @@
+#!/bin/sh
+exec maxima --very-quiet -r 'load("'"$1"'")$'

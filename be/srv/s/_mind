@@ -1,0 +1,3 @@
+#!/bin/sh
+../local/nkf -e $1 > test.src
+../local/mind7/bin/mind test ../local/mind7/lib/file | ../local/nkf

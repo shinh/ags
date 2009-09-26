@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ../local/scala-2.7.0-RC2/bin/scala $1

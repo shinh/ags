@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/qcl-0.6.3/qcl -I /golf/local/qcl-0.6.3/lib -q $1

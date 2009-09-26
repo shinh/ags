@@ -39,4 +39,7 @@ wine
 mzscheme
 git-core
 subversion
+scala
+libopen4-ruby1.9
+libopen4-ruby1.8
 

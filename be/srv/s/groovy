@@ -1,0 +1,5 @@
+#!/bin/sh
+#export JAVACMD=java
+#exec groovy $1
+java -cp /usr/share/groovy/embeddable/groovy-all-1.5.4.jar groovy.ui.GroovyMain $1
+

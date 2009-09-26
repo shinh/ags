@@ -1,0 +1,3 @@
+#!/bin/sh
+export LANG=C
+exec perl $1
