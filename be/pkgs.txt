@@ -38,4 +38,5 @@ groovy
 wine
 mzscheme
 git-core
+subversion
 
