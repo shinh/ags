@@ -37,4 +37,5 @@ vim
 groovy
 wine
 mzscheme
+git-core
 

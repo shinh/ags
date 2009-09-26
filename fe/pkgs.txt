@@ -16,4 +16,5 @@ libfcgi-ruby1.8
 libfcgi-ruby1.9
 ruby1.9
 gdb
+z80dasm
 
