@@ -129,7 +129,8 @@ else
   log = STDOUT
 end
 
-gs = TCPServer.open(SERV, PORT)
+#gs = TCPServer.open(SERV, PORT)
+gs = TCPServer.open(PORT)
 
 while true
   s = gs.accept
