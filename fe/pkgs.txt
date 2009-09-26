@@ -9,3 +9,7 @@ psmisc
 strace
 xenwatch
 xen-shell
+git-core
+xorg
+gcc
+
