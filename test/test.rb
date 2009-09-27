@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+test_cnt = 0
+fail_cnt = 0
+
 [
  ['testing.grb', 'testing', /Success/],
  ['testing.vi', 'testing', /Success/],
@@ -92,16 +95,25 @@
  ['load_hello.rb', 'hello+world', /failed/],
  ['cc.sh', 'Evil+C+Compiler', /Success/],
 ].each do |s, u, r|
+  test_cnt += 1
+
   print "Testing #{s}... "
   c = `./ag.rb t/#{s} http://localhost/p.rb?#{u}`
   #c = `./ag.rb t/#{s} http://golf.shinh.org/p.rb?#{u}`
   if c !~ r
     puts 'failed'
+    fail_cnt += 1
   else
     puts 'success'
   end
   File.open("log/#{s}.log", 'w') do |of|
     of.print(c)
   end
+end
+
+if fail_cnt == 0
+  puts 'All tests passed!'
+else
+  puts "%d of %d tests failed" % [fail_cnt, test_cnt]
 end
 
