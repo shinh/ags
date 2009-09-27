@@ -39,4 +39,5 @@ wine
 mzscheme
 git-core
 scala
+strace
 
