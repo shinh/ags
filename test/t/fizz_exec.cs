@@ -1,0 +1,2 @@
+class i{static void Main(){System.Diagnostics.Process.Start("perl -le 'print $_%15?$_%5?$_%3?$_:Fizz:Buzz:FizzBuzz for(1..100)'");}}
+//class i{static void Main(){for(int i=0;i++<100;)System.Console.WriteLine(i%3>0?i%5>0?""+i:"Buzz":i%5>0?"Fizz":"FizzBuzz");}}

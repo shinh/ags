@@ -18,4 +18,5 @@ ruby1.9
 gdb
 z80dasm
 subversion
+curl
 

@@ -1,0 +1,15 @@
+--- 
+cc: http://localhost/p.rb?Evil+C+Compiler
+hello_exec: http://localhost/p.rb?hello+world
+hello_wait: http://localhost/p.rb?hello+world
+testing_exec: http://localhost/p.rb?testing
+load_hello: http://localhost/p.rb?hello+world
+out: http://localhost/p.rb?testing
+fizz_exec: http://localhost/p.rb?FizzBuzz
+fizz: http://localhost/p.rb?FizzBuzz
+google: http://localhost/p.rb?google
+fizz_fail: http://localhost/p.rb?FizzBuzz
+hello: http://localhost/p.rb?hello+world
+google_wait: http://localhost/p.rb?google
+testing: http://localhost/p.rb?testing
+mk_hello: http://localhost/p.rb?hello+world
