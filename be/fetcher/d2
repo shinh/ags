@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
 cd /golf/local
-DMD=dmd.1.047.zip
-rm -fr dmd.$DMD dmd
+DMD=dmd.2.032.zip
+rm -fr $DMD dmd2
 wget http://ftp.digitalmars.com/$DMD
 unzip $DMD
-chmod 755 dmd/linux/bin/dmd
+chmod 755 dmd2/linux/bin/dmd

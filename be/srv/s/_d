@@ -1,3 +1,4 @@
 #!/bin/sh
+#/golf/local/dmd2/linux/bin/dmd -L-L/golf/local/dmd2/lib -I/golf/local/dmd2/src/phobos -g -O -ofa.out $1
 /golf/local/dmd/bin/dmd -L-L/golf/local/dmd/lib -I/golf/local/dmd/src/phobos -g -O -ofa.out $1
 
