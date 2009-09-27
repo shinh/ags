@@ -1,0 +1,1 @@
+class i{static void Main(){System.Console.WriteLine("pong");}}

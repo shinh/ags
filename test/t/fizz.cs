@@ -1,0 +1,2 @@
+class i{static void Main(){for(int i=0;i++<100;)System.Console.WriteLine(i%3>0?i%5>0?""+i:"Buzz":i%5>0?"Fizz":"FizzBuzz");}}
+//class i{static void Main(){for(int i=0;i++<100;)System.Console.WriteLine(i%3>0?i%5>0?""+i:"Buzz":i%5>0?"Fizz":"FizzBuzz");}}

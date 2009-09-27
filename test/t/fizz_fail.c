@@ -1,0 +1,1 @@
+i;main(){for(;i++<99;)printf(i%3?i%5?"%s%d\n":"%s\n":"Fizz%s\n",i%5?"":"Buzz",i);}
