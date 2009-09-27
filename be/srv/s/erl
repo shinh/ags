@@ -1,6 +1,6 @@
 #!/bin/sh
 export HOME=/home/golf
 m=`basename $2 .erl`
-mv test.beam $m.beam
+#mv test.beam $m.beam
 erl -noshell -s $m m -s erlang halt
 

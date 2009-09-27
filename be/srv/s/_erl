@@ -1,3 +1,6 @@
 #!/bin/sh
 export HOME=/home/golf
-erl -compile $1
+m=`basename $2 .erl`
+mv test.erl $m.erl
+erl -compile $m
+
