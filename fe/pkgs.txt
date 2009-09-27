@@ -17,4 +17,5 @@ libfcgi-ruby1.9
 ruby1.9
 gdb
 z80dasm
+subversion
 

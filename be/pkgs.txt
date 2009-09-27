@@ -38,6 +38,9 @@ groovy
 wine
 mzscheme
 git-core
+subversion
 scala
 strace
+libopen4-ruby1.9
+libopen4-ruby1.8
 
