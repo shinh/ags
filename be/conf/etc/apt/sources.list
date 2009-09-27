@@ -1,0 +1,23 @@
+#
+#  /etc/apt/sources.list
+#
+
+
+#
+# lenny
+#
+deb     http://ftp.us.debian.org/debian/     testing main contrib non-free
+deb-src http://ftp.us.debian.org/debian/     testing main contrib non-free
+
+deb     http://ftp.us.debian.org/debian/     lenny main contrib non-free
+deb-src http://ftp.us.debian.org/debian/     lenny main contrib non-free
+
+# 
+#  Security updates
+# 
+
+deb     http://security.debian.org/ testing/updates  main contrib non-free
+deb-src http://security.debian.org/ testing/updates  main contrib non-free
+
+#deb     http://security.debian.org/ lenny/updates  main contrib non-free
+#deb-src http://security.debian.org/ lenny/updates  main contrib non-free
