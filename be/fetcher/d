@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cd /golf/local
+rm -fr dmd.2.032.zip dmd
+wget http://ftp.digitalmars.com/dmd.2.032.zip
+unzip dmd.2.032.zip
+chmod 755 ./srv/local/dmd2/linux/bin/dmd
+
