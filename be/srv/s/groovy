@@ -1,5 +1,14 @@
 #!/bin/sh
 #export JAVACMD=java
 #exec groovy $1
-java -cp /usr/share/groovy/embeddable/groovy-all-1.5.4.jar groovy.ui.GroovyMain $1
+
+#CP=`echo /usr/share/groovy/lib/* | sed 's/ /:/g'`
+#echo $CP
+
+CP='/usr/share/groovy/lib/ant-junit.jar:/usr/share/groovy/lib/ant-launcher.jar:/usr/share/groovy/lib/ant.jar:/usr/share/groovy/lib/antlr.jar:/usr/share/groovy/lib/asm2-analysis.jar:/usr/share/groovy/lib/asm2-tree.jar:/usr/share/groovy/lib/asm2-util.jar:/usr/share/groovy/lib/asm2.jar:/usr/share/groovy/lib/bsf.jar:/usr/share/groovy/lib/commons-cli.jar:/usr/share/groovy/lib/commons-logging.jar:/usr/share/groovy/lib/groovy-1.6.3.jar:/usr/share/groovy/lib/jline.jar:/usr/share/groovy/lib/jsp-api.jar:/usr/share/groovy/lib/junit4.jar:/usr/share/groovy/lib/mockobjects-core.jar:/usr/share/groovy/lib/regexp.jar:/usr/share/groovy/lib/servlet-api.jar:/usr/share/groovy/lib/xstream.jar'
+
+java -cp "$CP" groovy.ui.GroovyMain $1
+
+#java -cp /usr/share/groovy/lib/groovy-1.6.3.jar groovy.ui.GroovyMain $1
+#java -cp /usr/share/groovy/embeddable/groovy-all-1.5.4.jar groovy.ui.GroovyMain $1
 
