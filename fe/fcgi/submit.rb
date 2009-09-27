@@ -154,20 +154,6 @@ class Submit < Handler
     end
 
     sending_code = fb
-    if ext == 'java'
-      Dir.glob('/tmp/*.class').each do |class_file|
-        File.unlink(class_file)
-      end
-      File.open('/tmp/tmp.java', 'w') do |of|
-        of.print(sending_code)
-      end
-      Dir.chdir('/tmp') do
-        if !system("LANG=C javac tmp.java > javac.log 2>&1")
-          raise "Compile failure<pre>#{CGI.escapeHTML(File.read('javac.log'))}</pre>"
-        end
-      end
-      sending_code = File.read(Dir.glob('/tmp/*.class')[0])
-    end
 
     s = nil
     begin
@@ -267,7 +253,7 @@ class Submit < Handler
             (ext != 'l' || execnt > 3) &&
             (ext != 'r' || execnt > 7) &&
             (ext != 'lmn' || execnt > 6) &&
-            (ext != 'java' || execnt > 5) &&
+            (ext != 'java' || execnt > 4) &&
             (ext != 'class' || execnt > 5) &&
             (ext != 'com' || execnt > 19) &&
             (ext != 'groovy' || execnt > 3))
