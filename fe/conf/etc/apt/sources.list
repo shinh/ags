@@ -1,0 +1,16 @@
+# deb http://ftp.jp.debian.org/debian/ lenny main
+
+deb http://ftp.jp.debian.org/debian/ testing main contrib non-free
+deb-src http://ftp.jp.debian.org/debian/ testing main contrib non-free
+
+deb http://ftp.jp.debian.org/debian/ lenny main contrib non-free
+deb-src http://ftp.jp.debian.org/debian/ lenny main contrib non-free
+
+#deb http://ftp.jp.debian.org/debian/ unstable main contrib non-free
+#deb-src http://ftp.jp.debian.org/debian/ unstable main contrib non-free
+
+deb http://security.debian.org/ testing/updates main contrib
+deb-src http://security.debian.org/ testing/updates main contrib
+
+deb http://volatile.debian.org/debian-volatile lenny/volatile main
+deb-src http://volatile.debian.org/debian-volatile lenny/volatile main
