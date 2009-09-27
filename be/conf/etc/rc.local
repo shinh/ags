@@ -11,4 +11,7 @@
 #
 # By default this script does nothing.
 
+chown -R root:root /golf
+chown -R golf:golf /golf/test
+
 exit 0
