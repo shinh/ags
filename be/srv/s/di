@@ -1,5 +1,4 @@
 #!/bin/sh
 b=`basename $1 .di`
 mv $1 $b.d
-exec /golf/local/dmd/bin/dmd -L-L/golf/local/dmd/lib -I/golf/local/dmd/src/phobos -c -ofa.out $b.d
-
+exec /golf/local/dmd/linux/bin/dmd -L-L/golf/local/dmd/lib -I/golf/local/dmd/src/phobos -c -ofa.out $b.d 2>&1
