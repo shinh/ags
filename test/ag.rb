@@ -25,11 +25,14 @@ url=~/p.rb\?/
 pn=$'
 url=$`+'submit.rb'
 
-$A=open(fn)
-require'submit'
+#$A=open(fn)
+#require'submit'
+#
+#on = "out#{en}"
+#on = 't/testing.vhdl' if en =~ /vhdl$/
 
-on = "out#{en}"
-on = 't/testing.vhdl' if en =~ /vhdl$/
+on = fn
+
 c=%Q(curl -s -0 --form file=@#{on} --form-string problem=#{pn} --form-string reveal= --form-string user=#{UN} #{url})
 puts `#{c}`
 
