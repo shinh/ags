@@ -265,7 +265,7 @@ class Submit < Handler
             (ext != 'out' || execnt > 3) &&
             (ext != 'vi' || execnt > 8) &&
             (ext != 'l' || execnt > 3) &&
-            (ext != 'r' || execnt > 6) &&
+            (ext != 'r' || execnt > 7) &&
             (ext != 'lmn' || execnt > 6) &&
             (ext != 'java' || execnt > 5) &&
             (ext != 'class' || execnt > 5) &&
