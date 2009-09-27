@@ -1,4 +1,7 @@
 #!/bin/sh
-#m=`basename $2 .java`
-#mv $1 $m.java
+
+m=`basename $2 .java`
+mv $1 $m.java
+javac -g $m.java
+
 #gcj --main=$m -g -O $m.java

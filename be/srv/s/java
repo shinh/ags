@@ -3,6 +3,6 @@
 #exec ./a.out
 
 m=`basename $2 .java`
-mv $1 $m.class
+#mv $1 $m.class
 exec java $m
 
