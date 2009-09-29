@@ -217,7 +217,7 @@ while true
       if t
     execnt = 1  # for strace
     if File.exists?('/golf/test/watch.log')
-      File.open('watch.log') do |ifile|
+      File.open('/golf/test/watch.log') do |ifile|
       	ifile.each do |watch_line|
           if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
             begin
