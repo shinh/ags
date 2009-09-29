@@ -232,6 +232,8 @@ while true
       end
       #system('cp watch.log /tmp/t')
       File.unlink('/golf/test/watch.log')
+    else
+      execnt = 99999
     end
     puts "exec cnt: #{execnt}"
 
