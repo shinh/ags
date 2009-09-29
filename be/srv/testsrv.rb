@@ -231,7 +231,7 @@ while true
         end
       end
       #system('cp watch.log /tmp/t')
-      File.unlink('watch.log')
+      File.unlink('/golf/test/watch.log')
     end
     puts "exec cnt: #{execnt}"
 
