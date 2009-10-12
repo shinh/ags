@@ -7,7 +7,6 @@ all: $(TARGETS)
 
 srv/local/watch.so: srv/watch.c
 	$(CC) -g -O -fPIC -shared -o $@ $< -ldl
-	#$(CC) -g -O -shared -o $@ $< -ldl
 
 srv/local/dmd2/linux/bin/dmd:
 	fetcher/d2

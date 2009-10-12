@@ -138,7 +138,7 @@ __attribute__((constructor)) static void init() {
 
 static void watch_log(const char *fmt, ...) {
     va_list ap;
-    FILE *fp = libc_fopen("/tmp/watch.log", "a");
+    FILE *fp = libc_fopen("/golf/test/watch.log", "a");
     va_start(ap, fmt);
     vfprintf(fp, fmt, ap);
     va_end(ap);

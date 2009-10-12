@@ -217,7 +217,7 @@ while true
       if t
     execnt = 1  # for strace
     if File.exists?('/golf/test/watch.log')
-      File.open('watch.log') do |ifile|
+      File.open('/golf/test/watch.log') do |ifile|
       	ifile.each do |watch_line|
           if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
             begin
@@ -231,7 +231,9 @@ while true
         end
       end
       #system('cp watch.log /tmp/t')
-      File.unlink('watch.log')
+      File.unlink('/golf/test/watch.log')
+    else
+      execnt = 99999
     end
     puts "exec cnt: #{execnt}"
 
