@@ -94,6 +94,8 @@ fail_cnt = 0
  ['mk_hello.rb', 'hello+world', /failed/],
  ['load_hello.rb', 'hello+world', /failed/],
  ['cc.sh', 'Evil+C+Compiler', /Success/],
+ # TODO: more message?
+ ['fork_bomb.sh', 'testing', /failed/],
 ].each do |s, u, r|
   test_cnt += 1
 
