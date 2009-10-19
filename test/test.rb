@@ -4,6 +4,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['daemon.rb', 'testing', /setsid/],
  ['testing.grb', 'testing', /Success/],
  ['testing.vi', 'testing', /Success/],
  ['testing.groovy', 'testing', /Success/],
