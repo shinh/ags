@@ -1,6 +1,9 @@
 require 'socket'
 require 'open4'
 
+Process.setrlimit(Process::RLIMIT_NPROC, 100)
+Process.setrlimit(Process::RLIMIT_RSS, 50)
+
 SYSCALLS = {
   :execve => 11,
   :fork => 2,
@@ -212,6 +215,7 @@ while true
   s = gs.accept
 
   begin
+    setup_sandbox
     Dir::chdir("/")
     if !system("/golf/remount")
       raise 'remount failed'
@@ -240,6 +244,7 @@ while true
     log.puts("connected #{fn} #{cs}")
 
     ext = t
+    cmd = "/golf/s/#{t} #{f} #{fn}"
 
     if File.exists?("/golf/s/_#{t}")
       t, r, o, e = run("/golf/s/_#{t} #{f} #{fn}")
