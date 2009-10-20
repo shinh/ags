@@ -52,7 +52,7 @@ MODULE_LICENSE("GPL");
     asmlinkage int (*orig_ ## name) args ;      \
     asmlinkage static int hook_ ## name args
 
-#define IS_NOT_ROOT current->uid != 0 || current->euid != 0
+#define IS_NOT_ROOT current->uid != 0 /* || current->euid != 0 */
 
 DEFINE_HOOK(execve,
             (const char *filename, char *const argv[], char *const envp[])) {
