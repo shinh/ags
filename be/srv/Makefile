@@ -1,6 +1,8 @@
-all: remount
+TARGETS = remount
+
+all: $(TARGETS)
 
 remount: remount.c
-	$(CC) $< -o $@.tmp
-	chmod 4755 $@.tmp
-	mv $@.tmp $@
+
+clean:
+	rm -f $(TARGETS)

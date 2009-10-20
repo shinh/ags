@@ -137,7 +137,7 @@ while true
 
   begin
     Dir::chdir("/")
-    if !system("/golf/local/remount")
+    if !system("/golf/remount")
       raise 'remount failed'
     end
     Dir::chdir("/golf/test")
@@ -222,40 +222,40 @@ while true
       t, r, o, e = run(cmd, i, timeout)
 
       if t
-    execnt = 1  # for strace
-    if File.exists?('/golf/test/watch.log')
-      File.open('/golf/test/watch.log') do |ifile|
-        ifile.each do |watch_line|
+        execnt = 1  # for strace
+        if File.exists?('/golf/test/watch.log')
+          File.open('/golf/test/watch.log') do |ifile|
+            ifile.each do |watch_line|
               if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
+                begin
+                  puts "deleting #{del_file}"
+                  File.unlink(del_file)
+                rescue
+                end
+              elsif watch_line =~ /^exec/
+                execnt += 1
+              end
+            end
+          end
+          #system('cp watch.log /tmp/t')
+          File.unlink('/golf/test/watch.log')
+        else
+          execnt = 99999
+        end
+        puts "exec cnt: #{execnt}"
+
+        if mode == 2
+          execnt = 2
+          if !NON_STRACE.include?(ext)
             begin
-              puts "deleting #{del_file}"
-              File.unlink(del_file)
+              trace = File.read('str.log').grep(/execve/)[0].split
+              execnt = trace[3].to_i-trace[4].to_i
             rescue
             end
-          elsif watch_line =~ /^exec/
-            execnt += 1
           end
+        elsif mode == 0
+          execnt = 2
         end
-      end
-      #system('cp watch.log /tmp/t')
-      File.unlink('/golf/test/watch.log')
-    else
-      execnt = 99999
-    end
-    puts "exec cnt: #{execnt}"
-
-    if mode == 2
-        execnt = 2
-        if !NON_STRACE.include?(ext)
-begin
-          trace = File.read('str.log').grep(/execve/)[0].split
-          execnt = trace[3].to_i-trace[4].to_i
-rescue
-end
-        end
-    elsif mode == 0
-        execnt = 2
-    end
 
         s.puts t
         s.puts r
