@@ -162,28 +162,54 @@ class Submit < Handler
       puts %Q(now maintenance? it will be back soon. please try again later.)
       raise $!
     end
-    s.puts(fn)
-    s.puts(sending_code.size)
-    s.print(sending_code)
-    s.puts(inputs.size)
-    inputs.each do |input|
-#      if (!input || input.size == 0)
+
+    modified_inputs = inputs.map do |input|
       if ext == 'sed' && (!input || input.size == 0)
         input = "\n"
       end
       if input
         if ext == 'js' && input[-1] != 10
-          input+="\n"
+          input += "\n"
         end
         input.gsub!("\r\n","\n")
-        s.puts(input.size)
-        s.print(input)
       else
-        s.puts(0)
+        input = ''
       end
-      s.puts(dexec)
+      input
     end
+
+    payload = {
+      :filename => fn,
+      :code => sending_code,
+      :inputs => modified_inputs,
+    }
+    encoded_payload = Marshal.dump(payload)
+    s.puts(encoded_payload.size)
+    s.print(encoded_payload)
     s.close_write
+
+#     s.puts(fn)
+#     s.puts(sending_code.size)
+#     s.print(sending_code)
+#     s.puts(inputs.size)
+#     inputs.each do |input|
+# #      if (!input || input.size == 0)
+#       if ext == 'sed' && (!input || input.size == 0)
+#         input = "\n"
+#       end
+#       if input
+#         if ext == 'js' && input[-1] != 10
+#           input+="\n"
+#         end
+#         input.gsub!("\r\n","\n")
+#         s.puts(input.size)
+#         s.print(input)
+#       else
+#         s.puts(0)
+#       end
+#       s.puts(dexec)
+#     end
+#     s.close_write
 
     title("#{pn} - result")
     puts tag('h1',"#{pn} - result")
