@@ -168,9 +168,9 @@ class Submit < Handler
         input = "\n"
       end
       if input
-        if ext == 'js' && input[-1] != 10
-          input += "\n"
-        end
+        #if ext == 'js' && input[-1] != 10
+        #  input += "\n"
+        #end
         input.gsub!("\r\n","\n")
       else
         input = ''
