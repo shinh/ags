@@ -93,7 +93,7 @@ def run(exe, i = nil, timeout = 60)
   sandbox_vals = get_sandbox_vals
 
   begin
-    pid, stdin, stdout, stderr = Open4.popen4("/golf/local/limit #{exe}")
+    pid, stdin, stdout, stderr = Open4.popen4(exe)
   rescue
     exit 1
   end
@@ -204,10 +204,9 @@ def run(exe, i = nil, timeout = 60)
     puts 'cheat?'
     exec_cnt = -1
   else
-    if exec_cnt < 4
+    if exec_cnt < 2
       puts 'mysterious exec count: %d' % exec_cnt
     end
-    exec_cnt -= 2
     if exec_cnt < 0
       exec_cnt = 0
     end
