@@ -220,42 +220,35 @@ class Submit < Handler
     t = 0
     all_time = 0.0
     outputs.each do |output|
-      time = s.gets
-      if !time
-        break
-      end
+      payload = Marshal.load(s.read(s.gets.to_i))
+      time = payload[:time]
+      status = payload[:status]
+      execnt = payload[:execnt]
+      o = payload[:stdout]
+      e = payload[:stderr]
 
       puts tag('h2', "test ##{t+=1}")
-	  if pn == 'Timeout'
-	    if (time.chomp == 'timeout')
-	      time = "3"
-	    else
-		  time = 'Not timeout'
-		end
-	  end
-      if (time !~ /\d/)
+      if pn == 'Timeout'
+        if time
+          time = 'Not timeout'
+        else
+          time = 3
+        end
+      end
+      if !time
+        time = 'timeout'
+      end
+      if time.class == String
         failed = true
         puts tag('p', time)
-		s.gets
-		s.gets
-        os = s.gets.to_i
-        o = s.read(os)
-        es = s.gets.to_i
-        e = s.read(es)
 
         puts %Q(<p>your output:
 <pre>#{output_filter(o)}</pre>
 <p>stderr:
-<pre>#{CGI.escapeHTML(e.to_s)}</pre>
+<pre>#{CGI.escapeHTML(e)}</pre>
 )
       else
-        all_time += time.to_f
-        status = s.gets
-        execnt = s.gets.to_i
-        os = s.gets.to_i
-        o = s.read(os)
-        es = s.gets.to_i
-        e = s.read(es)
+        all_time += time
 
         if pn == 'Quine'
           output = fb
