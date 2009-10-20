@@ -1,12 +1,46 @@
 require 'socket'
 require 'open4'
 
+SYSCALLS = {
+  :execve => 11,
+  :fork => 2,
+  :vfork => 190,
+  :clone => 120,
+  :setpgid => 57,
+  :setsid => 66,
+  :getpriority => 96,
+  :setpriority => 97,
+  :setuid => 23,
+  :setuid32 => 213,
+  :setreuid => 70,
+  :setreuid32 => 203,
+  :setresuid => 164,
+  :setresuid32 => 208,
+  :setfsuid => 138,
+  :setfsuid32 => 215,
+  :setgid => 46,
+  :setgid32 => 214,
+  :setregid => 71,
+  :setregid32 => 204,
+  :setresgid => 170,
+  :setresgid32 => 210,
+  :setfsgid => 139,
+  :setfsgid32 => 216,
+}
+SANDBOX_MAGIC_PRIORITY = 1764
+
+def get_sandbox_val(sym)
+  20 - Process.getpriority(1764, SYSCALLS[sym])
+end
+
+def set_sandbox_val(sym, cnt)
+  Process.setpriority(1764, SYSCALLS[sym], cnt)
+end
+
 SERV='192.168.35.2'
 #SERV='localhost'
 PORT=9999
 #PORT=9997
-
-NON_STRACE = ['sh', 'bf', 'ws', 'bef', 'unl', 'ms', 'pef', 'wr']
 
 def daemon
   catch(:RUN_DAEMON) do
@@ -25,12 +59,32 @@ def daemon
   end
 end
 
-def run(exe, i = nil, timeout = 60)
-begin
-  pid, stdin, stdout, stderr = Open4.popen4("/golf/local/limit #{exe}")
-rescue
-  exit 1
+def setup_sandbox
+  SYSCALLS.each do |sym, num|
+    if sym != :setpriority
+      set_sandbox_val(sym, 0)
+    end
+  end
 end
+
+def get_sandbox_vals
+  m = {}
+  SYSCALLS.each do |sym, num|
+    m[sym] = get_sandbox_val(sym)
+  end
+  m
+end
+
+def run(exe, i = nil, timeout = 60)
+  setup_sandbox
+  sandbox_vals = get_sandbox_vals
+
+  begin
+    pid, stdin, stdout, stderr = Open4.popen4("/golf/local/limit #{exe}")
+  rescue
+    exit 1
+  end
+
   if i && i.size > 0
     begin
       stdin.print(i)
@@ -74,7 +128,27 @@ end
     o = '' if !o
     e = stderr.read(100000)
     e = '' if !e
-    [@n-start, status.exitstatus, o, e]
+
+    sandbox_cnts = {}
+    get_sandbox_vals.each do |sym, val|
+      sandbox_cnts[sym] = val - sandbox_vals[sym]
+    end
+
+    exec_cnt = sandbox_cnts[:execve]
+    if sandbox_cnts[:setpriority] != 0
+      puts 'cheat?'
+      exec_cnt = -1
+    else
+      if exec_cnt < 4
+        puts 'mysterious exec count: %d' % exec_cnt
+      end
+      exec_cnt -= 2
+      if exec_cnt < 0
+        exec_cnt = 0
+      end
+    end
+
+    [@n-start, status.exitstatus, o, e, exec_cnt, sandbox_cnts]
   else
     `pgrep -P #{pid}`.each do |l|
        puts "kill #{l}"
@@ -164,11 +238,6 @@ while true
     log.puts("connected #{fn} #{cs}")
 
     ext = t
-    scmd = cmd = "/golf/s/#{t} #{f} #{fn}"
-    if !NON_STRACE.include?(ext)
-      scmd = "strace -f -e execve -c -o str.log /golf/s/#{t} #{f} #{fn}"
-      #scmd = "sh -c 'LD_PRELOAD=/golf/local/watch.so /golf/s/#{t} #{f} #{fn}'"
-    end
 
     if File.exists?("/golf/s/_#{t}")
       t, r, o, e = run("/golf/s/_#{t} #{f} #{fn}")
@@ -194,8 +263,6 @@ while true
       end
     end
 
-    #ENV['LD_PRELOAD'] = '/golf/local/watch.so'
-
     inputs.each do |i|
       i, mode = i
       timeout = 1
@@ -216,44 +283,12 @@ while true
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
       timeout += 4 if ext == 'arc'
-      if mode == 2
-        cmd = scmd
-      end
-      t, r, o, e = run(cmd, i, timeout)
+      t, r, o, e, execnt, sandbox_cnts = run(cmd, i, timeout)
 
       if t
-        execnt = 1  # for strace
-        if File.exists?('/golf/test/watch.log')
-          File.open('/golf/test/watch.log') do |ifile|
-            ifile.each do |watch_line|
-              if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
-                begin
-                  puts "deleting #{del_file}"
-                  File.unlink(del_file)
-                rescue
-                end
-              elsif watch_line =~ /^exec/
-                execnt += 1
-              end
-            end
-          end
-          #system('cp watch.log /tmp/t')
-          File.unlink('/golf/test/watch.log')
-        else
-          execnt = 99999
-        end
         puts "exec cnt: #{execnt}"
 
-        if mode == 2
-          execnt = 2
-          if !NON_STRACE.include?(ext)
-            begin
-              trace = File.read('str.log').grep(/execve/)[0].split
-              execnt = trace[3].to_i-trace[4].to_i
-            rescue
-            end
-          end
-        elsif mode == 0
+        if mode == 0
           execnt = 2
         end
 
