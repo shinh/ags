@@ -3,6 +3,9 @@
 #ifdef DECLARE_HOOK
 
 DECLARE_HOOK(execve)
+DECLARE_HOOK(fork)
+DECLARE_HOOK(vfork)
+DECLARE_HOOK(clone)
 DECLARE_HOOK(setpgid)
 DECLARE_HOOK(setsid)
 DECLARE_HOOK(getpriority)
@@ -55,6 +58,38 @@ DEFINE_HOOK(execve,
         execve_cnt++;
     }
     return orig_execve(filename, argv, envp);
+}
+
+DEFINE_HOOK(fork, (void)) {
+    if (current->euid != 0) {
+        if (fork_cnt >= 100) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_fork();
+}
+
+DEFINE_HOOK(vfork, (void)) {
+    if (current->euid != 0) {
+        if (fork_cnt >= 100) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_vfork();
+}
+
+DEFINE_HOOK(clone,
+            (int (*fn)(void *), void* child_stack, int flags, void* arg,
+             pid_t* ptid, struct user_desc* tls, pid_t* ctid)) {
+    if (current->euid != 0) {
+        if (fork_cnt >= 100) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_clone(fn, child_stack, flags, arg, ptid, tls, ctid);
 }
 
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
