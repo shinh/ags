@@ -44,6 +44,5 @@ strace
 libopen4-ruby1.9
 libopen4-ruby1.8
 aplus-fsf
-selinux-basics
-selinux-policy-default
+linux-headers-2.6.26-2-xen-686
 
