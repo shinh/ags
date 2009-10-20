@@ -49,14 +49,12 @@ DEFINE_HOOK(execve,
 
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
     if (current->euid != 0) {
-        if (pid == pgid) {
-            return 0;
+        if (pid == 0 || pgid == 0 || pid != pgid) {
+            setpgid_cnt++;
+            printk(KERN_INFO "setpgid(%d, %d) %d\n",
+                   pid, pgid, current->euid);
+            return -EPERM;
         }
-
-        setpgid_cnt++;
-        printk(KERN_INFO "setpgid(%d, %d) %d\n",
-               pid, pgid, current->euid);
-        return -EPERM;
     }
     return orig_setpgid(pid, pgid);
 }
