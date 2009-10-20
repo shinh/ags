@@ -196,6 +196,7 @@ class Handler
     @o.rewind
     r = @o.read
     @o = @orig_o
+    @orig_o = nil
     r
   end
 
