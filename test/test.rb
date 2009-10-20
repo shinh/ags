@@ -97,6 +97,8 @@ fail_cnt = 0
  ['cc.sh', 'Evil+C+Compiler', /Success/],
  # TODO: more message?
  ['fork_bomb.sh', 'testing', /failed/],
+ ['timeout.rb', 'Timeout', /Success/],
+ ['timeout_fail.rb', 'Timeout', /Not timeout/],
 ].each do |s, u, r|
   test_cnt += 1
 
