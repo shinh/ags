@@ -1,4 +1,4 @@
-TARGETS = sandbox.ko getvals reset
+TARGETS = sandbox.ko getvals reset syscalls
 obj-m := sandbox.o
 
 all: $(TARGETS)
