@@ -78,6 +78,16 @@ def get_sandbox_vals
   m
 end
 
+def sweep_prcesses
+  `pgrep -U 1000`.each do |l|
+    l = l.to_i
+    if l != $$ && l != Process.ppid
+      puts "kill #{l}"
+      Process.kill(:KILL, l) rescue puts "already died? #{l}"
+    end
+  end
+end
+
 def run(exe, i = nil, timeout = 60)
   setup_sandbox
   sandbox_vals = get_sandbox_vals
@@ -125,37 +135,21 @@ def run(exe, i = nil, timeout = 60)
   end
 
   if status
-    lo = stdout.read(100000)
-    lo = '' if !lo
-    o += lo
-    o = '' if !o
-    e = stderr.read(100000)
+    if IO.select([stdout], nil, nil, 0)
+      lo = stdout.read(100000)
+      lo = '' if !lo
+      o += lo
+    end
+    if IO.select([stderr], nil, nil, 0)
+      e = stderr.read(100000)
+    end
     e = '' if !e
 
-    sandbox_cnts = {}
-    get_sandbox_vals.each do |sym, val|
-      sandbox_cnts[sym] = val - sandbox_vals[sym]
-    end
-
-    exec_cnt = sandbox_cnts[:execve]
-    if sandbox_cnts[:setpriority] != 0
-      puts 'cheat?'
-      exec_cnt = -1
-    else
-      if exec_cnt < 4
-        puts 'mysterious exec count: %d' % exec_cnt
-      end
-      exec_cnt -= 2
-      if exec_cnt < 0
-        exec_cnt = 0
-      end
-    end
-
-    [@n-start, status.exitstatus, o, e, exec_cnt, sandbox_cnts]
+    ret = [@n-start, status.exitstatus, o, e]
   else
     `pgrep -P #{pid}`.each do |l|
-       puts "kill #{l}"
-       Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
+      puts "kill #{l}"
+      Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
     end
     puts "kill #{pid}"
     #Process::kill(:INT, pid)
@@ -197,8 +191,34 @@ def run(exe, i = nil, timeout = 60)
 #     end
     stdout.close
     stderr.close
-    [nil, nil, o, e]
+    ret = [nil, nil, o, e]
   end
+
+  sandbox_cnts = {}
+  get_sandbox_vals.each do |sym, val|
+    sandbox_cnts[sym] = val - sandbox_vals[sym]
+  end
+
+  exec_cnt = sandbox_cnts[:execve]
+  if sandbox_cnts[:setpriority] != 0
+    puts 'cheat?'
+    exec_cnt = -1
+  else
+    if exec_cnt < 4
+      puts 'mysterious exec count: %d' % exec_cnt
+    end
+    exec_cnt -= 2
+    if exec_cnt < 0
+      exec_cnt = 0
+    end
+  end
+
+  ret << exec_cnt
+  ret << sandbox_cnts
+
+  sweep_prcesses
+
+  ret
 end
 
 if ARGV[0] == '-d'
