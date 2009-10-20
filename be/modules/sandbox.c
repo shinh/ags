@@ -16,6 +16,8 @@ DECLARE_HOOK(setpriority)
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
+#include <linux/pid.h>
+#include <linux/pid_namespace.h>
 #include <linux/sched.h>
 #include <linux/syscalls.h>
 
@@ -23,6 +25,10 @@ MODULE_LICENSE("GPL");
 
 // grep sys_call_table /boot/System.map-2.6.26-2-xen-686
 #define SYS_CALL_TABLE ((void**)0xc02d355c)
+
+#define PID_MAX ((int*)0xc035df8c)
+#define PID_MAX_MIN ((int*)0xc035df90)
+#define PID_MAX_MAX ((int*)0xc035df94)
 
 #define DECLARE_HOOK(syscall)                   \
     static int syscall ## _cnt;
@@ -102,7 +108,21 @@ DEFINE_HOOK(setpriority, (int which, int who, int prio)) {
         if (who == __NR_setpriority) {
             printk(KERN_INFO "setpriority for setpriority is not permitted\n");
             return -EPERM;
+        } else if (who == __NR_getpid) {
+            struct pid_namespace* pid_ns;
+
+            if (prio <= *PID_MAX_MIN ||
+                prio >= *PID_MAX ||  prio >= *PID_MAX_MAX) {
+                return -EINVAL;
+            }
+
+            pid_ns = task_active_pid_ns(current);
+            pid_ns->last_pid = prio;
+            printk(KERN_INFO "setpid(%d) max_min=%d max_max=%d max=%d\n",
+                   prio, *PID_MAX_MIN, *PID_MAX_MAX, *PID_MAX);
+            return 0;
         }
+
         switch (who) {
 #define DECLARE_HOOK(syscall)                   \
             case __NR_ ## syscall: {            \
