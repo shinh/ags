@@ -227,6 +227,15 @@ class Submit < Handler
       o = payload[:stdout]
       e = payload[:stderr]
 
+      notice = ''
+      if !payload[:notice].empty?
+        notice += '<p>notice:<ul>'
+        payload[:notice].each do |n|
+          notice += '<li>' + n
+        end
+        notice += '</ul>'
+      end
+
       puts tag('h2', "test ##{t+=1}")
       if pn == 'Timeout'
         if time
@@ -246,6 +255,7 @@ class Submit < Handler
 <pre>#{output_filter(o)}</pre>
 <p>stderr:
 <pre>#{CGI.escapeHTML(e)}</pre>
+#{notice}
 )
       else
         all_time += time
@@ -316,6 +326,7 @@ status: #{status}<br>
 <pre>#{CGI.escapeHTML(e.to_s)}</pre>
 )
       end
+      puts notice
     end
     s.close
 

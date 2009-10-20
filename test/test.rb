@@ -4,6 +4,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['fork_bomb.sh', 'testing', /fork attempts might fail/],
  ['daemon.rb', 'testing', /setsid/],
  ['testing.grb', 'testing', /Success/],
  ['testing.vi', 'testing', /Success/],
@@ -95,8 +96,6 @@ fail_cnt = 0
  ['mk_hello.rb', 'hello+world', /failed/],
  ['load_hello.rb', 'hello+world', /failed/],
  ['cc.sh', 'Evil+C+Compiler', /Success/],
- # TODO: more message?
- ['fork_bomb.sh', 'testing', /failed/],
  ['timeout.rb', 'Timeout', /Success/],
  ['timeout_fail.rb', 'Timeout', /Not timeout/],
 ].each do |s, u, r|
