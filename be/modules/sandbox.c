@@ -59,7 +59,7 @@ DEFINE_HOOK(execve,
 
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
     if (current->euid != 0) {
-        if (pid == 0 || pgid == 0 || pid != pgid) {
+        if (pid == 0 || pgid == 0) {
             setpgid_cnt++;
             printk(KERN_INFO "setpgid(%d, %d) %d\n",
                    pid, pgid, current->euid);
