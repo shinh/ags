@@ -155,9 +155,11 @@ def run(exe, i = nil, timeout = 60)
        Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
     end
     puts "kill #{pid}"
-#    Process::kill(:INT, pid)
+    #Process::kill(:INT, pid)
     Process::kill(:KILL, pid) rescue puts "already died? #{pid}"
     Process::wait(pid)
+
+    # TODO: show some outputs for timeout solutions
     o=''
     e=''
 #    if a=IO.select([stdout], [], [], 0.1)
@@ -314,15 +316,12 @@ while true
       end
     end
 
-    #ENV['LD_PRELOAD'] = ''
-
     Dir.open("."){|d|
       d.each{|e|
         File.unlink(e) if e != '.' && e != '..'
       }
     }
-#    File.unlink(f) if File.exists?(f)
-#    File.unlink('a.out') if File.exists?('a.out')
+
     s.close
   rescue
     s.close
