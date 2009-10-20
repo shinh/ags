@@ -54,6 +54,8 @@ MODULE_LICENSE("GPL");
 
 #define IS_NOT_ROOT current->uid != 0 /* || current->euid != 0 */
 
+#define NUM_ALLOWED_FORK 100
+
 DEFINE_HOOK(execve,
             (const char *filename, char *const argv[], char *const envp[])) {
     if (IS_NOT_ROOT) {
@@ -64,7 +66,7 @@ DEFINE_HOOK(execve,
 
 DEFINE_HOOK(fork, (void)) {
     if (IS_NOT_ROOT) {
-        if (fork_cnt >= 100) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
             return -EPERM;
         }
         fork_cnt++;
@@ -74,7 +76,7 @@ DEFINE_HOOK(fork, (void)) {
 
 DEFINE_HOOK(vfork, (void)) {
     if (IS_NOT_ROOT) {
-        if (fork_cnt >= 100) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
             return -EPERM;
         }
         fork_cnt++;
@@ -86,7 +88,7 @@ DEFINE_HOOK(clone,
             (int (*fn)(void *), void* child_stack, int flags, void* arg,
              pid_t* ptid, struct user_desc* tls, pid_t* ctid)) {
     if (IS_NOT_ROOT) {
-        if (fork_cnt >= 100) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
             return -EPERM;
         }
         fork_cnt++;
