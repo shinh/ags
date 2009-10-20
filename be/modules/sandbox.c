@@ -3,12 +3,25 @@
 #ifdef DECLARE_HOOK
 
 DECLARE_HOOK(execve)
+DECLARE_HOOK(fork)
+DECLARE_HOOK(vfork)
+DECLARE_HOOK(clone)
 DECLARE_HOOK(setpgid)
 DECLARE_HOOK(setsid)
-DECLARE_HOOK(setuid)
-DECLARE_HOOK(setgid)
 DECLARE_HOOK(getpriority)
 DECLARE_HOOK(setpriority)
+
+#define DECLARE_HOOK_32(name)                   \
+    DECLARE_HOOK(name)                          \
+    DECLARE_HOOK(name ## 32)
+DECLARE_HOOK_32(setuid)
+DECLARE_HOOK_32(setreuid)
+DECLARE_HOOK_32(setresuid)
+DECLARE_HOOK_32(setfsuid)
+DECLARE_HOOK_32(setgid)
+DECLARE_HOOK_32(setregid)
+DECLARE_HOOK_32(setresgid)
+DECLARE_HOOK_32(setfsgid)
 
 #else
 
@@ -39,17 +52,53 @@ MODULE_LICENSE("GPL");
     asmlinkage int (*orig_ ## name) args ;      \
     asmlinkage static int hook_ ## name args
 
+#define IS_NOT_ROOT current->uid != 0 /* || current->euid != 0 */
+
+#define NUM_ALLOWED_FORK 100
+
 DEFINE_HOOK(execve,
             (const char *filename, char *const argv[], char *const envp[])) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         execve_cnt++;
     }
     return orig_execve(filename, argv, envp);
 }
 
+DEFINE_HOOK(fork, (void)) {
+    if (IS_NOT_ROOT) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_fork();
+}
+
+DEFINE_HOOK(vfork, (void)) {
+    if (IS_NOT_ROOT) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_vfork();
+}
+
+DEFINE_HOOK(clone,
+            (int (*fn)(void *), void* child_stack, int flags, void* arg,
+             pid_t* ptid, struct user_desc* tls, pid_t* ctid)) {
+    if (IS_NOT_ROOT) {
+        if (fork_cnt >= NUM_ALLOWED_FORK) {
+            return -EPERM;
+        }
+        fork_cnt++;
+    }
+    return orig_clone(fn, child_stack, flags, arg, ptid, tls, ctid);
+}
+
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
-    if (current->euid != 0) {
-        if (pid == 0 || pgid == 0 || pid != pgid) {
+    if (IS_NOT_ROOT) {
+        if (pid == 0 || pgid == 0) {
             setpgid_cnt++;
             printk(KERN_INFO "setpgid(%d, %d) %d\n",
                    pid, pgid, current->euid);
@@ -60,7 +109,7 @@ DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
 }
 
 DEFINE_HOOK(setsid, (void)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         setsid_cnt++;
         printk(KERN_INFO "setsid()\n");
         return -EPERM;
@@ -68,23 +117,30 @@ DEFINE_HOOK(setsid, (void)) {
     return orig_setsid();
 }
 
-DEFINE_HOOK(setuid, (uid_t uid)) {
-    if (current->euid != 0) {
-        setuid_cnt++;
-        printk(KERN_INFO "setuid(%d)\n", uid);
-        return -EPERM;
+#define DEFINE_DISABLE_HOOK(name, args, fmt, ...)               \
+    DEFINE_HOOK(name, args) {                                   \
+        if (IS_NOT_ROOT) {                                      \
+            name ## _cnt++;                                     \
+            printk(KERN_INFO #name "(" fmt ")\n", __VA_ARGS__); \
+            return -EPERM;                                      \
+        }                                                       \
+        return orig_ ## name (__VA_ARGS__);                     \
     }
-    return orig_setuid(uid);
-}
 
-DEFINE_HOOK(setgid, (gid_t gid)) {
-    if (current->euid != 0) {
-        setgid_cnt++;
-        printk(KERN_INFO "setgid(%d)\n", gid);
-        return -EPERM;
-    }
-    return orig_setgid(gid);
-}
+#define DEFINE_DISABLE_HOOK_32(name, args, fmt, ...)        \
+    DEFINE_DISABLE_HOOK(name, args, fmt, __VA_ARGS__)       \
+    DEFINE_DISABLE_HOOK(name ## 32, args, fmt, __VA_ARGS__)
+
+DEFINE_DISABLE_HOOK_32(setuid, (uid_t uid), "%d", uid)
+DEFINE_DISABLE_HOOK_32(setreuid, (uid_t uid, uid_t euid), "%d, %d", uid, euid)
+DEFINE_DISABLE_HOOK_32(setresuid, (uid_t uid, uid_t euid, uid_t suid),
+                       "%d, %d, %d", uid, euid, suid);
+DEFINE_DISABLE_HOOK_32(setfsuid, (uid_t uid), "%d", uid)
+DEFINE_DISABLE_HOOK_32(setgid, (gid_t gid), "%d", gid);
+DEFINE_DISABLE_HOOK_32(setregid, (gid_t gid, gid_t egid), "%d, %d", gid, egid)
+DEFINE_DISABLE_HOOK_32(setresgid, (gid_t gid, gid_t egid, gid_t sgid),
+                       "%d, %d, %d", gid, egid, sgid);
+DEFINE_DISABLE_HOOK_32(setfsgid, (uid_t uid), "%d", uid)
 
 DEFINE_HOOK(getpriority, (int which, int who)) {
     if (which == SANDBOX_MAGIC_PRIORITY) {
@@ -124,6 +180,7 @@ DEFINE_HOOK(setpriority, (int which, int who, int prio)) {
         switch (who) {
 #define DECLARE_HOOK(syscall)                   \
             case __NR_ ## syscall: {            \
+                setpriority_cnt++;              \
                 syscall ## _cnt = prio;         \
                 return 0;                       \
             }

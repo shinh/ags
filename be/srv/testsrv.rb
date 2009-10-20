@@ -1,12 +1,49 @@
 require 'socket'
 require 'open4'
 
+Process.setrlimit(Process::RLIMIT_NPROC, 100)
+Process.setrlimit(Process::RLIMIT_RSS, 50)
+
+SYSCALLS = {
+  :execve => 11,
+  :fork => 2,
+  :vfork => 190,
+  :clone => 120,
+  :setpgid => 57,
+  :setsid => 66,
+  :getpriority => 96,
+  :setpriority => 97,
+  :setuid => 23,
+  :setuid32 => 213,
+  :setreuid => 70,
+  :setreuid32 => 203,
+  :setresuid => 164,
+  :setresuid32 => 208,
+  :setfsuid => 138,
+  :setfsuid32 => 215,
+  :setgid => 46,
+  :setgid32 => 214,
+  :setregid => 71,
+  :setregid32 => 204,
+  :setresgid => 170,
+  :setresgid32 => 210,
+  :setfsgid => 139,
+  :setfsgid32 => 216,
+}
+SANDBOX_MAGIC_PRIORITY = 1764
+
+def get_sandbox_val(sym)
+  20 - Process.getpriority(1764, SYSCALLS[sym])
+end
+
+def set_sandbox_val(sym, cnt)
+  Process.setpriority(1764, SYSCALLS[sym], cnt)
+end
+
 SERV='192.168.35.2'
 #SERV='localhost'
 PORT=9999
 #PORT=9997
-
-NON_STRACE = ['sh', 'bf', 'ws', 'bef', 'unl', 'ms', 'pef', 'wr']
 
 def daemon
   catch(:RUN_DAEMON) do
@@ -25,12 +62,42 @@ def daemon
   end
 end
 
-def run(exe, i = nil, timeout = 60)
-begin
-  pid, stdin, stdout, stderr = Open4.popen4("../local/limit #{exe}")
-rescue
-  exit 1
+def setup_sandbox
+  SYSCALLS.each do |sym, num|
+    if sym != :setpriority
+      set_sandbox_val(sym, 0)
+    end
+  end
 end
+
+def get_sandbox_vals
+  m = {}
+  SYSCALLS.each do |sym, num|
+    m[sym] = get_sandbox_val(sym)
+  end
+  m
+end
+
+def sweep_prcesses
+  `pgrep -U 1000`.each do |l|
+    l = l.to_i
+    if l != $$ && l != Process.ppid
+      puts "kill #{l}"
+      Process.kill(:KILL, l) rescue puts "already died? #{l}"
+    end
+  end
+end
+
+def run(exe, i = nil, timeout = 60)
+  setup_sandbox
+  sandbox_vals = get_sandbox_vals
+
+  begin
+    pid, stdin, stdout, stderr = Open4.popen4(exe)
+  rescue
+    exit 1
+  end
+
   if i && i.size > 0
     begin
       stdin.print(i)
@@ -68,22 +135,28 @@ end
   end
 
   if status
-    lo = stdout.read(100000)
-    lo = '' if !lo
-    o += lo
-    o = '' if !o
-    e = stderr.read(100000)
+    if IO.select([stdout], nil, nil, 0)
+      lo = stdout.read(100000)
+      lo = '' if !lo
+      o += lo
+    end
+    if IO.select([stderr], nil, nil, 0)
+      e = stderr.read(100000)
+    end
     e = '' if !e
-    [@n-start, status.exitstatus, o, e]
+
+    ret = [@n-start, status.exitstatus, o, e]
   else
     `pgrep -P #{pid}`.each do |l|
-       puts "kill #{l}"
-       Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
+      puts "kill #{l}"
+      Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
     end
     puts "kill #{pid}"
-#    Process::kill(:INT, pid)
+    #Process::kill(:INT, pid)
     Process::kill(:KILL, pid) rescue puts "already died? #{pid}"
     Process::wait(pid)
+
+    # TODO: show some outputs for timeout solutions
     o=''
     e=''
 #    if a=IO.select([stdout], [], [], 0.1)
@@ -118,8 +191,33 @@ end
 #     end
     stdout.close
     stderr.close
-    [nil, nil, o, e]
+    ret = [nil, nil, o, e]
   end
+
+  sandbox_cnts = {}
+  get_sandbox_vals.each do |sym, val|
+    sandbox_cnts[sym] = val - sandbox_vals[sym]
+  end
+
+  exec_cnt = sandbox_cnts[:execve]
+  if sandbox_cnts[:setpriority] != 0
+    puts 'cheat?'
+    exec_cnt = -1
+  else
+    if exec_cnt < 2
+      puts 'mysterious exec count: %d' % exec_cnt
+    end
+    if exec_cnt < 0
+      exec_cnt = 0
+    end
+  end
+
+  ret << exec_cnt
+  ret << sandbox_cnts
+
+  sweep_prcesses
+
+  ret
 end
 
 if ARGV[0] == '-d'
@@ -136,36 +234,34 @@ while true
   s = gs.accept
 
   begin
-    fn = s.gets.chomp
-    t = File.extname(fn).tr('.','')
-    cs = s.gets.to_i
-    c = s.read(cs)
-    tnum = s.gets.to_i
-    testing = false
-    if tnum == -1
-      testing = true
-      tnum = 1
+    setup_sandbox
+    Dir::chdir("/")
+    if !system("/golf/remount")
+      raise 'remount failed'
     end
-    inputs = []
-    tnum.times {
-      is = s.gets.to_i
-      inputs << [s.read(is), s.gets.to_i]
-    }
+    Dir::chdir("/golf/test")
+
+    payload_size = s.gets.to_i
+    payload = Marshal.load(s.read(payload_size))
+
+    fn = payload[:filename]
+    t = File.extname(fn).tr('.','')
+    c = payload[:code]
+    # TODO: remove this flag
+    testing = false
+    inputs = payload[:inputs]
+
     File.open(f="test."+t, 'w') do |of|
       of.write(c)
     end
 
-    log.puts("connected #{fn} #{cs}")
+    log.puts("connected #{fn} #{c.size}")
 
     ext = t
-    scmd = cmd = "../s/#{t} #{f} #{fn}"
-    if !NON_STRACE.include?(ext)
-      scmd = "strace -f -e execve -c -o str.log ../s/#{t} #{f} #{fn}"
-      #scmd = "sh -c 'LD_PRELOAD=/golf/local/watch.so ../s/#{t} #{f} #{fn}'"
-    end
+    cmd = "/golf/s/#{t} #{f} #{fn}"
 
-    if File.exists?("../s/_#{t}")
-      t, r, o, e = run("../s/_#{t} #{f} #{fn}")
+    if File.exists?("/golf/s/_#{t}")
+      t, r, o, e = run("/golf/s/_#{t} #{f} #{fn}")
       if !t
         s.puts "compile timeout"
         s.close
@@ -188,10 +284,7 @@ while true
       end
     end
 
-    #ENV['LD_PRELOAD'] = '/golf/local/watch.so'
-
     inputs.each do |i|
-      i, mode = i
       timeout = 1
       if testing
         timeout = 5
@@ -209,46 +302,11 @@ while true
       timeout += 4 if ext == 'exe'
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
-      if mode == 2
-        cmd = scmd
-      end
-      t, r, o, e = run(cmd, i, timeout)
+      timeout += 4 if ext == 'arc'
+      t, r, o, e, execnt, sandbox_cnts = run(cmd, i, timeout)
 
       if t
-    execnt = 1  # for strace
-    if File.exists?('/golf/test/watch.log')
-      File.open('/golf/test/watch.log') do |ifile|
-      	ifile.each do |watch_line|
-          if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
-            begin
-              puts "deleting #{del_file}"
-              File.unlink(del_file)
-            rescue
-            end
-          elsif watch_line =~ /^exec/
-            execnt += 1
-          end
-        end
-      end
-      #system('cp watch.log /tmp/t')
-      File.unlink('/golf/test/watch.log')
-    else
-      execnt = 99999
-    end
-    puts "exec cnt: #{execnt}"
-
-    if mode == 2
-        execnt = 2
-        if !NON_STRACE.include?(ext)
-begin
-          trace = File.read('str.log').grep(/execve/)[0].split
-          execnt = trace[3].to_i-trace[4].to_i
-rescue
-end
-        end
-    elsif mode == 0
-        execnt = 2
-    end
+        puts "exec cnt: #{execnt}"
 
         s.puts t
         s.puts r
@@ -272,15 +330,12 @@ end
       end
     end
 
-    #ENV['LD_PRELOAD'] = ''
-
     Dir.open("."){|d|
       d.each{|e|
         File.unlink(e) if e != '.' && e != '..'
       }
     }
-#    File.unlink(f) if File.exists?(f)
-#    File.unlink('a.out') if File.exists?('a.out')
+
     s.close
   rescue
     s.close
