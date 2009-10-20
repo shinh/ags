@@ -27,7 +27,7 @@ end
 
 def run(exe, i = nil, timeout = 60)
 begin
-  pid, stdin, stdout, stderr = Open4.popen4("../local/limit #{exe}")
+  pid, stdin, stdout, stderr = Open4.popen4("/golf/local/limit #{exe}")
 rescue
   exit 1
 end
@@ -136,6 +136,12 @@ while true
   s = gs.accept
 
   begin
+    Dir::chdir("/")
+    if !system("/golf/local/remount")
+      raise 'remount failed'
+    end
+    Dir::chdir("/golf/test")
+
     fn = s.gets.chomp
     t = File.extname(fn).tr('.','')
     cs = s.gets.to_i
@@ -158,14 +164,14 @@ while true
     log.puts("connected #{fn} #{cs}")
 
     ext = t
-    scmd = cmd = "../s/#{t} #{f} #{fn}"
+    scmd = cmd = "/golf/s/#{t} #{f} #{fn}"
     if !NON_STRACE.include?(ext)
-      scmd = "strace -f -e execve -c -o str.log ../s/#{t} #{f} #{fn}"
-      #scmd = "sh -c 'LD_PRELOAD=/golf/local/watch.so ../s/#{t} #{f} #{fn}'"
+      scmd = "strace -f -e execve -c -o str.log /golf/s/#{t} #{f} #{fn}"
+      #scmd = "sh -c 'LD_PRELOAD=/golf/local/watch.so /golf/s/#{t} #{f} #{fn}'"
     end
 
-    if File.exists?("../s/_#{t}")
-      t, r, o, e = run("../s/_#{t} #{f} #{fn}")
+    if File.exists?("/golf/s/_#{t}")
+      t, r, o, e = run("/golf/s/_#{t} #{f} #{fn}")
       if !t
         s.puts "compile timeout"
         s.close
@@ -209,6 +215,7 @@ while true
       timeout += 4 if ext == 'exe'
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
+      timeout += 4 if ext == 'arc'
       if mode == 2
         cmd = scmd
       end
@@ -218,8 +225,8 @@ while true
     execnt = 1  # for strace
     if File.exists?('/golf/test/watch.log')
       File.open('/golf/test/watch.log') do |ifile|
-      	ifile.each do |watch_line|
-          if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
+        ifile.each do |watch_line|
+              if watch_line =~ /^open (\S*\/\S*)/ && (del_file = $1) && del_file !~ /^\/dev\//
             begin
               puts "deleting #{del_file}"
               File.unlink(del_file)
