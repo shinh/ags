@@ -52,16 +52,18 @@ MODULE_LICENSE("GPL");
     asmlinkage int (*orig_ ## name) args ;      \
     asmlinkage static int hook_ ## name args
 
+#define IS_NOT_ROOT current->uid != 0 || current->euid != 0
+
 DEFINE_HOOK(execve,
             (const char *filename, char *const argv[], char *const envp[])) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         execve_cnt++;
     }
     return orig_execve(filename, argv, envp);
 }
 
 DEFINE_HOOK(fork, (void)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         if (fork_cnt >= 100) {
             return -EPERM;
         }
@@ -71,7 +73,7 @@ DEFINE_HOOK(fork, (void)) {
 }
 
 DEFINE_HOOK(vfork, (void)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         if (fork_cnt >= 100) {
             return -EPERM;
         }
@@ -83,7 +85,7 @@ DEFINE_HOOK(vfork, (void)) {
 DEFINE_HOOK(clone,
             (int (*fn)(void *), void* child_stack, int flags, void* arg,
              pid_t* ptid, struct user_desc* tls, pid_t* ctid)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         if (fork_cnt >= 100) {
             return -EPERM;
         }
@@ -93,7 +95,7 @@ DEFINE_HOOK(clone,
 }
 
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         if (pid == 0 || pgid == 0) {
             setpgid_cnt++;
             printk(KERN_INFO "setpgid(%d, %d) %d\n",
@@ -105,7 +107,7 @@ DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
 }
 
 DEFINE_HOOK(setsid, (void)) {
-    if (current->euid != 0) {
+    if (IS_NOT_ROOT) {
         setsid_cnt++;
         printk(KERN_INFO "setsid()\n");
         return -EPERM;
@@ -115,7 +117,7 @@ DEFINE_HOOK(setsid, (void)) {
 
 #define DEFINE_DISABLE_HOOK(name, args, fmt, ...)               \
     DEFINE_HOOK(name, args) {                                   \
-        if (current->euid != 0) {                               \
+        if (IS_NOT_ROOT) {                                      \
             name ## _cnt++;                                     \
             printk(KERN_INFO #name "(" fmt ")\n", __VA_ARGS__); \
             return -EPERM;                                      \
