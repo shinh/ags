@@ -178,6 +178,7 @@ DEFINE_HOOK(setpriority, (int which, int who, int prio)) {
         switch (who) {
 #define DECLARE_HOOK(syscall)                   \
             case __NR_ ## syscall: {            \
+                setpriority_cnt++;              \
                 syscall ## _cnt = prio;         \
                 return 0;                       \
             }
