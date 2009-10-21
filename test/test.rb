@@ -1,9 +1,38 @@
 #!/usr/bin/env ruby
 
+# Arc (arc)
+# Kite(kt)
+# Cyan(cy)
+# Nemerle(n)
+# LMNtal(lmn)
+# REBOL(reb)
+# Asymptote(asy)
+# QCL(qcl)
+# GolfScript(gs)
+# Grass(grass),
+# Universal Lambda(lamb)
+# z80(z8b)
+# DOS(com)
+
+# Testing testing.cob... failed
+# Testing testing.curry... failed
+# Testing testing.pl6... failed
+# Testing testing.xgawk... failed
+# Testing google.d... failed
+# Testing hello.ijs... failed
+# Testing testing.ijs... failed
+# Testing fizz_exec.ijs... failed
+
+# Erlang(erl) sedsid
+# BASIC(bas) setpgid
+
 test_cnt = 0
 fail_cnt = 0
 
 [
+ # expected failure...
+ ['echo.max', 'echo', /failed/],
+ ['hello.max', 'hello+world', /Success/],
  ['hello_fail.c', 'hello+world', /compile error/],
  ['fork_bomb.sh', 'testing', /fork attempts might fail/],
  ['daemon.rb', 'testing', /setsid/],

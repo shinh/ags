@@ -1,0 +1,5 @@
+a:openr("/dev/stdin")$
+print(readline(a))$
+print(readline(a))$
+print(readline(a))$
+print(readline(a))$
