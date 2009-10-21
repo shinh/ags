@@ -100,6 +100,7 @@ fail_cnt = 0
  ['timeout.rb', 'Timeout', /Success/],
  ['timeout_fail.rb', 'Timeout', /Not timeout/],
  ['hello_timeout.d', 'hello+world', /compile timeout/],
+ ['hello_excessout.rb', 'hello+world', /foobarbaz/],
 ].each do |s, u, r|
   test_cnt += 1
 
