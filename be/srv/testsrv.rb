@@ -254,8 +254,15 @@ while true
   begin
     setup_sandbox
     Dir::chdir("/")
-    if !system("/golf/remount")
-      raise 'remount failed'
+    4.times {|i|
+      if system("/golf/remount")
+        break
+      end
+      log.puts('remount faiiled (attempt #%d)' % i)
+      if i == 3
+        raise 'remount failed'
+      end
+      sleep 1
     end
     Dir::chdir("/golf/test")
 
