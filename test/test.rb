@@ -4,7 +4,6 @@
 # Kite(kt)
 # Cyan(cy)
 # LMNtal(lmn)
-# REBOL(reb)
 # Asymptote(asy)
 # QCL(qcl)
 # GolfScript(gs)
@@ -29,6 +28,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['hello.reb', 'hello+world', /Success/],
  ['hello.n', 'hello+world', /Success/],
  # expected failure...
  ['echo.max', 'echo', /failed/],
