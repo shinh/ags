@@ -285,6 +285,7 @@ class Submit < Handler
             (ext != 'java' || execnt > 4) &&
             (ext != 'class' || execnt > 5) &&
             (ext != 'com' || execnt > 19) &&
+            (ext != 'max' || execnt > 12) &&
             (ext != 'groovy' || execnt > 3))
           puts tag('p', "exec is denied! (#{execnt})")
           failed = true

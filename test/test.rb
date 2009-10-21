@@ -29,6 +29,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.max', 'v', /Success/],
  ['v.cy', 'v', /Success/],
  ['v.reb', 'v', /Success/],
  ['v.n', 'v', /Success/],
