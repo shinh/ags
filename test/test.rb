@@ -4,6 +4,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['hello_fail.c', 'hello+world', /compile err/],
  ['fork_bomb.sh', 'testing', /fork attempts might fail/],
  ['daemon.rb', 'testing', /setsid/],
  ['testing.grb', 'testing', /Success/],
