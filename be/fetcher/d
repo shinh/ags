@@ -2,7 +2,7 @@
 
 cd /golf/local
 DMD=dmd.1.047.zip
-rm -fr dmd.$DMD dmd
+rm -fr $DMD dmd
 wget http://ftp.digitalmars.com/$DMD
 unzip $DMD
 chmod 755 dmd/linux/bin/dmd

@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+cd /golf/local
+RUBY=ruby-1.9.1-p243
+RUBY_PKG=$RUBY.tar.bz2
+rm -fr $RUBY $RUBY_PKG
+wget http://ftp.ruby-lang.org/pub/ruby/$RUBY_PKG
+tar -xvjf $RUBY_PKG
+cd $RUBY
+./configure --program-suffix=-1.9
+make
+make golf
+make install-nodoc

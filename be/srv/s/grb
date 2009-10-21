@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/local/bin/goruby1.9 $1
+exec /usr/local/bin/goruby-1.9 $1
