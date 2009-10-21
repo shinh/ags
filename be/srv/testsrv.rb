@@ -241,26 +241,21 @@ while true
     end
     Dir::chdir("/golf/test")
 
-    fn = s.gets.chomp
+    payload_size = s.gets.to_i
+    payload = Marshal.load(s.read(payload_size))
+
+    fn = payload[:filename]
     t = File.extname(fn).tr('.','')
-    cs = s.gets.to_i
-    c = s.read(cs)
-    tnum = s.gets.to_i
+    c = payload[:code]
+    # TODO: remove this flag
     testing = false
-    if tnum == -1
-      testing = true
-      tnum = 1
-    end
-    inputs = []
-    tnum.times {
-      is = s.gets.to_i
-      inputs << [s.read(is), s.gets.to_i]
-    }
+    inputs = payload[:inputs]
+
     File.open(f="test."+t, 'w') do |of|
       of.write(c)
     end
 
-    log.puts("connected #{fn} #{cs}")
+    log.puts("connected #{fn} #{c.size}")
 
     ext = t
     cmd = "/golf/s/#{t} #{f} #{fn}"
@@ -290,7 +285,6 @@ while true
     end
 
     inputs.each do |i|
-      i, mode = i
       timeout = 1
       if testing
         timeout = 5
@@ -313,10 +307,6 @@ while true
 
       if t
         puts "exec cnt: #{execnt}"
-
-        if mode == 0
-          execnt = 2
-        end
 
         s.puts t
         s.puts r
