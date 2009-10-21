@@ -2,7 +2,7 @@
 cd /golf/test
 #LD_PRELOAD=/usr/lib/wine/ntdll.dll.so
 #ulimit -v 100000
-for i in `seq 1 100`; do
+for i in `seq 1 95`; do
   echo $i
   ruby ../testsrv.rb
 done

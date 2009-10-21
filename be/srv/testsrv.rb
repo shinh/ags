@@ -235,7 +235,15 @@ def run(exe, i = nil, timeout = 60)
 
   sweep_prcesses
 
-  ret
+  {
+    :time => ret[0],
+    :status => ret[1],
+    :execnt => exec_cnt,
+    :stdout => ret[2],
+    :stderr => ret[3],
+    :sandbox_cnt => sandbox_cnts,
+    :notice => notice,
+  }
 end
 
 if ARGV[0] == '-d'
@@ -254,7 +262,7 @@ while true
   begin
     setup_sandbox
     Dir::chdir("/")
-    4.times {|i|
+    4.times do |i|
       if system("/golf/remount")
         break
       end
@@ -286,25 +294,24 @@ while true
     cmd = "/golf/s/#{t} #{f} #{fn}"
 
     if File.exists?("/golf/s/_#{t}")
-      t, r, o, e = run("/golf/s/_#{t} #{f} #{fn}")
-      if !t
-        s.puts "compile timeout"
-        s.close
-        log.puts("compile timeout err")
-        next
-      elsif r != 0
-        #s.puts t
-        s.puts 'compile error'
-        s.puts r
-        s.puts 0
-        s.puts o.size
-        s.print o
-        s.puts e.size
-        s.print e
+      payload = run("/golf/s/_#{t} #{f} #{fn}")
 
+      failed = false
+      if !payload[:time]
+        payload[:time] = 'compile timeout'
+        failed = true
+      elsif payload[:status] != 0
+        payload[:time] = 'compile error'
+        failed = true
+      end
+
+      if failed
+        encoded_payload = Marshal.dump(payload)
+        s.puts encoded_payload.size
+        s.print(encoded_payload)
+        log.puts(payload[:time])
         File.unlink(f) if File.exists?(f)
         s.close
-        log.puts("compile err")
         next
       end
     end
@@ -328,24 +335,19 @@ while true
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
       timeout += 4 if ext == 'arc'
-      t, r, o, e, execnt, sandbox_cnts, notice = run(cmd, i, timeout)
 
+      payload = run(cmd, i, timeout)
+
+      notice = payload[:notice]
       if !notice.empty?
         log.puts('notice: %s' % notice.inspect)
       end
 
-      payload = {
-        :time => t,
-        :status => r,
-        :execnt => execnt,
-        :stdout => o,
-        :stderr => e,
-        :notice => notice,
-      }
       encoded_payload = Marshal.dump(payload)
       s.puts(encoded_payload.size)
       s.print(encoded_payload)
 
+      execnt = payload[:execnt]
       if t
         log.puts("OK (execnt=#{execnt})")
       else
