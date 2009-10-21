@@ -134,6 +134,12 @@ def run(exe, i = nil, timeout = 60)
     end
   end
 
+  # get values before killing.
+  sandbox_cnts = {}
+  get_sandbox_vals.each do |sym, val|
+    sandbox_cnts[sym] = val - sandbox_vals[sym]
+  end
+
   if status
     if IO.select([stdout], nil, nil, 0)
       lo = stdout.read(100000)
@@ -147,6 +153,7 @@ def run(exe, i = nil, timeout = 60)
 
     ret = [@n-start, status.exitstatus, o, e]
   else
+    setup_sandbox
     `pgrep -P #{pid}`.each do |l|
       puts "kill #{l}"
       Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
@@ -192,11 +199,6 @@ def run(exe, i = nil, timeout = 60)
     stdout.close
     stderr.close
     ret = [nil, nil, o, e]
-  end
-
-  sandbox_cnts = {}
-  get_sandbox_vals.each do |sym, val|
-    sandbox_cnts[sym] = val - sandbox_vals[sym]
   end
 
   exec_cnt = sandbox_cnts[:execve]
@@ -305,28 +307,21 @@ while true
       timeout += 4 if ext == 'arc'
       t, r, o, e, execnt, sandbox_cnts = run(cmd, i, timeout)
 
+      payload = {
+        :time => t,
+        :status => r,
+        :execnt => execnt,
+        :stdout => o,
+        :stderr => e,
+      }
+      encoded_payload = Marshal.dump(payload)
+      s.puts(encoded_payload.size)
+      s.print(encoded_payload)
+
       if t
-        puts "exec cnt: #{execnt}"
-
-        s.puts t
-        s.puts r
-        s.puts execnt
-        s.puts o.size
-        s.print o
-        s.puts e.size
-        s.print e
-
-        log.puts("done")
+        log.puts("OK (execnt=#{execnt})")
       else
-        s.puts("timeout")
-        s.puts 0
-        s.puts execnt
-        s.puts o.size
-        s.print o
-        s.puts e.size
-        s.print e
-
-        log.puts("timeout err (execnt=%d)" % execnt)
+        log.puts("timeout err (execnt=#{execnt})")
       end
     end
 
