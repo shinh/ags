@@ -4,7 +4,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
- ['hello_fail.c', 'hello+world', /compile err/],
+ ['hello_fail.c', 'hello+world', /compile error/],
  ['fork_bomb.sh', 'testing', /fork attempts might fail/],
  ['daemon.rb', 'testing', /setsid/],
  ['testing.grb', 'testing', /Success/],
@@ -99,6 +99,7 @@ fail_cnt = 0
  ['cc.sh', 'Evil+C+Compiler', /Success/],
  ['timeout.rb', 'Timeout', /Success/],
  ['timeout_fail.rb', 'Timeout', /Not timeout/],
+ ['hello_timeout.d', 'hello+world', /compile timeout/],
 ].each do |s, u, r|
   test_cnt += 1
 
