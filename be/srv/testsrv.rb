@@ -117,8 +117,9 @@ def run(exe, i = nil, timeout = 60)
     if eof
       sleep 0.01
     else
-      sel = IO.select([stdout, stderr], nil, nil, 0.01)[0]
+      sel = IO.select([stdout, stderr], nil, nil, 0.01)
       if sel
+        sel = sel[0]
         begin
           if sel.include?(stdout)
             o += stdout.sysread(100000)
