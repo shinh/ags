@@ -1,7 +1,7 @@
 require 'socket'
 require 'open4'
 
-Process.setrlimit(Process::RLIMIT_NPROC, 100)
+Process.setrlimit(Process::RLIMIT_NPROC, 1024)
 Process.setrlimit(Process::RLIMIT_RSS, 50)
 
 SYSCALLS = {
@@ -79,6 +79,7 @@ def get_sandbox_vals
 end
 
 def sweep_prcesses
+  setup_sandbox
   `pgrep -U 1000`.each do |l|
     l = l.to_i
     if l != $$ && l != Process.ppid
@@ -202,20 +203,35 @@ def run(exe, i = nil, timeout = 60)
   end
 
   exec_cnt = sandbox_cnts[:execve]
+  notice = []
   if sandbox_cnts[:setpriority] != 0
     puts 'cheat?'
     exec_cnt = -1
+    notice << 'setpriority was called for cheating?'
   else
     if exec_cnt < 2
+      notice << 'exec count is too small (execnt=%d). this message should not happen. please report this at shinichiro.hamaji _at_ gamil.com' % exec_cnt
       puts 'mysterious exec count: %d' % exec_cnt
-    end
-    if exec_cnt < 0
-      exec_cnt = 0
     end
   end
 
+  if sandbox_cnts[:fork] >= 100
+    notice << 'some of your fork attempts might fail. you cannot fork >100 times'
+  end
+
+  [:setpgid, :setsid, :setuid, :setuid32, :setreuid, :setreuid32,
+   :setresuid, :setresuid32, :setfsuid, :setfsuid32, :setgid, :setgid32,
+   :setregid, :setregid32, :setresgid, :setresgid32,
+   :setfsgid, :setfsgid32].each do |sys|
+    if sandbox_cnts[sys] > 0
+      notice << "you called forbidden system call (#{sys}). if you need this, please contact at shinichiro.hamaji _at_ gamil.com"
+    end
+  end
+
+
   ret << exec_cnt
   ret << sandbox_cnts
+  ret << notice
 
   sweep_prcesses
 
@@ -305,7 +321,11 @@ while true
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
       timeout += 4 if ext == 'arc'
-      t, r, o, e, execnt, sandbox_cnts = run(cmd, i, timeout)
+      t, r, o, e, execnt, sandbox_cnts, notice = run(cmd, i, timeout)
+
+      if !notice.empty?
+        log.puts('notice: %s' % notice.inspect)
+      end
 
       payload = {
         :time => t,
@@ -313,6 +333,7 @@ while true
         :execnt => execnt,
         :stdout => o,
         :stderr => e,
+        :notice => notice,
       }
       encoded_payload = Marshal.dump(payload)
       s.puts(encoded_payload.size)
