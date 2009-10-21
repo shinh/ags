@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # Arc (arc)
+
 # Kite(kt)
 # Cyan(cy)
 # LMNtal(lmn)
@@ -28,6 +29,9 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.cy', 'v', /Success/],
+ ['v.reb', 'v', /Success/],
+ ['v.n', 'v', /Success/],
  ['hello.reb', 'hello+world', /Success/],
  ['hello.n', 'hello+world', /Success/],
  # expected failure...
