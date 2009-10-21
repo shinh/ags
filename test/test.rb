@@ -3,7 +3,6 @@
 # Arc (arc)
 # Kite(kt)
 # Cyan(cy)
-# Nemerle(n)
 # LMNtal(lmn)
 # REBOL(reb)
 # Asymptote(asy)
@@ -30,6 +29,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['hello.n', 'hello+world', /Success/],
  # expected failure...
  ['echo.max', 'echo', /failed/],
  ['hello.max', 'hello+world', /Success/],
