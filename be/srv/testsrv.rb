@@ -110,18 +110,27 @@ def run(exe, i = nil, timeout = 60)
   start = Time.now
 
   o = ''
+  e = ''
   status = nil
   eof = false
   while !status
     if eof
       sleep 0.01
     else
-      sel = IO.select([stdout], nil, nil, 0.01)
+      sel = IO.select([stdout, stderr], nil, nil, 0.01)[0]
       if sel
         begin
-          o += stdout.sysread(100000)
-          if o.size > 1000000
-            eof = true
+          if sel.include?(stdout)
+            o += stdout.sysread(100000)
+            if o.size > 1000000
+              eof = true
+            end
+          end
+          if sel.include?(stderr)
+            e += stderr.sysread(100000)
+            if e.size > 1000000
+              eof = true
+            end
           end
         rescue EOFError
           eof = true
@@ -148,9 +157,10 @@ def run(exe, i = nil, timeout = 60)
       o += lo
     end
     if IO.select([stderr], nil, nil, 0)
-      e = stderr.read(100000)
+      le = stderr.read(100000)
+      le = '' if !le
+      e += le
     end
-    e = '' if !e
 
     ret = [@n-start, status.exitstatus, o, e]
   else
@@ -164,39 +174,13 @@ def run(exe, i = nil, timeout = 60)
     Process::kill(:KILL, pid) rescue puts "already died? #{pid}"
     Process::wait(pid)
 
-    # TODO: show some outputs for timeout solutions
-    o=''
-    e=''
-#    if a=IO.select([stdout], [], [], 0.1)
-##      o = stdout.read
-#      o = a[0][0].read
-#      if o.size > 100000
-#        o = '(EXCESS OUTPUTS!)' + o[0,100000]
-#      end
-#    end
-#    if a=IO.select([stderr], [], [], 0.1)
-#      e = stderr.read
-#      if e.size > 100000
-#        e = '(EXCESS OUTPUTS!)' + e[0,100000]
-#      end
-#    end
+    if o.size > 1000000
+      o = "(Excess output. Not all output will be shown)\n" + o[0,1000000]
+    end
+    if e.size > 1000000
+      e = "(Excess output. Not all output will be shown)\n" + e[0,1000000]
+    end
 
-#     o = ''
-#     while c = stdout.getc
-#       o += c.chr
-#       if o.size > 10000
-#         o = '(EXCESS OUTPUTS!) ' + o
-#         break
-#       end
-#     end
-#     e = ''
-#     while c = stderr.getc
-#       e += c.chr
-#       if e.size > 10000
-#         e = '(EXCESS OUTPUTS!) ' + e
-#         break
-#       end
-#     end
     stdout.close
     stderr.close
     ret = [nil, nil, o, e]
