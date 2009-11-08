@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 
-# Cyan(cy)
-# LMNtal(lmn)
 # Asymptote(asy)
 # Arc (arc)
+
 # Kite(kt)
 # DOS(com)
+
+# LMNtal(lmn) EXEC
 
 # Testing testing.cob... failed
 # Testing testing.curry... failed
