@@ -7,7 +7,6 @@
 # LMNtal(lmn)
 # Asymptote(asy)
 # QCL(qcl)
-# z80(z8b)
 # DOS(com)
 
 # Testing testing.cob... failed
@@ -26,6 +25,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.z8b', 'v', /Success/],
  ['v.lamb', 'v', /Success/],
  ['v.grass', 'v', /Success/],
  ['testing.gs', 'testing', /Success/],
