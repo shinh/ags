@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 
-# Arc (arc)
-
-# Kite(kt)
 # Cyan(cy)
 # LMNtal(lmn)
 # Asymptote(asy)
-# QCL(qcl)
+# Arc (arc)
+# Kite(kt)
 # DOS(com)
 
 # Testing testing.cob... failed
@@ -25,6 +23,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.qcl', 'v', /Success/],
  ['v.z8b', 'v', /Success/],
  ['v.lamb', 'v', /Success/],
  ['v.grass', 'v', /Success/],
