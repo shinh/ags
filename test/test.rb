@@ -7,7 +7,6 @@
 # LMNtal(lmn)
 # Asymptote(asy)
 # QCL(qcl)
-# GolfScript(gs)
 # Grass(grass),
 # Universal Lambda(lamb)
 # z80(z8b)
@@ -29,6 +28,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.gs', 'testing', /Success/],
  ['v.max', 'v', /Success/],
  ['v.cy', 'v', /Success/],
  ['v.reb', 'v', /Success/],
