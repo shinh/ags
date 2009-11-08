@@ -7,7 +7,6 @@
 # LMNtal(lmn)
 # Asymptote(asy)
 # QCL(qcl)
-# Grass(grass),
 # Universal Lambda(lamb)
 # z80(z8b)
 # DOS(com)
@@ -28,6 +27,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.grass', 'v', /Success/],
  ['testing.gs', 'testing', /Success/],
  ['v.max', 'v', /Success/],
  ['v.cy', 'v', /Success/],
