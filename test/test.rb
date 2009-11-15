@@ -8,7 +8,6 @@
 
 # LMNtal(lmn) EXEC
 
-# Testing testing.cob... failed
 # Testing testing.curry... failed
 # Testing testing.pl6... failed
 # Testing testing.xgawk... failed
