@@ -5,8 +5,6 @@
 
 # DOS(com)
 
-# Testing testing.pl6... failed
-
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
 
@@ -98,7 +96,7 @@ fail_cnt = 0
  ['hello.ijs', 'hello+world', /Success/],
  ['google.bef', 'google', /Success/],
  ['google.c', 'google', /Success/],
- ['google.d', 'google', /failed/],
+ ['google.d', 'google', /Success/],
  ['google.hs', 'google', /Success/],
  ['google.pl', 'google', /Success/],
  ['google.rb', 'google', /Success/],
