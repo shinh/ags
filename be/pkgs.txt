@@ -47,4 +47,5 @@ aplus-fsf
 linux-headers-2.6.26-2-xen-686
 libmpfr-dev
 libstdc++5
+libgc-dev
 

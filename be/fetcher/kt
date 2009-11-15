@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+wget http://www.kite-language.org/files/kite-1.0.3.tar.gz
+tar -xvzf kite-1.0.3.tar.gz
+cd kite-1.0.3
+./configure
+make
+make install
+
