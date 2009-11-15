@@ -8,9 +8,7 @@
 
 # LMNtal(lmn) EXEC
 
-# Testing testing.curry... failed
 # Testing testing.pl6... failed
-# Testing google.d... failed
 
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
