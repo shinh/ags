@@ -3,18 +3,9 @@
 # Asymptote(asy)
 # Arc (arc)
 
-# Kite(kt)
 # DOS(com)
 
-# LMNtal(lmn) EXEC
-
-# Testing testing.curry... failed
 # Testing testing.pl6... failed
-# Testing testing.xgawk... failed
-# Testing google.d... failed
-# Testing hello.ijs... failed
-# Testing testing.ijs... failed
-# Testing fizz_exec.ijs... failed
 
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
@@ -23,6 +14,8 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.lmn', 'testing', /Success/],
+ ['testing.kt', 'testing', /Success/],
  ['v.qcl', 'v', /Success/],
  ['v.z8b', 'v', /Success/],
  ['v.lamb', 'v', /Success/],
