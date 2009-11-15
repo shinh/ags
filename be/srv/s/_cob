@@ -1,2 +1,2 @@
 #!/bin/sh
-cobc -free $1 -o a.out
+cobc -x -g -debug -free $1 -o a.out
