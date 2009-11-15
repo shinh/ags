@@ -128,26 +128,34 @@ class Handler
   end
 
   def file_types
-    ['rb','pl','py','php','scm','l','io','js','lua','tcl','xtal','kt','cy',
+    [
+     'rb','pl','py','php','scm','l','arc','io','js','lua','tcl','xtal','kt','cy',
      'st', 'pro','for','bas',
      'pl6', 'erl', 'ijs', 'a+', 'mind',
-     'c','cpp','d','ml','hs','adb','m','java','pas','f95','cs','n','cob','curry','lmn','max','reb',
+     'c','cpp','d','go',
+     'ml',
+     'hs','adb','m','java','pas','f95','cs','n','cob','curry','lmn','max','reb','asy',
      'awk','sed','sh','xgawk','m4','ps','r','vhdl','qcl',
      'bf','ws','bef', 'pef', 'ms', 'gs', 'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
      's','out','z8b','com','class','vi','grb',
-     'groovy']
+     'groovy'
+    ]
   end
   def file_langs
-    ['Ruby','Perl','Python','PHP','Scheme',
-     'Common LISP','Io','JavaScript','Lua','Tcl','Xtal','Kite','Cyan',
+    [
+     'Ruby','Perl','Python','PHP','Scheme',
+     'Common LISP','Arc','Io','JavaScript','Lua','Tcl','Xtal','Kite','Cyan',
      'Smalltalk', 'Prolog','Forth','BASIC',
      'Perl6', 'Erlang', 'J', 'A+', 'Mind',
-     'C','C++','D','OCaml','Haskell',
-     'Ada','ObjC','Java','Pascal','Fortran','C#','Nemerle','COBOL','Curry','LMNtal','Maxima','REBOL',
+     'C','C++','D','Go',
+     'OCaml',
+     'Haskell',
+     'Ada','ObjC','Java','Pascal','Fortran','C#','Nemerle','COBOL','Curry','LMNtal','Maxima','REBOL','Asymptote',
      'AWK','sed','Bash','xgawk','m4','Postscript','R','VHDL','QCL',
      'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript','Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
      'gas','x86','z80','DOS','JVM','vi','goruby',
-     'Groovy']
+     'Groovy'
+    ]
   end
 
   def ext2lang(e)
