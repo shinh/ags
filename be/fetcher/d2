@@ -1,8 +1,20 @@
 #!/bin/sh -e
 
 cd /golf/local
-DMD=dmd.2.032.zip
+# We intentionally avoid the newest version because it doesn't have printf.
+#DMD=dmd.2.032.zip
+DMD=dmd.2.019.zip
 rm -fr $DMD dmd2
 wget http://ftp.digitalmars.com/$DMD
-unzip $DMD
-chmod 755 dmd2/linux/bin/dmd
+
+rm -fr t
+mkdir t
+cd t
+unzip ../$DMD
+mv dmd ../dmd2
+cd ..
+rm -fr t
+
+#chmod 755 dmd2/linux/bin/dmd
+chmod 755 dmd2/bin/dmd
+
