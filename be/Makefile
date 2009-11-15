@@ -3,6 +3,7 @@ srv/local/dmd2/linux/bin/dmd \
 srv/local/dmd/linux/bin/dmd \
 /usr/local/bin/goruby-1.9 \
 /golf/local/j601 \
+/usr/local/bin/xgawk \
 
 all: $(TARGETS)
 
@@ -17,4 +18,7 @@ srv/local/dmd/linux/bin/dmd:
 
 /golf/local/j601:
 	fetcher/j
+
+/usr/local/bin/xgawk:
+	fetcher/xgawk
 

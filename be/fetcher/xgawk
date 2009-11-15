@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+wget 'http://sourceforge.net/projects/xmlgawk/files/xgawk/xgawk-3.1.6-20080101.tar.gz/xgawk-3.1.6-20080101.tar.gz/download'
+tar -xvzf xgawk-3.1.6-20080101.tar.gz
+cd xgawk-3.1.6-20080101
+
+patch -p0 < ../fetcher/xgawk.diff
+
+./configure --enable-static-extensions
+make
+make install
+

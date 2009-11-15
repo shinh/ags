@@ -1,0 +1,22 @@
+--- extension/Makefile.am.orig	2009-11-16 03:37:19.000000000 +0900
++++ extension/Makefile.am	2009-11-16 03:37:28.000000000 +0900
+@@ -106,7 +106,7 @@
+ 
+ static.link: $(install_libraries) Makefile
+ 	for p in $(install_libraries); do \
+-		. $$p ; \
++		. ./$$p ; \
+ 		echo "extension/.libs/$$old_library" ; \
+ 	done > $@
+ if BUILD_XML
+--- extension/Makefile.in.orig	2009-11-16 03:49:43.000000000 +0900
++++ extension/Makefile.in	2009-11-16 03:49:50.000000000 +0900
+@@ -669,7 +669,7 @@
+ 
+ static.link: $(install_libraries) Makefile
+ 	for p in $(install_libraries); do \
+-		. $$p ; \
++		. ./$$p ; \
+ 		echo "extension/.libs/$$old_library" ; \
+ 	done > $@
+ @BUILD_XML_TRUE@	echo " $(libxml_la_LIBADD)" >> $@
