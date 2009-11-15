@@ -10,11 +10,7 @@
 
 # Testing testing.curry... failed
 # Testing testing.pl6... failed
-# Testing testing.xgawk... failed
 # Testing google.d... failed
-# Testing hello.ijs... failed
-# Testing testing.ijs... failed
-# Testing fizz_exec.ijs... failed
 
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
