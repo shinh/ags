@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-# Asymptote(asy)
 # Arc (arc)
 
 # DOS(com)
@@ -12,6 +11,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.asy', 'testing', /Success/],
  ['testing.lmn', 'testing', /Success/],
  ['testing.kt', 'testing', /Success/],
  ['v.qcl', 'v', /Success/],
