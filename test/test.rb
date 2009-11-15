@@ -16,6 +16,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.lmn', 'testing', /Success/],
  ['testing.kt', 'testing', /Success/],
  ['v.qcl', 'v', /Success/],
  ['v.z8b', 'v', /Success/],
