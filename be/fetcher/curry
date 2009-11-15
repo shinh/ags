@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+wget http://danae.uni-muenster.de/~lux/curry/download/curry-0.9.11/curry-0.9.11-i686-linux-gnu.tar.gz
+tar -xvzf curry-0.9.11-i686-linux-gnu.tar.gz
+cd curry-0.9.11-i686-linux-gnu
+./configure
+make
+make install
+
