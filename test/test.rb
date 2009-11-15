@@ -3,7 +3,6 @@
 # Asymptote(asy)
 # Arc (arc)
 
-# Kite(kt)
 # DOS(com)
 
 # LMNtal(lmn) EXEC
@@ -17,6 +16,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.kt', 'testing', /Success/],
  ['v.qcl', 'v', /Success/],
  ['v.z8b', 'v', /Success/],
  ['v.lamb', 'v', /Success/],
