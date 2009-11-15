@@ -5,8 +5,6 @@
 
 # DOS(com)
 
-# LMNtal(lmn) EXEC
-
 # Testing testing.pl6... failed
 
 # Erlang(erl) sedsid
