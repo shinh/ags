@@ -8,6 +8,7 @@ DECLARE_HOOK(vfork)
 DECLARE_HOOK(clone)
 DECLARE_HOOK(setpgid)
 DECLARE_HOOK(setsid)
+DECLARE_HOOK(socketcall)
 DECLARE_HOOK(getpriority)
 DECLARE_HOOK(setpriority)
 
@@ -26,6 +27,7 @@ DECLARE_HOOK_32(setfsgid)
 #else
 
 #include <asm/unistd_32.h>
+#include <linux/in.h>
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -115,6 +117,22 @@ DEFINE_HOOK(setsid, (void)) {
         return -EPERM;
     }
     return orig_setsid();
+}
+
+DEFINE_HOOK(socketcall, (int call, unsigned long* args)) {
+    if (IS_NOT_ROOT && call == 3 /* connect */) {
+        struct sockaddr_in* sock = (struct sockaddr_in*)(args[1]);
+        int port = sock->sin_port;
+        unsigned char* addr;
+        port = ((port << 8) & 0xff) | (port >> 8);
+        addr = (unsigned char*)&sock->sin_addr.s_addr;
+        printk(KERN_INFO "connect(%ld, %d, %d, %d.%d.%d.%d)\n",
+               args[0], sock->sin_family, port,
+               addr[0], addr[1], addr[2], addr[3]);
+        socketcall_cnt++;
+        return -EPERM;
+    }
+    return orig_socketcall(call, args);
 }
 
 #define DEFINE_DISABLE_HOOK(name, args, fmt, ...)               \
