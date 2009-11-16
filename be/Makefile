@@ -7,6 +7,7 @@ srv/local/dmd/linux/bin/dmd \
 /usr/local/bin/cyc \
 /usr/local/bin/kite \
 /golf/local/arc3/as2.scm \
+/golf/local/gobin/8l \
 
 #srv/local/dmd2/linux/bin/dmd \
 
@@ -36,3 +37,6 @@ srv/local/dmd/linux/bin/dmd:
 
 /golf/local/arc3/as2.scm:
 	fetcher/arc
+
+/golf/local/gobin/8l:
+	fetcher/go

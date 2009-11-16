@@ -1,0 +1,7 @@
+#!/bin/sh
+export PATH=/golf/local/gobin:$PATH
+export GOROOT=/golf/local/go
+export GOARCH=386
+export GOOS=linux
+export GOBIN=/golf/local/gobin
+/golf/local/gobin/8g -o test.8 $1 && /golf/local/gobin/8l -o a.out test.8

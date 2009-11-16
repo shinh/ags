@@ -49,4 +49,5 @@ libmpfr-dev
 libstdc++5
 libgc-dev
 asymptote
-
+mercurial
+bison
