@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.go', 'testing', /Success/],
  ['nop.com', 'nop', /Success/],
  ['fizz.com', 'FizzBuzz', /Success/],
  ['testing.arc', 'testing', /Success/],
