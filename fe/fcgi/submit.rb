@@ -289,6 +289,12 @@ class Submit < Handler
             (ext != 'groovy' || execnt > 3))
           puts tag('p', "exec is denied! (#{execnt})")
           failed = true
+        elsif execnt == -1
+          puts tag('p', "you called setpriority for cheating?")
+          failed =true
+        elsif execnt < 2
+          puts tag('p', "it seems the execution server is broken. please contact at shinichiro.hamaji  _at_ gmail.com")
+          failed =true
         else
           ok = true
           unless (o == output && (pn != 'Quine' || (ext == 'ws' && fb.size > 5) || fb.rstrip != ""))
