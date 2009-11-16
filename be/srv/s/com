@@ -1,6 +1,7 @@
 #!/bin/sh
 export HOME=/home/golf
 #dosemu -quiet -dumb $1 > log
+tar -C $HOME -xzf /golf/local/dosemu.tgz
 exec dosemu -quiet -dumb $1
 #exec dosemu.bin $1
 #cat log
