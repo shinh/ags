@@ -31,6 +31,7 @@ DECLARE_HOOK_32(setfsgid)
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
+#include <linux/net.h>
 #include <linux/pid.h>
 #include <linux/pid_namespace.h>
 #include <linux/sched.h>
@@ -120,7 +121,7 @@ DEFINE_HOOK(setsid, (void)) {
 }
 
 DEFINE_HOOK(socketcall, (int call, unsigned long* args)) {
-    if (IS_NOT_ROOT && call == 3 /* connect */) {
+    if (IS_NOT_ROOT && call == SYS_CONNECT) {
         struct sockaddr_in* sock = (struct sockaddr_in*)(args[1]);
         int port = sock->sin_port;
         unsigned char* addr;
