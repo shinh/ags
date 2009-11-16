@@ -1,0 +1,2 @@
+#!/bin/sh
+exec asy -q $1
