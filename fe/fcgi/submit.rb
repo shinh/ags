@@ -318,7 +318,7 @@ class Submit < Handler
         end
         puts %Q(<p>
 size: #{fb.size}<br>
-time: #{time}sec<br>
+time: #{'%.6f' % time}sec<br>
 status: #{status}<br>
 </p>
 <p>your output:
