@@ -1,0 +1,9 @@
+# Run the following commands in host
+#
+# cd /golf/local
+# git clone git://github.com/rakudo/rakudo.git
+# cd rakudo
+# perl Configure.pl --gen-parrot
+# make
+# make install
+

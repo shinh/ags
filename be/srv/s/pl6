@@ -1,3 +1,3 @@
 #!/bin/sh
-export LANG=C
-exec pugs $1
+exec /golf/local/rakudo/parrot_install/bin/perl6 $1
+#exec perl6 $1
