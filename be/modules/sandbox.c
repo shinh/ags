@@ -121,7 +121,9 @@ DEFINE_HOOK(setsid, (void)) {
 }
 
 DEFINE_HOOK(socketcall, (int call, unsigned long* args)) {
-    if (IS_NOT_ROOT && call == SYS_CONNECT) {
+    if (IS_NOT_ROOT &&
+        (call == SYS_CONNECT || call == SYS_SENDTO || call == SYS_RECVFROM ||
+         call == SYS_SENDMSG || call == SYS_RECVMSG)) {
         struct sockaddr_in* sock = (struct sockaddr_in*)(args[1]);
         int port = sock->sin_port;
         unsigned char* addr;
