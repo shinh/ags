@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['example_net.sh', 'example_com', /you called forbidden system call \(socketcall\)/],
  ['testing.go', 'testing', /Success/],
  ['nop.com', 'nop', /Success/],
  ['fizz.com', 'FizzBuzz', /Success/],
