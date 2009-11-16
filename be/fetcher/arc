@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cp fetcher/as.scm /golf/local
+cd /golf/local
+wget http://ycombinator.com/arc/arc3.tar
+tar -xvf arc3.tar
+cp as.scm arc3/as2.scm
+

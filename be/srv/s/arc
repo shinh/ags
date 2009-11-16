@@ -1,0 +1,2 @@
+#!/bin/sh
+cd /golf/local/arc3 && exec /golf/local/plt/bin/mzscheme -m -v -f as2.scm -e '(aload "/golf/test/'$1'")'

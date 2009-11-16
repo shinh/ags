@@ -6,6 +6,7 @@ srv/local/dmd/linux/bin/dmd \
 /usr/local/bin/xgawk \
 /usr/local/bin/cyc \
 /usr/local/bin/kite \
+/golf/local/arc3/as2.scm \
 
 #srv/local/dmd2/linux/bin/dmd \
 
@@ -33,3 +34,5 @@ srv/local/dmd/linux/bin/dmd:
 /usr/local/bin/kite:
 	fetcher/kt
 
+/golf/local/arc3/as2.scm:
+	fetcher/arc
