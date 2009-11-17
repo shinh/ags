@@ -302,7 +302,7 @@ while true
         s.puts encoded_payload.size
         s.print(encoded_payload)
         log.puts(payload[:time])
-        File.unlink(f) if File.exists?(f)
+        #File.unlink(f) if File.exists?(f)
         s.close
         next
       end
@@ -347,11 +347,11 @@ while true
       end
     end
 
-    Dir.open("."){|d|
-      d.each{|e|
-        File.unlink(e) if e != '.' && e != '..'
-      }
-    }
+    #Dir.open("."){|d|
+    #  d.each{|e|
+    #    File.unlink(e) if e != '.' && e != '..'
+    #  }
+    #}
 
     s.close
   rescue
