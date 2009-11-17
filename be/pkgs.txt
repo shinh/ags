@@ -51,3 +51,4 @@ libgc-dev
 asymptote
 mercurial
 bison
+lsof
