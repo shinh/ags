@@ -5,6 +5,8 @@
 
 # DOS(com)
 
+# Testing testing.pl6... failed
+
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
 
