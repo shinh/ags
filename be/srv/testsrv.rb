@@ -80,10 +80,13 @@ def get_sandbox_vals
   m
 end
 
-def sweep_prcesses
+def get_user_processes
+  `pgrep -U 1000`.split.map{|_|_.to_i}
+end
+
+def sweep_processes
   setup_sandbox
-  `pgrep -U 1000`.each do |l|
-    l = l.to_i
+  get_user_processes do |l|
     if l != $$ && l != Process.ppid
       puts "kill #{l}"
       Process.kill(:KILL, l) rescue puts "already died? #{l}"
@@ -220,7 +223,7 @@ def run(exe, i = nil, timeout = 60)
   ret << sandbox_cnts
   ret << notice
 
-  sweep_prcesses
+  sweep_processes
 
   {
     :time => ret[0],
