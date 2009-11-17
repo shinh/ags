@@ -35,7 +35,9 @@ DECLARE_HOOK_32(setfsgid)
 #include <linux/pid.h>
 #include <linux/pid_namespace.h>
 #include <linux/sched.h>
+#include <linux/socket.h>
 #include <linux/syscalls.h>
+#include <linux/uaccess.h>
 
 MODULE_LICENSE("GPL");
 
@@ -45,6 +47,9 @@ MODULE_LICENSE("GPL");
 #define PID_MAX ((int*)0xc035df8c)
 #define PID_MAX_MIN ((int*)0xc035df90)
 #define PID_MAX_MAX ((int*)0xc035df94)
+
+#define GOLF_USER 1000
+#define MAX_SOCK_ADDR 128
 
 #define DECLARE_HOOK(syscall)                   \
     static int syscall ## _cnt;
@@ -124,44 +129,89 @@ DEFINE_HOOK(socketcall, (int call, unsigned long* args)) {
     if (IS_NOT_ROOT &&
         (call == SYS_CONNECT || call == SYS_SENDTO || call == SYS_RECVFROM ||
          call == SYS_SENDMSG || call == SYS_RECVMSG)) {
-        struct sockaddr_in* sock = (struct sockaddr_in*)(args[1]);
-        int port = sock->sin_port;
-        unsigned char* addr;
-        port = ((port << 8) & 0xff) | (port >> 8);
-        addr = (unsigned char*)&sock->sin_addr.s_addr;
-        printk(KERN_INFO "connect(%ld, %d, %d, %d.%d.%d.%d)\n",
-               args[0], sock->sin_family, port,
-               addr[0], addr[1], addr[2], addr[3]);
+        if (call == SYS_CONNECT) {
+            unsigned long a[3];
+            struct sockaddr __user* useraddr;
+            struct sockaddr kernaddr;
+            int addrlen;
+
+            if (copy_from_user(a, args, 3 * sizeof(unsigned long))) {
+                printk(KERN_INFO "connect(%p) EFAULT\n", args);
+                return -EFAULT;
+            }
+
+            useraddr = (struct sockaddr __user*)a[1];
+            addrlen = a[2];
+            if (addrlen > sizeof(struct sockaddr)) {
+                addrlen = sizeof(struct sockaddr);
+            }
+
+            memset(&kernaddr, 0, sizeof(struct sockaddr));
+            if (copy_from_user(&kernaddr, useraddr, addrlen)) {
+                printk(KERN_INFO "connect(%ld, %ld, %ld) EFAULT\n",
+                       a[0], a[1], a[2]);
+                return -EFAULT;
+            }
+
+            if (kernaddr.sa_family == AF_UNIX) {
+                goto ok;
+            } else if (kernaddr.sa_family == AF_INET) {
+                struct sockaddr_in* sock = (struct sockaddr_in*)&kernaddr;
+                int port;
+                unsigned char* addr;
+                port = sock->sin_port;
+                port = ((port << 8) & 0xff) | (port >> 8);
+                addr = (unsigned char*)&sock->sin_addr.s_addr;
+                printk(KERN_INFO "connect(%ld, %d, %d, %d.%d.%d.%d)\n",
+                       a[0], sock->sin_family, port,
+                       addr[0], addr[1], addr[2], addr[3]);
+            }
+        } else {
+            printk(KERN_INFO "socketcall(%d, %p)\n", call, args);
+        }
         socketcall_cnt++;
         return -EPERM;
     }
+ok:
     return orig_socketcall(call, args);
 }
 
-#define DEFINE_DISABLE_HOOK(name, args, fmt, ...)               \
-    DEFINE_HOOK(name, args) {                                   \
-        if (IS_NOT_ROOT) {                                      \
-            name ## _cnt++;                                     \
-            printk(KERN_INFO #name "(" fmt ")\n", __VA_ARGS__); \
-            return -EPERM;                                      \
-        }                                                       \
-        return orig_ ## name (__VA_ARGS__);                     \
+#define DEFINE_DISABLE_HOOK(name, args, cond, fmt, ...)          \
+    DEFINE_HOOK(name, args) {                                    \
+        if (IS_NOT_ROOT && cond) {                               \
+            name ## _cnt++;                                      \
+            printk(KERN_INFO #name "(" fmt ")\n", __VA_ARGS__);  \
+            return -EPERM;                                       \
+        }                                                        \
+        return orig_ ## name (__VA_ARGS__);                      \
     }
 
-#define DEFINE_DISABLE_HOOK_32(name, args, fmt, ...)        \
-    DEFINE_DISABLE_HOOK(name, args, fmt, __VA_ARGS__)       \
-    DEFINE_DISABLE_HOOK(name ## 32, args, fmt, __VA_ARGS__)
+#define DEFINE_DISABLE_HOOK_32(name, args, cond, fmt, ...)          \
+    DEFINE_DISABLE_HOOK(name, args, cond, fmt, __VA_ARGS__)         \
+    DEFINE_DISABLE_HOOK(name ## 32, args, cond, fmt, __VA_ARGS__)
 
-DEFINE_DISABLE_HOOK_32(setuid, (uid_t uid), "%d", uid)
-DEFINE_DISABLE_HOOK_32(setreuid, (uid_t uid, uid_t euid), "%d, %d", uid, euid)
+#define CHECK_ID_1(id1) (id1 != GOLF_USER)
+#define CHECK_ID_2(id1, id2) (CHECK_ID_1(id1) || CHECK_ID_1(id2))
+#define CHECK_ID_3(id1, id2, id3) (CHECK_ID_2(id1, id2) || CHECK_ID_1(id3))
+
+DEFINE_DISABLE_HOOK_32(setuid, (uid_t uid),
+                       CHECK_ID_1(uid), "%d", uid)
+DEFINE_DISABLE_HOOK_32(setreuid, (uid_t uid, uid_t euid),
+                       CHECK_ID_2(uid, euid), "%d, %d", uid, euid)
 DEFINE_DISABLE_HOOK_32(setresuid, (uid_t uid, uid_t euid, uid_t suid),
+                       CHECK_ID_3(uid, euid, suid),
                        "%d, %d, %d", uid, euid, suid);
-DEFINE_DISABLE_HOOK_32(setfsuid, (uid_t uid), "%d", uid)
-DEFINE_DISABLE_HOOK_32(setgid, (gid_t gid), "%d", gid);
-DEFINE_DISABLE_HOOK_32(setregid, (gid_t gid, gid_t egid), "%d, %d", gid, egid)
+DEFINE_DISABLE_HOOK_32(setfsuid, (uid_t uid),
+                       CHECK_ID_1(uid), "%d", uid)
+DEFINE_DISABLE_HOOK_32(setgid, (gid_t gid),
+                       CHECK_ID_1(gid), "%d", gid);
+DEFINE_DISABLE_HOOK_32(setregid, (gid_t gid, gid_t egid),
+                       CHECK_ID_2(gid, egid), "%d, %d", gid, egid)
 DEFINE_DISABLE_HOOK_32(setresgid, (gid_t gid, gid_t egid, gid_t sgid),
+                       CHECK_ID_3(gid, egid, sgid),
                        "%d, %d, %d", gid, egid, sgid);
-DEFINE_DISABLE_HOOK_32(setfsgid, (uid_t uid), "%d", uid)
+DEFINE_DISABLE_HOOK_32(setfsgid, (uid_t uid),
+                       CHECK_ID_1(uid), "%d", uid)
 
 DEFINE_HOOK(getpriority, (int which, int who)) {
     if (which == SANDBOX_MAGIC_PRIORITY) {
