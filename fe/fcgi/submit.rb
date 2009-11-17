@@ -284,11 +284,17 @@ class Submit < Handler
             (ext != 'lmn' || execnt > 7) &&
             (ext != 'java' || execnt > 4) &&
             (ext != 'class' || execnt > 5) &&
-            (ext != 'com' || execnt > 19) &&
+            (ext != 'com' || execnt > 26) &&
             (ext != 'max' || execnt > 12) &&
             (ext != 'groovy' || execnt > 3))
           puts tag('p', "exec is denied! (#{execnt})")
           failed = true
+        elsif execnt == -1
+          puts tag('p', "you called setpriority for cheating?")
+          failed =true
+        elsif execnt < 2
+          puts tag('p', "it seems the execution server is broken. please contact at shinichiro.hamaji  _at_ gmail.com")
+          failed =true
         else
           ok = true
           unless (o == output && (pn != 'Quine' || (ext == 'ws' && fb.size > 5) || fb.rstrip != ""))

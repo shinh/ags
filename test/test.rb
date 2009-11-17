@@ -1,12 +1,6 @@
 #!/usr/bin/env ruby
 
-# Asymptote(asy)
-# Arc (arc)
-
-# DOS(com)
-
-# Testing testing.pl6... failed
-
+# DOS(com) setreuid32
 # Erlang(erl) sedsid
 # BASIC(bas) setpgid
 
@@ -14,6 +8,13 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing_setpriority.rb', 'testing', /you called setpriority for cheating/],
+ ['example_net.sh', 'example_com', /you called forbidden system call \(socketcall\)/],
+ ['testing.go', 'testing', /Success/],
+ ['nop.com', 'nop', /Success/],
+ ['fizz.com', 'FizzBuzz', /Success/],
+ ['testing.arc', 'testing', /Success/],
+ ['testing.asy', 'testing', /Success/],
  ['testing.lmn', 'testing', /Success/],
  ['testing.kt', 'testing', /Success/],
  ['v.qcl', 'v', /Success/],
