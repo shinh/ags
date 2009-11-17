@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/io_static $1
+exec /golf/local/io_static $1

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/mind7/kernel/obj/kernel test
+exec /golf/local/mind7/kernel/obj/kernel test

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/lamb $1
+exec /golf/local/lamb $1

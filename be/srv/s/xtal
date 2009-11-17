@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/xtal.exe $1
+exec /golf/local/xtal.exe $1

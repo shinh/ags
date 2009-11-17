@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/2dpi.rb $1
+exec /golf/local/2dpi.rb $1

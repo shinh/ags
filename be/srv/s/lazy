@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/lazyk2 $1
+exec /golf/local/lazyk2 $1

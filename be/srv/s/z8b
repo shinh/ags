@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/z80golf $1
+exec /golf/local/z80golf $1

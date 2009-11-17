@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/wspace $1
+exec /golf/local/wspace $1

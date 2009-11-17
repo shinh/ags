@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/whirl $1
+exec /golf/local/whirl $1

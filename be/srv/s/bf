@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/bf $1
+exec /golf/local/bf $1

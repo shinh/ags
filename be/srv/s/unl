@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ../local/unlambda $1
+exec /golf/local/unlambda $1
