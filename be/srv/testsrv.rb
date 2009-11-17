@@ -10,8 +10,8 @@ SYSCALLS = {
   :fork => 2,
   :vfork => 190,
   :clone => 120,
-  :setpgid => 57,
-  :setsid => 66,
+#  :setpgid => 57,
+#  :setsid => 66,
   :socketcall => 102,
   :getpriority => 96,
   :setpriority => 97,
@@ -86,7 +86,7 @@ end
 
 def sweep_processes
   setup_sandbox
-  get_user_processes do |l|
+  get_user_processes.each do |l|
     if l != $$ && l != Process.ppid
       puts "kill #{l}"
       Process.kill(:KILL, l) rescue puts "already died? #{l}"
@@ -209,7 +209,9 @@ def run(exe, i = nil, timeout = 60)
     notice << 'some of your fork attempts might fail. you cannot fork >100 times'
   end
 
-  [:setpgid, :setsid, :socketcall, :setuid, :setuid32, :setreuid, :setreuid32,
+  [
+#   :setpgid, :setsid,
+   :socketcall, :setuid, :setuid32, :setreuid, :setreuid32,
    :setresuid, :setresuid32, :setfsuid, :setfsuid32, :setgid, :setgid32,
    :setregid, :setregid32, :setresgid, :setresgid32,
    :setfsgid, :setfsgid32].each do |sys|

@@ -1,4 +1,5 @@
 #define SANDBOX_MAGIC_PRIORITY 1764
+#define DISALLOW_SETSID 0
 
 #ifdef DECLARE_HOOK
 
@@ -6,8 +7,10 @@ DECLARE_HOOK(execve)
 DECLARE_HOOK(fork)
 DECLARE_HOOK(vfork)
 DECLARE_HOOK(clone)
+#if DISALLOW_SETSID
 DECLARE_HOOK(setpgid)
 DECLARE_HOOK(setsid)
+#endif
 DECLARE_HOOK(socketcall)
 DECLARE_HOOK(getpriority)
 DECLARE_HOOK(setpriority)
@@ -104,6 +107,8 @@ DEFINE_HOOK(clone,
     return orig_clone(fn, child_stack, flags, arg, ptid, tls, ctid);
 }
 
+#if DISALLOW_SETSID
+
 DEFINE_HOOK(setpgid, (pid_t pid, pid_t pgid)) {
     if (IS_NOT_ROOT) {
         if (pid == 0 || pgid == 0) {
@@ -124,6 +129,8 @@ DEFINE_HOOK(setsid, (void)) {
     }
     return orig_setsid();
 }
+
+#endif
 
 DEFINE_HOOK(socketcall, (int call, unsigned long* args)) {
     if (IS_NOT_ROOT &&
