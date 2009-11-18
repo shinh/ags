@@ -14,6 +14,10 @@
 
 <p>
 You can set the PID by this interface.
+Note that some PIDs will be consumed by golf system after you set a PID.
+The number of PIDs the system consumes depends on the language you are using.
+For example, if you set PID=3000 and then you submit a ruby code,
+your program's PID would be 3004 in the first run.
 
 <form action="setpid.rb" method="POST">
 
