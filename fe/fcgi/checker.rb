@@ -4,7 +4,7 @@ require 'fileutils'
 # multipart handling is from cgi.rb
 
 class Checker < Handler
-  @@serv = '192.168.35.2'
+  @@serv = '192.168.36.2'
   @@port = 9999
 
   @@eol = "\r\n"

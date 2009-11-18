@@ -4,8 +4,8 @@ require 'fileutils'
 # multipart handling is from cgi.rb
 
 class Submit < Handler
-  #@@serv = '192.168.35.2'
-  @@serv = '192.168.11.13'
+  @@serv = '192.168.36.2'
+  #@@serv = '192.168.11.13'
   @@port = 9999
 
   @@eol = "\r\n"
