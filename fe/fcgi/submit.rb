@@ -51,7 +51,8 @@ class Submit < Handler
         end
 
         if (dl > 0)
-          File.open("../code/#{pn}_#{un}_#{now.to_i}", 'w') do |o|
+          FileUtils.mkdir_p("../code/#{pn}")
+          File.open("../code/#{pn}/#{un}_#{now.to_i}", 'w') do |o|
             o.print(code)
           end
         end
@@ -188,29 +189,6 @@ class Submit < Handler
     s.print(encoded_payload)
     s.close_write
 
-#     s.puts(fn)
-#     s.puts(sending_code.size)
-#     s.print(sending_code)
-#     s.puts(inputs.size)
-#     inputs.each do |input|
-# #      if (!input || input.size == 0)
-#       if ext == 'sed' && (!input || input.size == 0)
-#         input = "\n"
-#       end
-#       if input
-#         if ext == 'js' && input[-1] != 10
-#           input+="\n"
-#         end
-#         input.gsub!("\r\n","\n")
-#         s.puts(input.size)
-#         s.print(input)
-#       else
-#         s.puts(0)
-#       end
-#       s.puts(dexec)
-#     end
-#     s.close_write
-
     title("#{pn} - result")
     puts tag('h1',"#{pn} - result")
 
@@ -308,6 +286,9 @@ class Submit < Handler
           end
           if ok && pn == 'Whitespaceless Hello world'
             ok = false if fb =~ /[ \t\n]/
+          end
+          if ok && pn == 'Helloworldless Hello world'
+            ok = false if fb =~ /[Hello, world!]/
           end
           if ok
             puts tag('p', 'success!')
