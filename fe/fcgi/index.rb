@@ -80,7 +80,7 @@ I've just understood how to create too short entries (thanks for nazo). However,
     puts '<br>'
     puts a("checker.html", "performance checker")
     puts '<br>'
-    puts a("caddy.tgz", "caddy, a testing/squeezing/submission helper tool for golfers")
+    puts a("http://github.com/shinh/caddy", "caddy, a testing/squeezing/submission helper tool for golfers")
     puts '<br>'
 
     puts %Q(
@@ -111,8 +111,8 @@ News
 </ul>
 </p>
 <p>
-<a href="sag.tgz">Source code</a>.
-<a href="langs.html">Version informations</a>.
+<a href="http://github.com/shinh/ags">Source code</a>.
+<a href="langs.html">Version informations</a> (too old information!).
 </p>
 <p>
 Contact: shinichiro.hamaji _at_ gmail.com .
