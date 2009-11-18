@@ -87,6 +87,13 @@ I've just understood how to create too short entries (thanks for nazo). However,
 <p>
 News
 <ul>
+<li>Some submissions were gone due to disk full. I'm sorry about this. Please re-post your code again.
+<li>added <a href="http://golang.org/">Go</a>.
+<li>Now the execution server removes written files and directories using tmpfs. Please tell me if you can create a file and utilize the file content by another submission. Also, I removed some records in "hello world" problem as I guess they used file creation. If you didn't, please re-submit the code.
+<li>created <a href="http://golf.shinh.org/lang_speed.html">a graph which shows the best solutions size and speed</a>, inspired by <a href="http://shootout.alioth.debian.org/u32/shapes.php">Computer Language Benchmarks Game</a>. <a href="http://golf.shinh.org/lang_speed2.html">Another graph</a> whose size is shown by score (10000 * size_of_best_lang / size_of_the_lang).
+<li>added <a href="http://arclanguage.com/install">Arc</a>. Thanks flagitious for suggestion and <a href="http://route477.net/d/?date=20090929#p01">yhara</a> for investigating how to run it in this system.
+<li>To support OCaml golf competition, OCaml will be in the top of the language lists for a while.
+<li>added <a href="http://asymptote.sourceforge.net/">Asymptote</a> (thanks notogawa for suggestion!).
 <li>added <a href="http://maxima.sourceforge.net/">Maxima</a> (thanks yshl!) and <a href="http://rebol.com/">REBOL</a> (thanks Jos\'h!). I couldn\'t find the best suffixes for them. I couldn\'t find commonly used suffix for Maxima. REBOL\'s "r" was already used by R. If you know better suffixes for them, please let me know.
 <li>added <a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">LMNtal</a>.
 <li>I forgot to mention this... There is a twitter account which reports the recent activities: http://twitter.com/mircbot. You may able to use its RSS as well.
@@ -101,54 +108,15 @@ News
 <li>ruby 1.8.7.
 <li>allow more time for R (you have 2 sec for 3 test cases problems, 2.5 secs for 2 test cases, and 4 secs for 1 test case) since its invocation seems to take more than one second.
 <li>updated execution server (Ubuntu edgy => gutsy). Many languages are updated (the detail will be described). Maybe now you can use standard input from /dev/fd/0. As usual :\(, there may be several bugs. Please report me if you find bugs.
-<li>made the system allow >65336 bytes outputs (this is the limit of linux pipe) for this <a href="http://golf.shinh.org/p.rb?Print+out+a+lot+_56K+BEWARE_">this challenge</a>. thanks yshl for investigating.
-<li>added R (2.3.1). As of this time, I think we cannot use stdin. I'll investigate way to do...
-<li>updated version of D (2.010), Io (20080209).
-<li>added JVM, <a href="http://groovy.codehaus.org/">Groovy</a>. Unfortunately, Scala was too slow in my attempts (it didn't solve hello world with 12sec timeout). (2008-02-17 added) Sorry, all groovy problem was considered as using exec. I'm not sure, but I've fixed the problem for easy ones.
-<li>updated goruby's version using <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/golf_prelude.rb?view=markup&pathrev=15046">revision 15046</a>.
-<li>released <a href="caddy.tgz">caddy</a>, a helper tool for golfers. You can test your solution, squeeze (remove comments or unnecessary whitespaces) your code, and submit the solution with this tool. Please unpack the package and check README for details. (I fixed a bug of database. Please re-download the package again if your caddy doesn't work correctly)
-<li>updated goruby using <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/golf_prelude.rb?revision=14809">this version</a>. The most significant change might be the faster method_missing, which is provided by eban and flagitious. Thanks for the great contribution!
-<li>added "name grep" to language summary page. This patch is provided by flagitious. Also, fixed binary escape for \\x1a-\\x1f, suggested by Pla. Thanks two guys!
-<li>updated golfscript using new version and ruby1.9.
-<li>added language summary page. You can access the page from <a href="http://golf.shinh.org/lranking.rb">language ranking</a>. These information will be updated every 10 minutes. Uploaded the newest source code of this server.
-<li>added goruby, which is a kind of joke program but is *officially* bundled in ruby-1.9.0-0 package (you can create the binary by &quot;make golf&quot;). I think there are two features: 1. Kernel#h method, which outputs Hello, world! 2. short method names: you can call Kernel#print using &quot;pr&quot;. This feature is implemented by method_missing.
-<li>added <a href="http://www.vim.org/">Vim</a> as a language. You should make the buffer match the expected output given by each problem. The buffer is initialized using the standard input of the problem. For example, &quot;ddZZ&quot; can be the 4B solution of &quot;delete first line&quot; challenge.
-<li>added <a href="http://www.golfscript.com/golfscript/">GolfScript</a>, a stack oriented esoteric language developped by flagitious. I'm pretty sure this language can be the #1 language of this site. Though the first purpose of this language might be golfing, its computation model is interesting, too. Thanks flagitious for this nice work!
-<li>added Z80 as a language. Please check out <a href="http://www.mokehehe.com/z80golf/">the description of the environment made by mokehehe</a>. Thanks mokehehe for suggesting and providing the environment!
-<li>according to flagitious's suggestion, I relaxed timeout policy: you have 1 sec for 3 test cases problems, 1.5 secs for 2 test cases, and 3 secs for 1 test case.
-<li>deploy new exec filter into all problems. It makes program ~10 times faster. Please tell me if you find some bugs.
-<li>thanks all guys for submissions for tesing problem! I fixed A+'s suffix problem according to the <a href="http://golf.shinh.org/p.rb?testing#A+">suggestion</a>.
-<li>the <a href="http://www.icfpcontest.org/">ICFP contest</a> is coming soon (July 20th)! I introduce this contest in this site because I think you golfers will enjoy this contest (especially, the contest in the last year contains many golfing challenges!). Join and enjoy the contests (but don't defeat me :) 
-<li>add <a href="http://www.bigzaphod.org/whirl/">Whirl</a>.
-<li>update version of DMD to 1.015 and fix VHDL's exec denied problem.
-<li>add <a href="http://d.hatena.ne.jp/ku-ma-me/20070529/p1">Pefunge</a>.
-<li>my email address was changed.
-<li>add deadline feature. Authors of problems can select the deadline. After the deadline, the problem state becomes to "post-mortem" and all submitted source codes are opened. If you want to create closed problem, you can select no deadline option.
-<li>add <a href="http://www.gnu.org/software/ghostscript/ghostscript.html">Postscript</a>.
-<li>add <a href="http://home.vrweb.de/~juergen.kahrs/gawk/XML/">xgawk</a>, <a href="http://www.gnu.org/software/m4/">m4</a>, and update GHC to 6.6 from 6.4.
-<li>expire all entries which use file save. I know this bug as mentioned the below, but i have not fixed yet. Please kindly don't submit entries using file save/load.
-<li>changed the timeout of Java to 1.5sec (because its stratup is slow).
-</ul>
-<p>
-Please whisper me (shinichiro.hamaji _at_ gmail.com) if you found some problems.
-If you meet the following situations, it is the bug.
-</p>
-<ul>
-<li>can access network
-<li>can be root
-<li>can allocate >50MB memory
-<li>meet stupid things
-</ul>
-</p>
-<p>
-I know the following things:
-<ul>
-<li>can load saved files. Basically, the saved files will be removed after executing submitted code. However, you can avoid this check by using system call directly. (I'll remove this bug if I have much spare time...)
 </ul>
 </p>
 <p>
 <a href="sag.tgz">Source code</a>.
 <a href="langs.html">Version informations</a>.
+</p>
+<p>
+Contact: shinichiro.hamaji _at_ gmail.com .
+If you found some bugs or you have some requests (fix problem you submitted, add language XXX, and etc.), please email me.
 </p>
 )
 
