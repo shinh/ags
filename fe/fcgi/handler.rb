@@ -42,6 +42,8 @@ class Hash
 end
 
 class Handler
+  @@eol = "\r\n"
+
   def root_url
     if develop?
       'http://127.0.0.1:81'

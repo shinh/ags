@@ -7,8 +7,6 @@ class Checker < Handler
   @@serv = '192.168.36.2'
   @@port = 9999
 
-  @@eol = "\r\n"
-
   def output_filter(s)
     escape_binary(CGI.escapeHTML(s.gsub("\r\n","\n")).gsub("\n",%Q(<span class="gray">\\n\n</span>)))
   end
@@ -46,36 +44,47 @@ class Checker < Handler
       puts %Q(now maintenance? it will be back soon. please try again later.)
       raise $!
     end
-    s.puts(fn)
-    s.puts(fb.size)
-    s.print(fb)
-    s.puts(-1)
+
     if ext == 'sed' && (!input || input.size == 0)
       input = "\n"
     end
     if input
-      if ext == 'js' && input[-1] != 10
-        input+="\n"
-      end
+      #if ext == 'js' && input[-1] != 10
+      #  input+="\n"
+      #end
       input.gsub!("\r\n","\n")
-      s.puts(input.size)
-      s.print(input)
     else
-      s.puts(0)
+      input = ''
     end
+
+    payload = {
+      :filename => fn,
+      :code => fb,
+      :inputs => [input],
+    }
+    encoded_payload = Marshal.dump(payload)
+    s.puts(encoded_payload.size)
+    s.print(encoded_payload)
     s.close_write
 
     title("checker - result")
     puts tag('h1',"checker - result")
 
-    time = s.gets
+    payload = Marshal.load(s.read(s.gets.to_i))
+    time = payload[:time]
+    status = payload[:status]
+    execnt = payload[:execnt]
+    o = payload[:stdout]
+    e = payload[:stderr]
+
+    if !time
+      time = 'timeout'
+    else
+      time = time.to_s
+    end
 
     if (time !~ /\d/)
       puts tag('p', time)
-      os = s.gets.to_i
-      o = s.read(os)
-      es = s.gets.to_i
-      e = s.read(es)
 
       puts %Q(<p>your output:
 <pre>#{output_filter(o)}</pre>
@@ -83,16 +92,9 @@ class Checker < Handler
 <pre>#{CGI.escapeHTML(e.to_s)}</pre>
 )
     else
-      status = s.gets
-      execnt = s.gets.to_i
-      os = s.gets.to_i
-      o = s.read(os)
-      es = s.gets.to_i
-      e = s.read(es)
-
       puts %Q(<p>
 size: #{fb.size}<br>
-time: #{time}sec<br>
+time: #{'%.6f' % time}sec<br>
 status: #{status}<br>
 </p>
 <p>your output:

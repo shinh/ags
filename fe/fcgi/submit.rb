@@ -8,8 +8,6 @@ class Submit < Handler
   #@@serv = '192.168.11.13'
   @@port = 9999
 
-  @@eol = "\r\n"
-
   def get_statistics(s)
     a=[0,0,0,0]
     an=/[a-zA-Z0-9]/
