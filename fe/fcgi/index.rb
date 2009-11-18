@@ -5,9 +5,9 @@ class Index < Handler
     html_header
     title("anarchy golf")
 
-    puts %Q(<h1>Under construction</h1>
+    puts %Q(<h1>Anarchy Golf</h1>
 <p>
-This is a test of golf server.
+This is a golf server.
 You can enjoy short coding here in several languages (#{file_types.size} languages).
 The purpose of this server is not serious competition.
 Joke problems are welcomed and
@@ -21,9 +21,12 @@ IRC channel for this golf server: #anagol in freenode. Please feel free to join 
 <p>
 Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingtips/Home">site</a> for this golf server. If you would like to join to add tips, please ask Mark to add you as a collaborator (supposedly, in IRC?).
 </p>
-<p>
-I've just understood how to create too short entries (thanks for nazo). However, it seems not to be easy to fix the bug. I'll work on the problem in near future and I'll remove entries which is considered to use the bug. Thanks for understanding.
+
+<p style="color: red;">
+The server is upgraded. There should be some issues (as usual!).
+Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
 </p>
+
 )
 
     if @e['SERVER_NAME'] != 'golf.shinh.org'
@@ -87,6 +90,14 @@ I've just understood how to create too short entries (thanks for nazo). However,
 <p>
 News
 <ul>
+<li>Now, the golf server was upgraded. The new system should be faster than before.
+<pre>
+Ubuntu hardy => Debian squeeze (with sid packages)
+linux-2.6.19-4 => linux-2.6.26-2
+Mobile Intel(R) Celeron(R) CPU 1.70GHz => Intel(R) Core(TM)2 CPU T5600 @ 1.83GHz
+384MB/128MB => 1GB/256MB (web server / execution server)
+</pre>
+Many languages were upgrade. I'll work on gathering the version information of them.
 <li>Some submissions were gone due to disk full. I'm sorry about this. Please re-post your code again.
 <li>added <a href="http://golang.org/">Go</a>.
 <li>Now the execution server removes written files and directories using tmpfs. Please tell me if you can create a file and utilize the file content by another submission. Also, I removed some records in "hello world" problem as I guess they used file creation. If you didn't, please re-submit the code.
