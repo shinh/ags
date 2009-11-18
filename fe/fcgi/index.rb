@@ -90,7 +90,8 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
 <p>
 News
 <ul>
-<li>Now, the golf server was upgraded. The new system should be faster than before.
+<li>Now, you have <a href="http://golf.shinh.org/setpid.html">setpid</a> interface. You can adjust the PID without attacking the server!
+<li>The golf server was upgraded. The new system should be faster than before.
 <pre>
 Ubuntu hardy => Debian squeeze (with sid packages)
 linux-2.6.19-4 => linux-2.6.26-2
