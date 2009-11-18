@@ -98,7 +98,7 @@ linux-2.6.19-4 => linux-2.6.26-2
 Mobile Intel(R) Celeron(R) CPU 1.70GHz => Intel(R) Core(TM)2 CPU T5600 @ 1.83GHz
 384MB/128MB => 1GB/256MB (web server / execution server)
 </pre>
-Many languages were upgrade. I'll work on gathering the version information of them.
+Many languages were upgrade. I'll work on gathering the version information of them. You can see <a href="http://github.com/shinh/ags">the source code of this system</a> in github.
 <li>Some submissions were gone due to disk full. I'm sorry about this. Please re-post your code again.
 <li>added <a href="http://golang.org/">Go</a>.
 <li>Now the execution server removes written files and directories using tmpfs. Please tell me if you can create a file and utilize the file content by another submission. Also, I removed some records in "hello world" problem as I guess they used file creation. If you didn't, please re-submit the code.
