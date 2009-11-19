@@ -15,5 +15,7 @@ chown -R root:root /golf/*
 chown -R golf:golf /golf/test
 chmod +s /golf/remount
 
-exit 0
+insmod /root/ags/be/modules/sandbox.ko
+sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
 
+exit 0
