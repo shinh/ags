@@ -8,7 +8,7 @@ class Reveal < Handler
     q = CGI.unescape(query)
     q.sub!('/plain','')
     plain = $&
-    f = "../code/#{q.tr('/','_')}"
+    f = "../code/#{q.tr('/','_').sub('_','/')}"
 
     err("invalid query") if !File.file?(f)
 

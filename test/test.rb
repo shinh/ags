@@ -33,7 +33,9 @@ fail_cnt = 0
  ['hello.max', 'hello+world', /Success/],
  ['hello_fail.c', 'hello+world', /compile error/],
  ['fork_bomb.sh', 'testing', /fork attempts might fail/],
- ['daemon.rb', 'testing', /setsid/],
+ # We don't disallow setsid anymore
+ #['daemon.rb', 'testing', /setsid/],
+ ['daemon.rb', 'testing', /failed/],
  ['testing.grb', 'testing', /Success/],
  ['testing.vi', 'testing', /Success/],
  ['testing.groovy', 'testing', /Success/],
