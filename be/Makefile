@@ -1,6 +1,6 @@
 TARGETS = \
-srv/local/dmd2/bin/dmd \
-srv/local/dmd/linux/bin/dmd \
+/golf/local/dmd2/bin/dmd \
+/golf/local/dmd/linux/bin/dmd \
 /usr/local/bin/goruby-1.9 \
 /golf/local/j601 \
 /usr/local/bin/xgawk \
@@ -9,15 +9,19 @@ srv/local/dmd/linux/bin/dmd \
 /golf/local/arc3/as2.scm \
 /golf/local/gobin/8l \
 
-#srv/local/dmd2/linux/bin/dmd \
+#/golf/local/dmd2/linux/bin/dmd \
 
 all: $(TARGETS)
+	make -C modules
+	git archive HEAD srv | tar -C / -xvf -
+	cd /golf && make
+	chmod +s /golf/remount
 
-#srv/local/dmd2/linux/bin/dmd:
-srv/local/dmd2/bin/dmd:
+#/golf/local/dmd2/linux/bin/dmd:
+/golf/local/dmd2/bin/dmd:
 	fetcher/d2
 
-srv/local/dmd/linux/bin/dmd:
+/golf/local/dmd/linux/bin/dmd:
 	fetcher/d
 
 /usr/local/bin/goruby-1.9:
