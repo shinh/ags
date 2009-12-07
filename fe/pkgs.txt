@@ -19,4 +19,5 @@ gdb
 z80dasm
 subversion
 curl
+libjson-ruby
 
