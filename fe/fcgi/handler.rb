@@ -300,7 +300,7 @@ class Handler
       end
       un = CGI.escapeHTML(v[0])
       if pm == 1
-        un = %Q(<a href="reveal.rb?#{CGI.escape(pn)}/#{CGI.escape(v[0])}/#{v[3].to_i}&#{ext}">#{un != '' ? un : '_'}</a>)
+        un = %Q(<a href="reveal.rb?#{CGI.escape(pn)}/#{CGI.escape(v[0])}_#{v[3].to_i}&#{ext}">#{un != '' ? un : '_'}</a>)
       end
       date = v[3].strftime('%y/%m/%d %H:%M:%S')
       if v[5] == 1

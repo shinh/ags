@@ -8,11 +8,15 @@ class Reveal < Handler
     q = CGI.unescape(query)
     q.sub!('/plain','')
     plain = $&
-    f = "../code/#{q.tr('/','_').sub('_','/')}"
+    #f = "../code/#{q.tr('/','_').sub('_','/')}"
+    f = "../code/#{q}"
+    if q.count('/') == 2
+      f[f.rindex('/')] = '_'
+    end
 
     err("invalid query") if !File.file?(f)
 
-    q =~ /([^\/]*)\/([^\/]*)/
+    q =~ /^([^\/]*)\/([^\/]*)[\/_]\d+$/
     pn = $1
     un = CGI.escapeHTML($2)
     db = get_db(pn)
