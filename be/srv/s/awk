@@ -1,2 +1,2 @@
 #!/bin/sh
-exec awk -f $1
+exec mawk -f $1
