@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['testing.ly', 'testing', /Success/],
  ['testing_setpriority.rb', 'testing', /you called setpriority for cheating/],
  ['example_net.sh', 'example_com', /you called forbidden system call \(socketcall\)/],
  ['testing.go', 'testing', /Success/],
@@ -134,8 +135,8 @@ fail_cnt = 0
   test_cnt += 1
 
   print "Testing #{s}... "
-  c = `./ag.rb t/#{s} http://localhost/p.rb?#{u}`
-  #c = `./ag.rb t/#{s} http://golf.shinh.org/p.rb?#{u}`
+  #c = `./ag.rb t/#{s} http://localhost/p.rb?#{u}`
+  c = `./ag.rb t/#{s} http://golf.shinh.org/p.rb?#{u}`
   if c !~ r
     puts 'failed'
     fail_cnt += 1
