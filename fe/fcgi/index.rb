@@ -90,6 +90,7 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
 <p>
 News
 <ul>
+<li>Added <a href="http://lilypond.org/">LilyPond</a>. Thanks KirarinSnow for suggesting this.
 <li>Now, you have <a href="http://golf.shinh.org/setpid.html">setpid</a> interface. You can adjust the PID without attacking the server!
 <li>The golf server was upgraded. The new system should be faster than before.
 <pre>
