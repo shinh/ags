@@ -52,3 +52,4 @@ asymptote
 mercurial
 bison
 lsof
+lilypond
