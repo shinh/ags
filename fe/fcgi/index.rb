@@ -117,6 +117,7 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added <a href="u.rb">user ranking</a>, and re-organized this site.
 <li>Added <a href="http://lilypond.org/">LilyPond</a>. Thanks KirarinSnow for suggesting this.
 <li>Now, you have <a href="http://golf.shinh.org/setpid.html">setpid</a> interface. You can adjust the PID without attacking the server!
 <li>The golf server was upgraded. The new system should be faster than before.
