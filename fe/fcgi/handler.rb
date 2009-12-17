@@ -315,9 +315,13 @@ class Handler
     ret + %Q(</table>)
   end
 
+  def sorted_langs
+    file_types.zip(file_langs).sort_by{|a|a[1].downcase}
+  end
+
   def put_by_languages(pa, base, overall = [])
     puts "<p>|"
-    types = overall + file_types.zip(file_langs).sort_by{|a|a[1]}
+    types = overall + sorted_langs
     types.each do |la, ln|
       if pa == la
         puts ln, "|"

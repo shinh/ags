@@ -25,7 +25,7 @@ class P < Handler
     puts %Q(
 <script>
 use_form = function() {
-  document.getElementById('file').innerHTML='<select name="ext">#{file_types.zip(file_langs).map{|x, y|"<option value=\"#{x}\">#{y}</option>"}}</select><br><textarea name="code" rows="20" cols="80"></textarea>';
+  document.getElementById('file').innerHTML='<select name="ext">#{sorted_langs.map{|x, y|"<option value=\"#{x}\">#{y}</option>"}}</select><br><textarea name="code" rows="20" cols="80"></textarea>';
   return false;
 }
 </script>
