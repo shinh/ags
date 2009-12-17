@@ -5,14 +5,22 @@ class L < Handler
     html_header
     pn, pa = page
     lindex = file_types.index(pa)
-    if !lindex
+    if !lindex && !pa.empty?
       puts 'page not found'
       foot
       return
     end
 
-    title("anarchy golf - " + file_langs[lindex])
-    puts "<h1>#{file_langs[lindex]}</h1>"
+    title("anarchy golf - Results by a language")
+    puts "<h1>Results by a language</h1>"
+    put_by_languages(pa, 'l.rb')
+
+    if pa.empty?
+      foot
+      return
+    end
+
+    puts "<h2>#{file_langs[lindex]}</h2>"
 
     puts %Q(name grep: <input type="text" id="namegrep" size="14" value=")+user_name+%Q(" onkeypress="if (event.keyCode == 10 || event.keyCode == 13) {display();}">
 max results: <input type="text" id="nresults" size="4" value="3" onkeypress="if (event.keyCode == 10 || event.keyCode == 13) {display();}">

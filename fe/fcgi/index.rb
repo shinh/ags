@@ -38,13 +38,22 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
     deadlines = pdb.get('deadline')
     active_problems = []
     hot_post_mortems = []
+    recent_problems = []
+    endless_problems = []
     now = Time.now.to_i
     problems.zip(deadlines, [*1..deadlines.size]).each do |p, d, i|
       if d && d > now
         active_problems << [d, p, i]
       elsif d && d < now && d > now - 60 * 60 * 24 * 14
         hot_post_mortems << [d, p, i]
+      elsif !active_problems.empty?
+        recent_problems << [d, p, i]
+      elsif d == 0
+        endless_problems << [d, p, i]
       end
+    end
+    while recent_problems.size < 3
+      recent_problems.push(endless_problems.pop)
     end
 
     if !active_problems.empty?
@@ -67,28 +76,46 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
       puts '</ul>'
     end
 
-    puts '<h2>All problems</h2>'
-
-    puts '<ol>'
-    problems.each do |x|
-      puts tag('li', a(problem_url(x), x))
+    if !recent_problems.empty?
+      puts '<h2>Recent endless problems</h2><ul>'
+      recent_problems.each do |d, x, i|
+        puts tag('li',
+                 "#{i}. " + a(problem_url(x), x))
+      end
+      puts '</ul>'
     end
-    puts '</ol>'
 
-    puts a("mkprob.html", "create new problem")
+    puts '<h2>Some links</h2>'
+    puts a('all.rb', 'The list of all problems')
     puts '<br>'
-    puts a("recent.rb", "recent records")
     puts '<br>'
-    puts a("lranking.rb", "language ranking")
+
+    #puts '<h2>All problems</h2>'
+    #puts '<ol>'
+    #problems.each do |x|
+    #  puts tag('li', a(problem_url(x), x))
+    #end
+    #puts '</ol>'
+
+    puts a("mkprob.html", "Create a new problem")
     puts '<br>'
-    puts a("checker.html", "performance checker")
+    puts a("recent.rb", "Recent records")
+    puts '<br>'
+    puts a("lranking.rb", "Language ranking")
+    puts '<br>'
+    puts a("u.rb", "User ranking")
+    puts '<br>'
+    puts a("l.rb", "Results by a language")
+    puts '<br>'
+    puts a("checker.html", "Performance checker")
+    puts '<br>'
+    puts a("setpid.html", "A tool to change the PID")
     puts '<br>'
     puts a("http://github.com/shinh/caddy", "caddy, a testing/squeezing/submission helper tool for golfers")
     puts '<br>'
 
     puts %Q(
-<p>
-News
+<h2>News</h2>
 <ul>
 <li>Added <a href="http://lilypond.org/">LilyPond</a>. Thanks KirarinSnow for suggesting this.
 <li>Now, you have <a href="http://golf.shinh.org/setpid.html">setpid</a> interface. You can adjust the PID without attacking the server!

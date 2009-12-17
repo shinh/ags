@@ -306,13 +306,27 @@ class Handler
       if v[5] == 1
         date = %Q(<em class="pm">#{date}</em>)
       end
-      ret += %Q(<tr><td>#{i+1}</td><td>#{un}</td><td>#{v[1]}</td><td>#{"%.4f"%v[2]}</td><td>#{date}</td><td>#{st.map{|x|"#{x}B"}*' / '}</td>)
+      ret += "<tr><td>#{i+1}</td><td>#{un}</td><td>#{v[1]}</td><td>#{"%.4f"%v[2]}</td><td>#{date}</td><td>#{st.map{|x|"#{x}B"}*' / '}</td>"
       if del
         del[1].call(v)
       end
       ret += %Q(</tr>)
     end
     ret + %Q(</table>)
+  end
+
+  def put_by_languages(pa, base, overall = [])
+    puts "<p>|"
+    types = overall + file_types.zip(file_langs).sort_by{|a|a[1]}
+    types.each do |la, ln|
+      if pa == la
+        puts ln, "|"
+      else
+        l = la.empty? ? base : "#{base}?#{la}"
+        puts a(l, ln), "|"
+      end
+    end
+    puts "</p>"
   end
 
   def ranking(pn, del, pm)

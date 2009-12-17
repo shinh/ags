@@ -6,6 +6,7 @@ class Lranking < Handler
     title("anarchy golf - Language Ranking")
 
     puts tag('h1', "Language Ranking")
+    puts tag('p', 'The score is the sum of 10000 * min(sizes of all solutions) / min(sizes of solutions in a language) for each problems.')
 
     lrf = 'db/_lranking.db'
     if (!File.exists?(lrf) || File.mtime(lrf) < Time.now-60*60*3)
