@@ -272,8 +272,7 @@ while true
     fn = payload[:filename]
     t = File.extname(fn).tr('.','')
     c = payload[:code]
-    # TODO: remove this flag
-    testing = false
+    testing = payload[:testing]
     inputs = payload[:inputs]
 
     File.open(f="test."+t, 'w') do |of|
@@ -311,7 +310,7 @@ while true
     inputs.each do |i|
       timeout = 1
       if testing
-        timeout = 5
+        timeout = 10
       else
         timeout = timeout * 3.0 / inputs.size
       end
