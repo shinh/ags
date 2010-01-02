@@ -61,6 +61,7 @@ class Checker < Handler
       :filename => fn,
       :code => fb,
       :inputs => [input],
+      :testing => true,
     }
     encoded_payload = Marshal.dump(payload)
     s.puts(encoded_payload.size)
