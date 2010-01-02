@@ -67,11 +67,12 @@ Open <a href="bas.html">code-statistics</a>: <input type="checkbox" name="reveal
 </p>
 )
 
-    puts '<p>Language is selected by extension. Supported types are:<br>'
-    puts (file_types.zip(file_langs).map{|x, y|
-            "#{y}(#{x})"
-          }*', ')
-    puts '</p>'
+    #puts '<p>Language is selected by extension. Supported types are:<br>'
+    #puts (file_types.zip(file_langs).map{|x, y|
+    #        "#{y}(#{x})"
+    #      }*', ')
+    #puts '</p>'
+    puts '<p>Language is selected by the extension of the file. See <a href="version.rb">the list of supported languages</a> to know the extension of your language.</p>'
 
     puts tag('h2', 'Problem')
     puts tag('p', d.gsub(/\r\n|\n/,"<br>"))

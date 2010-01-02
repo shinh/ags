@@ -22,11 +22,6 @@ IRC channel for this golf server: #anagol in freenode. Please feel free to join 
 Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingtips/Home">site</a> for this golf server. If you would like to join to add tips, please ask Mark to add you as a collaborator (supposedly, in IRC?).
 </p>
 
-<p style="color: red;">
-The server is upgraded. There should be some issues (as usual!).
-Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
-</p>
-
 )
 
     if @e['SERVER_NAME'] != 'golf.shinh.org'
@@ -111,12 +106,15 @@ Please let me know (at shinichiro.hamaji _at_ gmail.com) if you found an issue.
     puts '<br>'
     puts a("setpid.html", "A tool to change the PID")
     puts '<br>'
+    puts a("version.rb", "Version info of languages")
+    puts '<br>'
     puts a("http://github.com/shinh/caddy", "caddy, a testing/squeezing/submission helper tool for golfers")
     puts '<br>'
 
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Updated <a href="version.rb">the version info of languages</a>.
 <li>Added <a href="u.rb">user ranking</a>, and re-organized this site.
 <li>Added <a href="http://lilypond.org/">LilyPond</a>. Thanks KirarinSnow for suggesting this.
 <li>Now, you have <a href="http://golf.shinh.org/setpid.html">setpid</a> interface. You can adjust the PID without attacking the server!
@@ -153,7 +151,6 @@ Many languages were upgrade. I'll work on gathering the version information of t
 </p>
 <p>
 <a href="http://github.com/shinh/ags">Source code</a>.
-<a href="langs.html">Version informations</a> (too old information!).
 </p>
 <p>
 Contact: shinichiro.hamaji _at_ gmail.com .

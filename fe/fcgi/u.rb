@@ -93,12 +93,13 @@ class U < Handler
       $u_ranks[pa] = [now+60*60, um.sort_by{|un, u|-u.score}]
     end
 
-    puts %Q(<table border="1"><tr><th>User</th><th>Score</th><th>Entries</th><th>Avg</th><th># of 10000</th></tr>)
+    puts %Q(<table border="1"><tr><th>Rank</th><th>User</th><th>Score</th><th>Entries</th><th>Avg</th><th># of 10000</th></tr>)
     um = $u_ranks[pa][1]
+    rank = 0
     um.each do |un, u|
       next if u.count < 2
       avg = u.score / u.count
-      puts %Q(<tr><td>#{un}</td><td>#{u.score}</td><td>#{u.count}</td><td>#{avg}</td><td>#{u.no1_count}</td></tr>)
+      puts %Q(<tr><td>#{rank+=1}</td><td>#{un}</td><td>#{u.score}</td><td>#{u.count}</td><td>#{avg}</td><td>#{u.no1_count}</td></tr>)
     end
     puts %Q(</table>)
 
