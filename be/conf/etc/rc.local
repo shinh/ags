@@ -22,7 +22,7 @@ echo 0 > /proc/sys/kernel/msgmax
 echo 0 > /proc/sys/kernel/msgmni
 echo 0 > /proc/sys/kernel/shmmax
 echo 0 > /proc/sys/kernel/shmmni
-# Mono requires some (maybe 8) semaphores.
-echo 20 20 20 20 > /proc/sys/kernel/sem
+# Mono requires some semaphores.
+echo 8 8 1 1 > /proc/sys/kernel/sem
 
 exit 0
