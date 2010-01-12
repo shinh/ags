@@ -75,7 +75,7 @@ class Submit < Handler
       end
     end
 
-    if should_add
+    if should_add && pn != 'testing'
       r = [pn, un, ext, cs, time, now, rank, 10000*max/cs]
       rdb = PStore.new('db/recent.db')
       rdb.transaction do
