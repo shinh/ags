@@ -18,4 +18,7 @@ chmod +s /golf/remount
 insmod /root/ags/be/modules/sandbox.ko
 sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
 
+echo 0 > /proc/sys/kernel/msgmax
+echo 0 > /proc/sys/kernel/msgmni
+
 exit 0
