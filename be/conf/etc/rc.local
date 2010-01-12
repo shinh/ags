@@ -20,5 +20,8 @@ sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
 
 echo 0 > /proc/sys/kernel/msgmax
 echo 0 > /proc/sys/kernel/msgmni
+echo 0 > /proc/sys/kernel/shmmax
+echo 0 > /proc/sys/kernel/shmmni
+echo 0 0 0 0 > /proc/sys/kernel/sem
 
 exit 0
