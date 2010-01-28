@@ -315,6 +315,7 @@ while true
         timeout = timeout * 3.0 / inputs.size
       end
       timeout += 0.5 if ext == 'java'
+      timeout += 1 if ext == 'clj'
       timeout += 1 if ext == 'asy'
       timeout += 1 if ext == 'cs'
       timeout += 4 if ext == 'cy'
