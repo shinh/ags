@@ -259,6 +259,7 @@ class Submit < Handler
             (ext != 'r' || execnt > 7) &&
             (ext != 'lmn' || execnt > 7) &&
             (ext != 'java' || execnt > 4) &&
+            (ext != 'clj' || execnt > 3) &&
             (ext != 'class' || execnt > 5) &&
             (ext != 'com' || execnt > 26) &&
             (ext != 'max' || execnt > 12) &&
