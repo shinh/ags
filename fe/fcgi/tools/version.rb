@@ -95,6 +95,7 @@ LANGS = {
   'vi' => [apt['vim']],
   'grb' => ['ruby 1.9.1p243 (2009-07-16 revision 24175) (http://ruby-lang.org/)'],
   'groovy' => [apt['groovy']],
+  'clj' => ['Clojure 1.1.0 with clojure-contrib 1.1.0 (http://code.google.com/p/clojure/downloads/list)'],
 }
 
 LANGS.each do |l, info|

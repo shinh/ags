@@ -7,7 +7,7 @@ payload = {
   :filename => 'version.rb',
   :code => File.read('version.rb'),
   :inputs => [''],
-  :testing = true,
+  :testing => true,
 }
 encoded_payload = Marshal.dump(payload)
 s.puts(encoded_payload.size)
