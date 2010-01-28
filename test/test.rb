@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.clj', 'v', /Success/],
  ['testing.ly', 'testing', /Success/],
  ['testing_setpriority.rb', 'testing', /you called setpriority for cheating/],
  ['example_net.sh', 'example_com', /you called forbidden system call \(socketcall\)/],
