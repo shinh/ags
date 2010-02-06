@@ -114,6 +114,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Sorry for confusing, but python entries for Buffalo need to be fixed. Please wait for a while.... Fixed.
 <li>Added <a href="http://code.google.com/p/clojure/">Clojure</a>. Though I forgot to mention, I think <a href="http://john.freml.in/codegolf-cheating">this loophole</a> was closed two weeks ago. It seems sometimes you cannot run C# and Nemerle programs due to this fix. Until I fix this issue, please let me know if you notice you cannot run them on this server. Thanks John for finding and reporting this! 2009-01-29
 <li>Updated <a href="version.rb">the version info of languages</a>.
 <li>Added <a href="u.rb">user ranking</a>, and re-organized this site.
