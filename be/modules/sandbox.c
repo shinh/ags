@@ -65,7 +65,7 @@ MODULE_LICENSE("GPL");
 
 #define IS_NOT_ROOT current->uid != 0 /* || current->euid != 0 */
 
-#define NUM_ALLOWED_FORK 100
+#define NUM_ALLOWED_FORK 2000
 
 DEFINE_HOOK(execve,
             (const char *filename, char *const argv[], char *const envp[])) {
