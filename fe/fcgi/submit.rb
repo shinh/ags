@@ -248,7 +248,7 @@ class Submit < Handler
         end
 
 #        if (o.rstrip.gsub("\r\n","\n") == output.rstrip.gsub("\r\n","\n"))
-        if ((execnt > 2 && dexec > 0 && ext != 'sh' && ext != 'di') &&
+        if ((execnt > 2 && dexec > 0 && ext != 'sh' && ext != 'di' && ext != 'zsh' && ext != 'fish') &&
             (ext != 'erl') && (ext != 'pef') &&
             (ext != 'ijs' || execnt > 4) &&
             (ext != 'cy' || execnt > 4) &&

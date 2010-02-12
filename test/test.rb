@@ -8,6 +8,9 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.bc', 'v', /Success/],
+ ['v.fish', 'v', /Success/],
+ ['v.zsh', 'v', /Success/],
  ['v.clj', 'v', /Success/],
  ['testing.ly', 'testing', /Success/],
  ['testing_setpriority.rb', 'testing', /you called setpriority for cheating/],
