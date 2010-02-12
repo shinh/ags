@@ -53,3 +53,6 @@ mercurial
 bison
 lsof
 lilypond
+fish
+zsh
+bc
