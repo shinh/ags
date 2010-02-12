@@ -205,8 +205,8 @@ def run(exe, i = nil, timeout = 60)
     end
   end
 
-  if sandbox_cnts[:fork] >= 100
-    notice << 'some of your fork attempts might fail. you cannot fork >100 times'
+  if sandbox_cnts[:fork] >= 2000
+    notice << 'some of your fork attempts might fail. you cannot fork >2000 times'
   end
 
   [
