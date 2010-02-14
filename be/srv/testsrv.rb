@@ -99,7 +99,7 @@ def run(exe, i = nil, timeout = 60)
   sandbox_vals = get_sandbox_vals
 
   begin
-    pid, stdin, stdout, stderr = Open4.popen4(exe)
+    pid, stdin, stdout, stderr = Open4.popen4(*exe)
   rescue
     exit 1
   end
@@ -282,10 +282,10 @@ while true
     log.puts("connected #{fn} #{c.size}")
 
     ext = t
-    cmd = "/golf/s/#{t} #{f} #{fn}"
+    cmd = ["/golf/s/#{t}", f, fn]
 
     if File.exists?("/golf/s/_#{t}")
-      payload = run("/golf/s/_#{t} #{f} #{fn}")
+      payload = run(["/golf/s/_#{t}", f, fn])
 
       failed = false
       if !payload[:time]
