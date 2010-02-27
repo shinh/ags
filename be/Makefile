@@ -8,8 +8,8 @@ TARGETS = \
 /usr/local/bin/kite \
 /golf/local/arc3/as2.scm \
 /golf/local/gobin/8l \
-/golf/local/gobin/fernando \
-/golf/local/gobin/FlogScript.php \
+/golf/local/fernando \
+/golf/local/FlogScript.php \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -47,8 +47,9 @@ all: $(TARGETS)
 /golf/local/gobin/8l:
 	fetcher/go
 
-/golf/local/gobin/fernando: fetcher/fernando.hs
+/golf/local/fernando: fetcher/fernando.hs
 	ghc --make -o $@ $<
 
-/golf/local/gobin/FlogScript.php: fetcher/FlogScript.php
+/golf/local/FlogScript.php: fetcher/FlogScript.php
 	cp $< $@
+	chmod 755 $@

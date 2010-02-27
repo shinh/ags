@@ -1,0 +1,2 @@
+#!/bin/sh
+exec php5 /golf/local/FlogScript.php $1
