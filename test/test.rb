@@ -8,6 +8,8 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.flog', 'v', /Success/],
+ ['v.nand', 'v', /Success/],
  # need manual test
  #["hello (paren) 'quotes`.rb", 'hello+world', /Success/],
  ['v.bc', 'v', /Success/],

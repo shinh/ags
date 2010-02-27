@@ -140,7 +140,8 @@ class Handler
      'hs','adb','m','java','pas','f95','cs','n','cob','curry','lmn','max','reb','asy',
      'awk','sed','sh','zsh','fish','bc',
      'xgawk','m4','ps','r','vhdl','qcl',
-     'bf','ws','bef', 'pef', 'ms', 'gs', 'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
+     'bf','ws','bef', 'pef', 'ms', 'gs', 'flog', 'nand',
+     'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
      's','out','z8b','com','class','vi','grb',
      'groovy'
     ]
@@ -158,7 +159,8 @@ class Handler
      'Ada','ObjC','Java','Pascal','Fortran','C#','Nemerle','COBOL','Curry','LMNtal','Maxima','REBOL','Asymptote',
      'AWK','sed','Bash','Zsh','fish','bc',
      'xgawk','m4','Postscript','R','VHDL','QCL',
-     'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript','Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
+     'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript', 'FlogScript', 'FerNANDo',
+     'Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
      'gas','x86','z80','DOS','JVM','vi','goruby',
      'Groovy'
     ]
