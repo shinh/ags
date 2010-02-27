@@ -48,7 +48,7 @@ all: $(TARGETS)
 	fetcher/go
 
 /golf/local/gobin/fernando: fetcher/fernando.hs
-	ghc -o $@ $<
+	ghc --make -o $@ $<
 
 /golf/local/gobin/FlogScript.php: fetcher/FlogScript.php
 	cp $< $@
