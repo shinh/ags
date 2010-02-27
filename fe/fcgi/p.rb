@@ -14,7 +14,7 @@ class P < Handler
   def handle_
     html_header
     pn, pa = page
-    if !File.exist?('db/' + pn + '.db')
+    if pn == '' || !File.exist?('db/' + pn + '.db')
       puts 'page not found'
       foot
       return
