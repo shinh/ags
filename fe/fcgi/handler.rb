@@ -260,7 +260,7 @@ class Handler
   end
 
   def title(t)
-    print %Q(<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+    print %Q(<!DOCTYPE html>
 <html>
 
 <head>
