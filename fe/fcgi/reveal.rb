@@ -8,21 +8,22 @@ class Reveal < Handler
     q = CGI.unescape(query)
     q.sub!('/plain','')
     plain = $&
-    #f = "../code/#{q.tr('/','_').sub('_','/')}"
-    f = "../code/#{q}"
-    if q.count('/') == 2
-      f[f.rindex('/')] = '_'
-    end
 
-    err("invalid query") if !File.file?(f)
-
-    q =~ /^([^\/]*)\/([^\/]*)[\/_]\d+$/
+    q =~ /^([^\/]*)\/(.*)[\/_](\d+)$/
     pn = $1
     un = CGI.escapeHTML($2)
+    time = $3
     db = get_db(pn)
     dl = db.get('deadline')
     dl = dl.to_i
     pm = (dl > 0 && dl < Time.now.to_i) ? 1 : 0
+
+    #f = "../code/#{q.tr('/','_').sub('_','/')}"
+    f = "../code/#{pn}/#{un.gsub('/','%2F')}_#{time}"
+    #if q.count('/') == 2
+    #  f[f.rindex('/')] = '_'
+    #end
+    err("invalid query") if !File.file?(f)
 
     code = File.read(f)
 

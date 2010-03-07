@@ -50,7 +50,7 @@ class Submit < Handler
 
         if (dl > 0)
           FileUtils.mkdir_p("../code/#{pn}")
-          File.open("../code/#{pn}/#{un}_#{now.to_i}", 'w') do |o|
+          File.open("../code/#{pn}/#{un.gsub('/','%2F')}_#{now.to_i}", 'w') do |o|
             o.print(code)
           end
         end
