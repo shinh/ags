@@ -1,2 +1,2 @@
 #!/bin/sh
-exec bc -lq $1
+BC_LINE_LENGTH=9999 exec bc -lq $1
