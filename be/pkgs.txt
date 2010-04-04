@@ -56,3 +56,4 @@ lilypond
 fish
 zsh
 bc
+dc

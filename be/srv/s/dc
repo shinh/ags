@@ -1,0 +1,2 @@
+#!/bin/sh
+DC_LINE_LENGTH=9999 exec dc -f $1
