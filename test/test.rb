@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['embed.dc', 'embed', /Success/],
  ['v.flog', 'v', /Success/],
  ['v.nand', 'v', /Success/],
  # need manual test
