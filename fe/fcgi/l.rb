@@ -45,7 +45,7 @@ max results: <input type="text" id="nresults" size="4" value="3" onkeypress="if 
         r = ldb.transaction(true) do
           ldb[pa]
         end
-        html += "<h2><a href=#{problem_url(p)}>#{p}</a></h2>"
+        html += "<h2>#{problem_summary(p, dl, now)}</h2>"
         if r
           html += lranking(pa,r,p,nil,pm)
         else

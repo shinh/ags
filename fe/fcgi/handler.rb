@@ -240,6 +240,17 @@ class Handler
     '/p.rb?' + x.tr(' ','+')
   end
 
+  def problem_summary(x, d, now)
+    anchor = a(problem_url(x), x)
+    if !d || d == 0
+      anchor + " (endless)"
+    elsif d > now   
+      anchor + " #{time_diff(d-now)} left (#{Time.at(d).strftime('%m/%d %H:%M:%S JST')})"
+    else
+      anchor + " (post mortem)"
+    end
+  end
+
   def lang_url(x)
     '/l.rb?' + x
   end
