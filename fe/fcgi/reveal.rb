@@ -11,7 +11,7 @@ class Reveal < Handler
 
     q =~ /^([^\/]*)\/(.*)[\/_](\d+)$/
     pn = $1
-    un = CGI.escapeHTML($2)
+    un = $2
     time = $3
     db = get_db(pn)
     dl = db.get('deadline')
@@ -26,6 +26,8 @@ class Reveal < Handler
     err("invalid query") if !File.file?(f)
 
     code = File.read(f)
+
+    un = CGI.escapeHTML(un)
 
     if plain
       text_header
