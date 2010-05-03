@@ -37,7 +37,8 @@ class Reveal < Handler
 
       title("anarchy golf - the source code")
 
-      puts tag('h2', pn + " by " + un)
+      plink = %Q(<a href="#{problem_url(pn)}">#{pn}</a>)
+      puts tag('h2', plink + " by " + un)
 
       if pm == 0
         puts %Q(not opened yet)
@@ -72,6 +73,7 @@ class Reveal < Handler
 #        end
 #        puts '</pre>'
       end
+
       puts %Q(<p><a href="/reveal.rb?#{query}/plain">download</a></p>)
 
       foot
