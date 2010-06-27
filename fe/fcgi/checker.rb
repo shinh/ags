@@ -4,9 +4,6 @@ require 'fileutils'
 # multipart handling is from cgi.rb
 
 class Checker < Handler
-  @@serv = '192.168.36.2'
-  @@port = 9999
-
   def output_filter(s)
     escape_binary(CGI.escapeHTML(s.gsub("\r\n","\n")).gsub("\n",%Q(<span class="gray">\\n\n</span>)))
   end
@@ -37,36 +34,7 @@ class Checker < Handler
 
     input = q.input.read
 
-    s = nil
-    begin
-      s = TCPSocket.open(@@serv, @@port)
-    rescue
-      puts %Q(now maintenance? it will be back soon. please try again later.)
-      raise $!
-    end
-
-    if ext == 'sed' && (!input || input.size == 0)
-      input = "\n"
-    end
-    if input
-      #if ext == 'js' && input[-1] != 10
-      #  input+="\n"
-      #end
-      input.gsub!("\r\n","\n")
-    else
-      input = ''
-    end
-
-    payload = {
-      :filename => fn,
-      :code => fb,
-      :inputs => [input],
-      :testing => true,
-    }
-    encoded_payload = Marshal.dump(payload)
-    s.puts(encoded_payload.size)
-    s.print(encoded_payload)
-    s.close_write
+    s = execute2(fn, fb, [input], true)
 
     title("checker - result")
     puts tag('h1',"checker - result")

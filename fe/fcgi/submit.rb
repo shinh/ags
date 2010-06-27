@@ -4,10 +4,6 @@ require 'fileutils'
 # multipart handling is from cgi.rb
 
 class Submit < Handler
-  @@serv = '192.168.36.2'
-  #@@serv = '192.168.11.13'
-  @@port = 9999
-
   def get_statistics(s)
     a=[0,0,0,0]
     an=/[a-zA-Z0-9]/
@@ -154,38 +150,7 @@ class Submit < Handler
 
     sending_code = fb
 
-    s = nil
-    begin
-      s = TCPSocket.open(@@serv, @@port)
-    rescue
-      puts %Q(now maintenance? it will be back soon. please try again later.)
-      raise $!
-    end
-
-    modified_inputs = inputs.map do |input|
-      if ext == 'sed' && (!input || input.size == 0)
-        input = "\n"
-      end
-      if input
-        #if ext == 'js' && input[-1] != 10
-        #  input += "\n"
-        #end
-        input.gsub!("\r\n","\n")
-      else
-        input = ''
-      end
-      input
-    end
-
-    payload = {
-      :filename => fn,
-      :code => sending_code,
-      :inputs => modified_inputs,
-    }
-    encoded_payload = Marshal.dump(payload)
-    s.puts(encoded_payload.size)
-    s.print(encoded_payload)
-    s.close_write
+    s = execute2(fn, sending_code, inputs)
 
     title("#{pn} - result")
     puts tag('h1',"#{pn} - result")

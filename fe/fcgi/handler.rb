@@ -42,6 +42,9 @@ class Hash
 end
 
 class Handler
+  @@serv = '192.168.36.2'
+  @@port = 9999
+
   @@eol = "\r\n"
 
   def root_url
@@ -474,5 +477,46 @@ class Handler
 
     params
   end # read_multipart
+
+  def execute
+    begin
+      return TCPSocket.open(@@serv, @@port)
+    rescue
+      puts %Q(now maintenance? it will be back soon. please try again later.)
+      raise
+    end
+  end
+
+  def execute2(filename, code, inputs, testing=false)
+    modified_inputs = inputs.map do |input|
+      if /\.sed$/ =~ filename && (!input || input.size == 0)
+        input = "\n"
+      end
+      if input
+        input.gsub!("\r\n","\n")
+      else
+        input = ''
+      end
+      input
+    end
+
+    payload = {
+      :filename => filename,
+      :code => code,
+      :inputs => modified_inputs,
+    }
+    if testing
+      payload[:testing] = true
+    end
+
+    encoded_payload = Marshal.dump(payload)
+
+    s = execute
+    s.puts(encoded_payload.size)
+    s.print(encoded_payload)
+    s.close_write
+
+    s
+  end
 
 end
