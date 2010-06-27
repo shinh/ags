@@ -79,3 +79,19 @@ status: #{status}<br>
   end
 end
 
+if $0 == __FILE__
+  c = Checker.new
+  s = c.execute2(ARGV[0], ARGV[1], [''], true)
+
+  payload = Marshal.load(s.read(s.gets.to_i))
+  time = payload[:time]
+  status = payload[:status]
+  execnt = payload[:execnt]
+  o = payload[:stdout]
+  e = payload[:stderr]
+
+  print o
+  STDOUT.flush
+  STDERR.print e
+  exit status
+end
