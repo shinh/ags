@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.wake', 'v', /Success/],
  ['embed.dc', 'embed', /Success/],
  ['v.flog', 'v', /Success/],
  ['v.nand', 'v', /Success/],

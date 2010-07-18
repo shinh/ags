@@ -217,6 +217,7 @@ class Submit < Handler
             (ext != 'erl') && (ext != 'pef') &&
             (ext != 'ijs' || execnt > 4) &&
             (ext != 'cy' || execnt > 4) &&
+            (ext != 'wake' || execnt > 3) &&
             (ext != 'vhdl' || execnt > 3) &&
             (ext != 'out' || execnt > 3) &&
             (ext != 'vi' || execnt > 8) &&

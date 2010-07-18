@@ -102,6 +102,8 @@ LANGS = {
   'zsh' => [apt['zsh']],
   'fish' => [apt['fish']],
   'bc' => [apt['bc']],
+  'wake' => ['http://shinh.skr.jp/wake/',
+            'We are using the C++ implementation.'],
 }
 
 LANGS.each do |l, info|
