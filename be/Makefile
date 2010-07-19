@@ -10,6 +10,7 @@ TARGETS = \
 /golf/local/gobin/8l \
 /golf/local/fernando \
 /golf/local/FlogScript.php \
+/golf/local/wake/wake \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -53,3 +54,6 @@ all: $(TARGETS)
 /golf/local/FlogScript.php: fetcher/FlogScript.php
 	cp $< $@
 	chmod 755 $@
+
+/golf/local/wake/wake:
+	fetcher/wake
