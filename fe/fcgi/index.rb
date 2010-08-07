@@ -114,6 +114,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Updated the version of Perl6. Now it uses rakudo-star-2010.07.
 <li>Added <a href="http://en.wikipedia.org/wiki/Dc_(Unix)">dc</a>. I also added BC_LINE_LENGTH=9999 environment variable for bc so it can solve more problems. Thanks Carlos for these suggestions!
 <li>Added <a href="http://esolangs.org/wiki/FlogScript">FlogScript</a> and <a href="http://esolangs.org/wiki/FerNANDo">FerNANDo</a>. Thanks leonid and asiekierka for the suggestions!
 <li>Added <a href="http://www.zsh.org/">Zsh</a>, <a href="http://fishshell.org/index.php">fish</a>, and <a href="http://en.wikipedia.org/wiki/Bc_programming_language">bc</a>.
