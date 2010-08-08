@@ -1,3 +1,4 @@
 #!/bin/sh
-exec /golf/local/rakudo/parrot_install/bin/perl6 $1
+#exec /golf/local/rakudo/parrot_install/bin/perl6 $1
+exec /golf/local/rakudo-star-2010.07/perl6 $1
 #exec perl6 $1
