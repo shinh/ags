@@ -44,6 +44,7 @@ end
 class Handler
   @@serv = '192.168.36.2'
   @@port = 9999
+  @@maintenance = false
 
   @@eol = "\r\n"
 
@@ -482,7 +483,11 @@ class Handler
     begin
       return TCPSocket.open(@@serv, @@port)
     rescue
-      puts %Q(now maintenance? it will be back soon. please try again later.)
+      if @@maintenance
+        puts %Q(now maintenance. it will be back soon. please try again later.)
+      else
+        puts %Q(something are broken. please send an email to shinichiro.hamaji@gmail.com if this issue stays long)
+      end
       raise
     end
   end
