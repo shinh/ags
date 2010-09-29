@@ -318,6 +318,7 @@ while true
       timeout += 1 if ext == 'clj'
       timeout += 1 if ext == 'asy'
       timeout += 1 if ext == 'cs'
+      timeout += 1 if ext == 'ly'
       timeout += 4 if ext == 'cy'
       timeout += 1 if ext == 'io'
       timeout += 1 if ext == 'erl'
