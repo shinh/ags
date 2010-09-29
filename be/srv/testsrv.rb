@@ -323,7 +323,7 @@ while true
       timeout += 1 if ext == 'io'
       timeout += 1 if ext == 'erl'
       timeout += 1 if ext == 'r'
-      timeout += 1 if ext == 'pl6'
+      timeout += 7 if ext == 'pl6'
       timeout += 4 if ext == 'exe'
       timeout += 3 if ext == 'groovy'
       timeout += 9 if ext == 'scala'
