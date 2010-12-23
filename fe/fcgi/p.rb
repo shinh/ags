@@ -3,12 +3,12 @@ require 'handler'
 class P < Handler
   def show_input(i,c)
     puts tag('h2', 'Sample input:'+a("#test#{c}",'_',"test#{c}"))
-    puts i == '' ? tag('p', '*NOTHING*') : tag('pre', CGI.escapeHTML(i))
+    puts i == '' ? tag('p', '*NOTHING*') : tag('pre', "\n" + CGI.escapeHTML(i))
   end
 
   def show_output(o)
     puts tag('h2', 'Sample output:')
-    puts tag('pre', CGI.escapeHTML(o))
+    puts tag('pre', "\n" + CGI.escapeHTML(o))
   end
 
   def handle_
