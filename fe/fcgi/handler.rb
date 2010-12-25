@@ -295,7 +295,7 @@ class Handler
 
   def mircbot(msg)
     begin
-      sock = TCPSocket.new('192.168.11.2',9999)
+      sock = TCPSocket.new('localhost',9999)
       sock.print(msg)
       sock.close
     rescue
