@@ -41,14 +41,15 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
         active_problems << [d, p, i]
       elsif d && d < now && d > now - 60 * 60 * 24 * 14
         hot_post_mortems << [d, p, i]
-      elsif !active_problems.empty?
-        recent_problems << [d, p, i]
+      #elsif !active_problems.empty?
+      #  recent_problems << [d, p, i]
       elsif d == 0
         endless_problems << [d, p, i]
       end
     end
-    while recent_problems.size < 3
-      recent_problems.push(endless_problems.pop)
+
+    while active_problems.size < 3
+      active_problems.push(endless_problems.pop)
     end
 
     if !active_problems.empty?
@@ -71,14 +72,14 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
       puts '</ul>'
     end
 
-    if !recent_problems.empty?
+    #if !recent_problems.empty?
       puts '<h2>Recent endless problems</h2><ul>'
-      recent_problems.each do |d, x, i|
+      endless_problems[-5..-1].each do |d, x, i|
         puts tag('li',
                  "#{i}. " + a(problem_url(x), x))
       end
       puts '</ul>'
-    end
+    #end
 
     puts '<h2>Some links</h2>'
     puts a('all.rb', 'The list of all problems')
