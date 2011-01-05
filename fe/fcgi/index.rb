@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>There were two directories where we can write permanent files and one of this was used in http://golf.shinh.org/p.rb?27c3_Generate+C . I've already fixed the permission of this directory and removed the entries. Thanks 27c3 guys for finding this issue!
 <li>I removed <a href="http://golf.shinh.org/p.rb?Sokoban">Sokoban challenge</a> by mistake but it recovered now. Sorry for inconvenience.
 <li>Updated the version of Perl6. Now it uses rakudo-star-2010.07.
 <li>Added <a href="http://en.wikipedia.org/wiki/Dc_(Unix)">dc</a>. I also added BC_LINE_LENGTH=9999 environment variable for bc so it can solve more problems. Thanks Carlos for these suggestions!
