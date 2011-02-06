@@ -43,7 +43,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
         hot_post_mortems << [d, p, i]
       #elsif !active_problems.empty?
       #  recent_problems << [d, p, i]
-      elsif d == 0
+      elsif !d || d == 0
         endless_problems << [d, p, i]
       end
     end
@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>I've just removed <a href="http://golf.shinh.org/p.rb?Just+random+data">Just random data</a> from the list as it seems this problems is a copy of <a href="http://www.spoj.pl/SHORTEN/problems/MONS/">SPOJ's MONS</a> and people don't like this problem so much. Also, I made <a href="http://golf.shinh.org/p.rb?Yin+Yang">Yin Yang</a> endless because SPOJ also has the same challenge. Please refrain from copying problems from SPOJ.
 <li>There were two directories where we can write permanent files and one of this was used in http://golf.shinh.org/p.rb?27c3_Generate+C . I've already fixed the permission of this directory and removed the entries. Thanks 27c3 guys for finding this issue!
 <li>I removed <a href="http://golf.shinh.org/p.rb?Sokoban">Sokoban challenge</a> by mistake but it recovered now. Sorry for inconvenience.
 <li>Updated the version of Perl6. Now it uses rakudo-star-2010.07.
