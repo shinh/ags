@@ -229,7 +229,8 @@ class Submit < Handler
             (ext != 'class' || execnt > 5) &&
             (ext != 'com' || execnt > 26) &&
             (ext != 'max' || execnt > 12) &&
-            (ext != 'groovy' || execnt > 3))
+            (ext != 'groovy' || execnt > 3) &&
+            (ext != 'scala' || execnt > 4))
           puts tag('p', "exec is denied! (#{execnt})")
           failed = true
         elsif execnt == -1
