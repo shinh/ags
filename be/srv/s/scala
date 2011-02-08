@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /golf/local/scala-2.7.0-RC2/bin/scala $1
+exec scala $1
