@@ -326,7 +326,7 @@ while true
       timeout += 7 if ext == 'pl6'
       timeout += 4 if ext == 'exe'
       timeout += 3 if ext == 'groovy'
-      timeout += 9 if ext == 'scala'
+      timeout += 3 if ext == 'scala'
       timeout += 4 if ext == 'arc'
 
       payload = run(cmd, i, timeout)
