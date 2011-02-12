@@ -54,10 +54,10 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
 
     if !active_problems.empty?
       puts '<h2>Active problems</h2><ul>'
-      active_problems.sort_by{|d,x,i|[d,i,x]}.each do |d, x, i|
+      active_problems.sort_by{|d,x,i|[d || 2**33,i,x]}.each do |d, x, i|
+        time_str = d ? " #{time_diff(d-now)} left (#{Time.at(d).strftime('%m/%d %H:%M:%S JST')})" : " (endless)"
         puts tag('li',
-                 "#{i}. " + a(problem_url(x), x) +
-                 " #{time_diff(d-now)} left (#{Time.at(d).strftime('%m/%d %H:%M:%S JST')})")
+                 "#{i}. " + a(problem_url(x), x) + time_str)
       end
       puts '</ul>'
     end
