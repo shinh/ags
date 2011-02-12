@@ -48,9 +48,9 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
       end
     end
 
-    while active_problems.size < 3
-      active_problems.push(endless_problems.pop)
-    end
+    #while active_problems.size < 3
+    #  active_problems.push(endless_problems.pop)
+    #end
 
     if !active_problems.empty?
       puts '<h2>Active problems</h2><ul>'
