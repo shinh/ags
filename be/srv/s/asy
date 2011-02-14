@@ -1,2 +1,2 @@
 #!/bin/sh
-exec asy -q $1
+exec asy -nosafe -q $1
