@@ -105,6 +105,8 @@ LANGS = {
   'bc' => [apt['bc']],
   'wake' => ['http://shinh.skr.jp/wake/',
             'We are using the C++ implementation.'],
+  'dc' => [apt['dc']],
+  'scala' => [apt['scala']],
 }
 
 LANGS.each do |l, info|
