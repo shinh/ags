@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Due to <a href="http://en.wikipedia.org/wiki/2011_Sendai_earthquake_and_tsunami">the big earthquake</a>, we will have planned power outages several times. I think this site may be down occasionally. Sorry for inconvenience. Update: they say the power company is planning not to stop power for my area. So, maybe this site won't be down.
 <li>Added scala, finally. Thanks for folks who suggested this language to me.
 <li>I've just removed <a href="http://golf.shinh.org/p.rb?Just+random+data">Just random data</a> from the list as it seems this problems is a copy of <a href="http://www.spoj.pl/SHORTEN/problems/MONS/">SPOJ's MONS</a> and people don't like this problem so much. Also, I made <a href="http://golf.shinh.org/p.rb?Yin+Yang">Yin Yang</a> endless because SPOJ also has the same challenge. Please refrain from copying problems from SPOJ.
 <li>There were two directories where we can write permanent files and one of this was used in http://golf.shinh.org/p.rb?27c3_Generate+C . I've already fixed the permission of this directory and removed the entries. Thanks 27c3 guys for finding this issue!
