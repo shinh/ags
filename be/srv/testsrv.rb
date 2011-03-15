@@ -104,13 +104,10 @@ def run(exe, i = nil, timeout = 60)
     exit 1
   end
 
-  if i && i.size > 0
-    begin
-      stdin.print(i)
-    rescue
-    end
+  if !i || i.empty?
+    i = ''
+    stdin.close
   end
-  stdin.close
 
   start = Time.now
 
@@ -122,9 +119,22 @@ def run(exe, i = nil, timeout = 60)
     if eof
       sleep 0.01
     else
-      sel = IO.select([stdout, stderr], nil, nil, 0.01)
-      if sel
-        sel = sel[0]
+      sel_all = IO.select([stdout, stderr], i.empty? ? [] : [stdin], nil, 0.01)
+      if sel_all
+        sel = sel_all[1]
+        if sel[0]
+          begin
+            wb = stdin.write(i)
+            i = i[wb..-1]
+            if i.empty?
+              stdin.close
+            end
+          rescue
+            p $!
+          end
+        end
+
+        sel = sel_all[0]
         begin
           if sel.include?(stdout)
             o += stdout.sysread(100000)
