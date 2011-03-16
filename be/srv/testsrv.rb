@@ -1,3 +1,4 @@
+require 'io/nonblock'
 require 'socket'
 require 'open4'
 
@@ -103,6 +104,9 @@ def run(exe, i = nil, timeout = 60)
   rescue
     exit 1
   end
+  stdin.nonblock = true
+  stdout.nonblock = true
+  stderr.nonblock = true
 
   if !i || i.empty?
     i = ''
@@ -124,7 +128,7 @@ def run(exe, i = nil, timeout = 60)
         sel = sel_all[1]
         if sel[0]
           begin
-            wb = stdin.write(i)
+            wb = stdin.write(i[0,4096])
             i = i[wb..-1]
             if i.empty?
               stdin.close
@@ -137,13 +141,14 @@ def run(exe, i = nil, timeout = 60)
         sel = sel_all[0]
         begin
           if sel.include?(stdout)
-            o += stdout.sysread(100000)
+            o += stdout.readpartial(4096)
             if o.size > 1000000
               eof = true
             end
+            eof = true if stdout.eof?
           end
           if sel.include?(stderr)
-            e += stderr.sysread(100000)
+            e += stderr.readpartial(4096)
             if e.size > 1000000
               eof = true
             end
