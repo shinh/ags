@@ -108,7 +108,7 @@ LANGS = {
   'dc' => [apt['dc']],
   'scala' => [apt['scala']],
   'logo' => [apt['ucblogo']],
-  'oct' => [apt['octave']],
+  'oct' => [apt['octave3.2']],
 }
 
 LANGS.each do |l, info|
