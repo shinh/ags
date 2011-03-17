@@ -112,6 +112,7 @@ def run(exe, i = nil, timeout = 60)
     i = ''
     stdin.close
   end
+  ii = 0
 
   start = Time.now
 
@@ -123,14 +124,14 @@ def run(exe, i = nil, timeout = 60)
     if eof
       sleep 0.01
     else
-      sel_all = IO.select([stdout, stderr], i.empty? ? [] : [stdin], nil, 0.01)
+      sel_all = IO.select([stdout, stderr], i[ii] ? [stdin] : [], nil, 0.01)
       if sel_all
         sel = sel_all[1]
         if sel[0]
           begin
-            wb = stdin.write(i[0,4096])
-            i = i[wb..-1]
-            if i.empty?
+            wb = stdin.write_nonblock(i[ii,65536])
+            ii += wb
+            if !i[ii]
               stdin.close
             end
           rescue
@@ -141,14 +142,14 @@ def run(exe, i = nil, timeout = 60)
         sel = sel_all[0]
         begin
           if sel.include?(stdout)
-            o += stdout.readpartial(4096)
+            o += stdout.readpartial(65536)
             if o.size > 1000000
               eof = true
             end
             eof = true if stdout.eof?
           end
           if sel.include?(stderr)
-            e += stderr.readpartial(4096)
+            e += stderr.readpartial(65536)
             if e.size > 1000000
               eof = true
             end
