@@ -147,7 +147,7 @@ class Handler
      'bf','ws','bef', 'pef', 'ms', 'gs', 'flog', 'nand',
      'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
      's','out','z8b','com','class','vi','grb',
-     'groovy', 'scala'
+     'groovy', 'scala', 'logo',
     ]
   end
   def file_langs
@@ -166,7 +166,7 @@ class Handler
      'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript', 'FlogScript', 'FerNANDo',
      'Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
      'gas','x86','z80','DOS','JVM','vi','goruby',
-     'Groovy', 'Scala'
+     'Groovy', 'Scala', 'Logo',
     ]
   end
 
