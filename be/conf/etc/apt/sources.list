@@ -12,6 +12,10 @@ deb-src http://ftp.us.debian.org/debian/     testing main contrib non-free
 deb     http://ftp.us.debian.org/debian/     lenny main contrib non-free
 deb-src http://ftp.us.debian.org/debian/     lenny main contrib non-free
 
+# unstable
+deb     http://ftp.us.debian.org/debian/     unstable main contrib non-free
+deb-src http://ftp.us.debian.org/debian/     unstable main contrib non-free
+
 # 
 #  Security updates
 # 

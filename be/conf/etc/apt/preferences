@@ -1,0 +1,13 @@
+Package: *
+Pin: release a=testing
+Pin-Priority: 700 
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 600 
+
+Package: *
+Pin: release a=lenny
+Pin-Priority: 500 
+
+

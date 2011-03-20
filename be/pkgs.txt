@@ -8,7 +8,7 @@ ruby
 perl
 python
 php5-cli
-gauche
+-t unstable gauche
 clisp
 spidermonkey-bin
 lua5.1
