@@ -44,7 +44,7 @@ end
 class Handler
   @@serv = '192.168.36.2'
   @@port = 9999
-  @@maintenance = false
+  @@maintenance = File.exist?('maintenance')
 
   @@eol = "\r\n"
 
