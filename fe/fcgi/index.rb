@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added octave and ucblogo. Updated the version of scala (2.8.1) and gauche (0.9.1). Thanks KirarinSnow, gengar68, and m_satyr for these suggestions!
 <li>Due to <a href="http://en.wikipedia.org/wiki/2011_Sendai_earthquake_and_tsunami">the big earthquake</a>, we will have planned power outages several times. I think this site may be down occasionally. Sorry for inconvenience. Update: they say the power company is planning not to stop power for my area. So, maybe this site won't be down.
 <li>Added scala, finally. Thanks for folks who suggested this language to me.
 <li>I've just removed <a href="http://golf.shinh.org/p.rb?Just+random+data">Just random data</a> from the list as it seems this problems is a copy of <a href="http://www.spoj.pl/SHORTEN/problems/MONS/">SPOJ's MONS</a> and people don't like this problem so much. Also, I made <a href="http://golf.shinh.org/p.rb?Yin+Yang">Yin Yang</a> endless because SPOJ also has the same challenge. Please refrain from copying problems from SPOJ.
