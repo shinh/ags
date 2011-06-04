@@ -63,12 +63,13 @@ class Handler
     @e = req.env
     @headered = nil
 
-    #if @e['SERVER_NAME'] != 'golf.shinh.org'
-    if false
+    if @e['SERVER_NAME'] == 'www.shinh.org'
+    #if false
       print "Status Code: 301 Moved Permanently\r\n"
       l = @e['REQUEST_URI']
       print "Location: #{root_url}#{l}\r\n"
       print "\r\n"
+      @req.finish
       return
     end
 

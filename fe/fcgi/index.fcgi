@@ -21,7 +21,7 @@ end
 FCGI.each do |req|
   o = req.out
   e = req.env
-  s = req.env['SCRIPT_NAME']
+  s = e['SCRIPT_NAME']
 
   begin
     s = s[/\/(.*)/,1]
