@@ -1,4 +1,4 @@
 #!/bin/sh
-export LD_PRELOAD=$LD_PRELOAD:/lib/libSegFault.so
+export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/libSegFault.so
 export LANG=C
 exec ./a.out
