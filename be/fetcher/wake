@@ -3,6 +3,6 @@
 cd /golf/local
 rm -fr wake.tgz wake
 wget http://shinh.skr.jp/wake/wake.tgz
-tar -xvzf wake/wake.tgz
+tar -xvzf wake.tgz
 cd wake
 make
