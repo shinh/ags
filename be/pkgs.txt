@@ -5,6 +5,7 @@ g++
 gobjc++
 gfortran
 ruby
+ruby1.9.1
 perl
 python
 php5-cli
