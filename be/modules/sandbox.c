@@ -29,6 +29,7 @@ DECLARE_HOOK_32(setfsgid)
 
 #else
 
+#include <asm/cacheflush.h>
 #include <asm/unistd_32.h>
 #include <linux/in.h>
 #include <linux/init.h>
@@ -271,8 +272,15 @@ DEFINE_HOOK(setpriority, (int which, int who, int prio)) {
     return orig_setpriority(which, who, prio);
 }
 
+void set_addr_rw(unsigned long addr) {
+    unsigned int level;
+    pte_t *pte = lookup_address(addr, &level);
+
+    if (pte->pte &~ _PAGE_RW) pte->pte |= _PAGE_RW;
+}
+
 int sandbox_init(void) {
-    printk(KERN_INFO "sandbox_init called !\n");
+    set_addr_rw((unsigned long)SYS_CALL_TABLE);
 
 #define DECLARE_HOOK(syscall)                               \
     syscall ## _cnt = 0;                                    \
@@ -280,6 +288,8 @@ int sandbox_init(void) {
     SYS_CALL_TABLE[__NR_ ## syscall] = hook_ ## syscall;
 #include "sandbox.c"
 #undef DECLARE_HOOK
+
+    printk(KERN_INFO "sandbox_init called !\n");
 
     return 0;
 }
