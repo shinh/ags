@@ -1,2 +1,3 @@
 #!/bin/sh
+ln -s /usr/lib/i386-linux-gnu/crt*.o .
 gpc -g -O $1
