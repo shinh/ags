@@ -44,12 +44,12 @@ DECLARE_HOOK_32(setfsgid)
 
 MODULE_LICENSE("GPL");
 
-// grep sys_call_table /boot/System.map-2.6.26-2-xen-686
-#define SYS_CALL_TABLE ((void**)0xc02d355c)
+// grep sys_call_table /boot/System.map-2.6.32-5-xen-686
+#define SYS_CALL_TABLE ((void**)0xc1295348)
 
-#define PID_MAX ((int*)0xc035df8c)
-#define PID_MAX_MIN ((int*)0xc035df90)
-#define PID_MAX_MAX ((int*)0xc035df94)
+#define PID_MAX ((int*)0xc13d47bc)
+#define PID_MAX_MIN ((int*)0xc13d47c0)
+#define PID_MAX_MAX ((int*)0xc13d47c4)
 
 #define GOLF_USER 1000
 #define MAX_SOCK_ADDR 128
@@ -63,7 +63,7 @@ MODULE_LICENSE("GPL");
     asmlinkage int (*orig_ ## name) args ;      \
     asmlinkage static int hook_ ## name args
 
-#define IS_NOT_ROOT current->uid != 0 /* || current->euid != 0 */
+#define IS_NOT_ROOT current->real_cred->uid != 0 /* || current->euid != 0 */
 
 #define NUM_ALLOWED_FORK 2000
 
