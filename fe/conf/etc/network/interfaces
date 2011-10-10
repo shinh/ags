@@ -1,0 +1,30 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+#allow-hotplug eth0
+auto xenbr1
+iface xenbr1 inet static
+        bridge_ports eth0
+	address 49.212.93.182
+	netmask 255.255.254.0
+	network 49.212.92.0
+	broadcast 49.212.93.255
+	gateway 49.212.92.1
+	# dns-* options are implemented by the resolvconf package, if installed
+	dns-nameservers 210.188.224.11
+	dns-search sakura.ne.jp
+
+auto xenbr0
+iface xenbr0 inet static
+        bridge_ports eth0:1
+	address 192.168.36.1
+	netmask 255.255.255.0
+	network 192.168.36.0
+	broadcast 192.168.36.255
+
+post-up /usr/sbin/ethtool -K eth0 tso off

@@ -1,16 +1,21 @@
-# deb http://ftp.jp.debian.org/debian/ lenny main
+# 
 
-#deb http://ftp.jp.debian.org/debian/ testing main contrib non-free
-#deb-src http://ftp.jp.debian.org/debian/ testing main contrib non-free
+# deb cdrom:[Debian GNU/Linux 6.0.1a _Squeeze_ - Official i386 NETINST Binary-1 20110320-15:03]/ squeeze main
 
-deb http://ftp.jp.debian.org/debian/ lenny main contrib non-free
-deb-src http://ftp.jp.debian.org/debian/ lenny main contrib non-free
+#deb cdrom:[Debian GNU/Linux 6.0.1a _Squeeze_ - Official i386 NETINST Binary-1 20110320-15:03]/ squeeze main
 
-#deb http://ftp.jp.debian.org/debian/ unstable main contrib non-free
-#deb-src http://ftp.jp.debian.org/debian/ unstable main contrib non-free
+deb http://ftp.jp.debian.org/debian squeeze main
+deb-src http://ftp.jp.debian.org/debian squeeze main
 
-#deb http://security.debian.org/ testing/updates main contrib
-#deb-src http://security.debian.org/ testing/updates main contrib
+deb http://security.debian.org/ squeeze/updates main
+deb-src http://security.debian.org/ squeeze/updates main
 
-deb http://volatile.debian.org/debian-volatile lenny/volatile main
-deb-src http://volatile.debian.org/debian-volatile lenny/volatile main
+deb http://ftp.jp.debian.org/debian testing main
+deb-src http://ftp.jp.debian.org/debian testing main
+
+deb http://security.debian.org/ testing/updates main
+deb-src http://security.debian.org/ testing/updates main
+
+# squeeze-updates, previously known as 'volatile'
+deb http://ftp.jp.debian.org/debian squeeze-updates main
+deb-src http://ftp.jp.debian.org/debian squeeze-updates main
