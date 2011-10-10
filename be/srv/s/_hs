@@ -1,2 +1,2 @@
 #!/bin/sh
-ghc -O $1
+ghc -O $1 -o a.out
