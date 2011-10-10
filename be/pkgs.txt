@@ -12,7 +12,7 @@ php5-cli
 clisp
 spidermonkey-bin
 lua5.1
-tcl8.5
+tcl
 gnu-smalltalk
 swi-prolog
 gforth
@@ -36,15 +36,15 @@ dosemu
 vim
 groovy
 wine
-mzscheme
+plt-scheme
 git-core
 subversion
 scala
 strace
-libopen4-ruby1.9
+libopen4-ruby1.9.1
 libopen4-ruby1.8
 aplus-fsf
-linux-headers-2.6.26-2-xen-686
+linux-headers-2.6.32-5-xen-686
 libmpfr-dev
 libstdc++5
 libgc-dev
