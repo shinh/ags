@@ -15,6 +15,9 @@ chown -R root:root /golf/*
 chown -R golf:golf /golf/test
 chmod +s /golf/remount
 
+# for dosemu
+sysctl -w vm.mmap_min_addr=0
+
 insmod /root/ags/be/modules/sandbox.ko
 sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
 

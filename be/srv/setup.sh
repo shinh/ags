@@ -1,5 +1,8 @@
 #!/bin/sh -x
 
+# for dosemu
+mkdir -p /media/CDROM
+
 rm -rf /tmp
 ln -s /dev/shm /tmp
 
