@@ -1,13 +1,15 @@
 Package: *
 Pin: release a=testing
-Pin-Priority: 700 
+Pin-Priority: 700
 
 Package: *
 Pin: release a=unstable
-Pin-Priority: 600 
+Pin-Priority: 600
+
+Package: *
+Pin: release a=stable
+Pin-Priority: 500
 
 Package: *
 Pin: release a=lenny
-Pin-Priority: 500 
-
-
+Pin-Priority: 400
