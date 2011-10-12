@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+cp fetcher/dmd2.patch /golf/local
+
 cd /golf/local
 # We intentionally avoid the newest version because it doesn't have printf.
 #DMD=dmd.2.032.zip
@@ -18,3 +20,5 @@ rm -fr t
 #chmod 755 dmd2/linux/bin/dmd
 chmod 755 dmd2/bin/dmd
 
+cd dmd2
+patch -p1 < ../dmd2.patch

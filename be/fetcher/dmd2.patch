@@ -1,0 +1,24 @@
+diff -ur dmd2-old/src/phobos/std/conv.d dmd2/src/phobos/std/conv.d
+--- dmd2-old/src/phobos/std/conv.d	2011-10-12 12:38:19.000000000 +0900
++++ dmd2/src/phobos/std/conv.d	2011-10-12 12:38:28.000000000 +0900
+@@ -1505,7 +1505,7 @@
+ 
+     // min and max
+     d = toDouble("2.22507e-308");
+-    assert(feq(cast(real)d, cast(real)2.22507e-308));
++    assert(feq(cast(real)d, cast(real)2.22507e-308L));
+     assert(feq(cast(real)d, cast(real)double.min));
+     d = toDouble("1.79769e+308");
+     assert(toString(d) == toString(1.79769e+308));
+diff -ur dmd2-old/src/phobos/std/math.d dmd2/src/phobos/std/math.d
+--- dmd2-old/src/phobos/std/math.d	2011-10-12 12:38:19.000000000 +0900
++++ dmd2/src/phobos/std/math.d	2011-10-12 12:38:36.000000000 +0900
+@@ -961,7 +961,7 @@
+    static if (real.mant_dig == 64) {
+      static real extendedvals[][3] = [ // x,frexp,exp
+         [0x1.a5f1c2eb3fe4efp+73, 0x1.A5F1C2EB3FE4EFp-1,   74],    // normal
+-        [0x1.fa01712e8f0471ap-1064,  0x1.fa01712e8f0471ap-1,     -1063],
++        [0x1.fa01712e8f0471ap-1064L,  0x1.fa01712e8f0471ap-1,     -1063],
+         [real.min,  .5,     -16381],
+         [real.min/2.0L, .5,     -16382]    // denormal
+      ];
