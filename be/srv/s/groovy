@@ -1,6 +1,6 @@
 #!/bin/sh
 #export JAVACMD=java
-#exec groovy $1
+exec groovy $1
 
 #CP=`echo /usr/share/groovy/lib/* | sed 's/ /:/g'`
 #echo $CP
