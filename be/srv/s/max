@@ -1,2 +1,2 @@
 #!/bin/sh
-exec maxima --very-quiet -r 'load("'"$1"'")$'
+exec maxima --very-quiet -r 'batchload("'"$1"'")$'
