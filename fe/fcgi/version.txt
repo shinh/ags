@@ -1,66 +1,66 @@
 flog <a href="http://esolangs.org/wiki/FlogScript">http://esolangs.org/wiki/FlogScript</a>
 mind Mind Version 7 for UNIX mind7u06.tar.gz (<a href="http://www.scripts-lab.co.jp/mind/whatsmind.html">http://www.scripts-lab.co.jp/mind/whatsmind.html</a>)
 lamb <a href="http://www.golfscript.com/lam/">http://www.golfscript.com/lam/</a><br>Universal Lambda is proposed by flagitious. We are using <a href="http://kiritanpo.dyndns.org/clamb.c">the C interpreter written by irori</a>.
-oct Debian package: octave3.2-3.2.4-8 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
-cob Debian package: open-cobol-1.0-4 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
+oct Debian package: octave3.2-3.2.4-12 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
+cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
 clj Clojure 1.1.0 with clojure-contrib 1.1.0 (<a href="http://code.google.com/p/clojure/downloads/list">http://code.google.com/p/clojure/downloads/list</a>)
-groovy Debian package: groovy-1.6.3-1 (<a href="http://groovy.codehaus.org/">http://groovy.codehaus.org/</a>)
-a+ Debian package: aplus-fsf-4.22.1-1
-for Debian package: gforth-0.7.0+ds1-5 (<a href="http://www.complang.tuwien.ac.at/projects/forth.html">http://www.complang.tuwien.ac.at/projects/forth.html</a>)
-erl Debian package: erlang-13.b.1-dfsg-6 (<a href="http://www.erlang.org/">http://www.erlang.org/</a>)
+groovy Debian package: groovy-1.8.2-1 (<a href="http://groovy.codehaus.org/">http://groovy.codehaus.org/</a>)
+a+ Debian package: aplus-fsf-4.22.1-4
+for Debian package: gforth-0.7.0+ds1-6 (<a href="http://www.complang.tuwien.ac.at/projects/forth.html">http://www.complang.tuwien.ac.at/projects/forth.html</a>)
+erl Debian package: erlang-14.b.3-dfsg-2 (<a href="http://www.erlang.org/">http://www.erlang.org/</a>)
 unl <a href="http://www.madore.org/~david/programs/unlambda/">http://www.madore.org/~david/programs/unlambda/</a><br>We are using <a href="http://www.math.cas.cz/~jerabek/unlambda/unl.c">the C interpreter</a> written by Emil Jerabek.
-asy Debian package: asymptote-1.88-2 (<a href="http://asymptote.sourceforge.net/">http://asymptote.sourceforge.net/</a>)
-vhdl Debian package: ghdl-0.27+svn110+gcc4.3.3+dfsg-1 (<a href="http://ghdl.free.fr">http://ghdl.free.fr</a>)
-rb Debian package: ruby1.8-1.8.7.174-2 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
-ps Debian package: ghostscript-8.70~dfsg-2 (<a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a>)
-pas Debian package: gpc-2.1-4.1.2-37
+asy Debian package: asymptote-2.13-2 (<a href="http://asymptote.sourceforge.net/">http://asymptote.sourceforge.net/</a>)
+vhdl Debian package: ghdl-0.29+gcc4.3.4+dfsg-1+b2 (<a href="http://ghdl.free.fr">http://ghdl.free.fr</a>)
+rb Debian package: ruby1.8-1.8.7.352-2 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
+ps Debian package: ghostscript-9.02~dfsg-3 (<a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a>)
+pas Debian package: gpc-2.1-4.1.2-46
 wake <a href="http://shinh.skr.jp/wake/">http://shinh.skr.jp/wake/</a><br>We are using the C++ implementation.
-r Debian package: r-base-2.9.2-1 (<a href="http://www.r-project.org/">http://www.r-project.org/</a>)
+r Debian package: r-base-2.13.1-1 (<a href="http://www.r-project.org/">http://www.r-project.org/</a>)
 reb rebol-276 (<a href="http://www.rebol.com/">http://www.rebol.com/</a>)
-s Debian package: binutils-2.20.1-16
+s Debian package: binutils-2.21.52.20110606-2
 awk Debian package: mawk-1.3.3-15
-max Debian package: maxima-5.17.1-1
-php Debian package: php5-cli-5.2.10.dfsg.1-2.2 (<a href="http://www.php.net/">http://www.php.net/</a>)
-scala Debian package: scala-2.8.1.dfsg-1 (<a href="http://www.scala-lang.org/">http://www.scala-lang.org/</a>)
-js Debian package: spidermonkey-bin-1.9.0.13-0lenny1 (<a href="http://www.mozilla.org/js/">http://www.mozilla.org/js/</a>)
-ml Debian package: ocaml-3.11.1-2 (<a href="http://caml.inria.fr/">http://caml.inria.fr/</a>)
-m4 Debian package: m4-1.4.13-2
+max Debian package: maxima-5.24.0-1
+php Debian package: php5-cli-5.3.8-2 (<a href="http://www.php.net/">http://www.php.net/</a>)
+scala Debian package: scala-2.9.1.dfsg-1 (<a href="http://www.scala-lang.org/">http://www.scala-lang.org/</a>)
+js Debian package: spidermonkey-bin-7.0.1-2 (<a href="http://www.mozilla.org/js/">http://www.mozilla.org/js/</a>)
+ml Debian package: ocaml-3.12.0-7 (<a href="http://caml.inria.fr/">http://caml.inria.fr/</a>)
+m4 Debian package: m4-1.4.16-2 (<a href="http://www.gnu.org/software/m4/">http://www.gnu.org/software/m4/</a>)
 pef <a href="http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge">http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge</a><br>Pefunge is an esoteric language proposed by mame. There is only Japanese documentation about this language. <a href="http://dame.dyndns.org/misc/pefunge/2dpi.rb">The reference implementation</a>.
 lmn lmntal-20080828 (<a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal</a>)
 cy cyan-1.0.3.tgz (<a href="http://www.geocities.jp/takt0_h/cyan/index.html">http://www.geocities.jp/takt0_h/cyan/index.html</a>)
-bas Debian package: yabasic-2.763-5
-sed Debian package: sed-4.2.1-3 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
+bas Debian package: yabasic-2.763-4
+sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
 wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
-cpp Debian package: g++-4.3.3-9
-lua Debian package: lua5.1-5.1.4-3 (<a href="http://www.lua.org">http://www.lua.org</a>)
-f95 Debian package: gfortran-4.3.3-9
-hs Debian package: ghc6-6.8.2dfsg1-1
-vi Debian package: vim-7.2.245-2 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
+cpp Debian package: g++-4.6.1-2
+lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
+f95 Debian package: gfortran-4.6.1-2
+hs Debian package: ghc-7.0.4-6 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
+vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://www.mokehehe.com/z80golf/">http://www.mokehehe.com/z80golf/</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
 ws <a href="http://compsoc.dur.ac.uk/whitespace/">http://compsoc.dur.ac.uk/whitespace/</a><br>We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.
-c Debian package: gcc-4.3.3-9
+c Debian package: gcc-4.6.1-2
 lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cwi.nl/~tromp/cl/lazy-k.html</a><br>We are using <a href="http://kiritanpo.dyndns.org/lazyk.c">the C interpreter</a> written by irori.
-py Debian package: python-2.5.4-2
+py Debian package: python-2.7.2-8 (<a href="http://www.python.org/">http://www.python.org/</a>)
 arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 dc Debian package: dc-1.06.95-2
-zsh Debian package: zsh-4.3.10-9 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
-out Linux 2.6.26-2-xen-686 #1 SMP Wed Aug 19 08:47:57 UTC 2009 i686 GNU/Linux
+zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
+out Linux 2.6.32-5-xen-686 #1 SMP Mon Oct 3 09:00:14 UTC 2011 i686 GNU/Linux
 bef <a href="http://catseye.tc/projects/bef/">http://catseye.tc/projects/bef/</a><br>We are using <a href="http://catseye.tc/projects/bef-2.21.zip">the reference implementation</a>.
-ly Debian package: lilypond-2.12.2-1 (<a href="http://lilypond.org/">http://lilypond.org/</a>)
-class Debian package: sun-java6-jre-6-16-1 (<a href="http://java.sun.com/javase/">http://java.sun.com/javase/</a>)
+ly Debian package: lilypond-2.14.2-2 (<a href="http://lilypond.org/">http://lilypond.org/</a>)
+class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
-st Debian package: gnu-smalltalk-3.0.3-2 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
+st Debian package: gnu-smalltalk-3.2.4-1 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
 logo Debian package: ucblogo-5.5-2.1
 bc Debian package: bc-1.06.95-2
 go go changeset-4015:cb140bac9ab0 Nov 12 14:55:26 2009 -0800 (<a href="http://golang.org/">http://golang.org/</a>)
 grb ruby 1.9.1p243 (2009-07-16 revision 24175) (<a href="http://ruby-lang.org/">http://ruby-lang.org/</a>)
-com Debian package: dosemu-1.4.0+svn.1828-3 (<a href="http://www.dosemu.org/">http://www.dosemu.org/</a>)
-pl Debian package: perl-5.10.1-17
+com Debian package: dosemu-1.4.0+svn.2010-1 (<a href="http://www.dosemu.org/">http://www.dosemu.org/</a>)
+pl Debian package: perl-5.12.4-4
 ms <a href="http://www.golfscript.com/minus/">http://www.golfscript.com/minus/</a><br>Minus is an esoteric language, with only 1 instruction operator, invented by flagitious.
-java Debian package: sun-java6-jdk-6-16-1 (<a href="http://java.sun.com/javase/">http://java.sun.com/javase/</a>)
+java Debian package: sun-java6-jdk-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 qcl qcl-0.6.3 (<a href="http://tph.tuwien.ac.at/~oemer/qcl.html">http://tph.tuwien.ac.at/~oemer/qcl.html</a>)
-adb Debian package: gnat-4.3.3-9
+adb Debian package: gnat-4.4+1.1 (<a href="http://gcc.gnu.org">http://gcc.gnu.org</a>)
 fish Debian package: fish-1.23.1-2 (<a href="http://fishshell.org/">http://fishshell.org/</a>)
 kt This is kite, version 1.0.3 (<a href="http://www.kite-language.org/">http://www.kite-language.org/</a>)
 xgawk Extensible GNU Awk 3.1.6 (build 20080101) with dynamic loading, and with statically-linked extensions (<a href="http://sourceforge.net/projects/xmlgawk">http://sourceforge.net/projects/xmlgawk</a>)
@@ -68,16 +68,16 @@ bf <a href="http://en.wikipedia.org/wiki/Brainfuck">http://en.wikipedia.org/wiki
 grass <a href="http://www.blue.sky.or.jp/grass/">http://www.blue.sky.or.jp/grass/</a><br>We are using <a href="http://panathenaia.halfmoon.jp/alang/grass/grass.ml">the OCaml interpreter</a> written by YT.
 curry cyc version 0.9.11 (built on Mon Jun 11 10:35:49 CEST 2007) (<a href="http://www.curry-language.org/">http://www.curry-language.org/</a>)
 scm Debian package: gauche-0.9.1-5 (<a href="http://practical-scheme.net/gauche/">http://practical-scheme.net/gauche/</a>)
-tcl Debian package: tcl8.5-8.5.7-1 (<a href="http://www.tcl.tk/">http://www.tcl.tk/</a>)
+tcl Debian package: tcl8.5-8.5.10-1 (<a href="http://www.tcl.tk/">http://www.tcl.tk/</a>)
 xtal xtal 0.9.7.0 (<a href="http://code.google.com/p/xtal-language/">http://code.google.com/p/xtal-language/</a>)
-l Debian package: clisp-2.44.1-4.1 (<a href="http://www.clisp.org/">http://www.clisp.org/</a>)
+l Debian package: clisp-2.49-8 (<a href="http://www.clisp.org/">http://www.clisp.org/</a>)
 gs <a href="http://www.golfscript.com/golfscript/">http://www.golfscript.com/golfscript/</a><br>GolfScript is a stack oriented esoteric language invented by flagitious.
-sh Debian package: bash-4.0-4
+sh Debian package: bash-4.1-3 (<a href="http://tiswww.case.edu/php/chet/bash/bashtop.html">http://tiswww.case.edu/php/chet/bash/bashtop.html</a>)
 nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNANDo</a><br>We are using the Haskell implementation.
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
-pro Debian package: swi-prolog-5.6.64-3 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
-m Debian package: gobjc-4.3.3-9
+pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
+m Debian package: gobjc-4.6.1-2
 ijs j602 (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
-cs Debian package: mono-gmcs-2.4.2.3+dfsg-2 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
+cs Debian package: mono-gmcs-2.6.7-5 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
 pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="http://github.com/downloads/rakudo/star/rakudo-star-2010.07.tar.gz">this version</a>.
-n Debian package: nemerle-0.9.3+dfsg-3 (<a href="http://nemerle.org">http://nemerle.org</a>)
+n Debian package: nemerle-0.9.3+dfsg-2
