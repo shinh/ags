@@ -123,6 +123,7 @@ Intel(R) Core(TM)2 CPU T5600 @ 1.83GHz => Intel(R) Core(TM)2 Duo CPU T7700 @ 2.4
 1GB/256MB => 1GB/256MB (web server / execution server)
 </pre>
 I've upgraded several languages, and fixed a few broken languages (e.g., com).
+You can see which languages were updated by <a href="https://github.com/shinh/ags/commit/457ca23a274aa07db74c479ab25dc4a51cbac9c7">this github commit</a>.
 Please let me know if you see some issues.
 <li>Added octave and ucblogo. Updated the version of scala (2.8.1) and gauche (0.9.1). Thanks KirarinSnow, gengar68, and m_satyr for these suggestions!
 <li>Due to <a href="http://en.wikipedia.org/wiki/2011_Sendai_earthquake_and_tsunami">the big earthquake</a>, we will have planned power outages several times. I think this site may be down occasionally. Sorry for inconvenience. Update: they say the power company is planning not to stop power for my area. So, maybe this site won't be down.
