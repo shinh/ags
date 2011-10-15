@@ -41,7 +41,7 @@ LANGS = {
   # cd /golf/local/go && hg log | head -4
   'go' => ['go changeset-4015:cb140bac9ab0 Nov 12 14:55:26 2009 -0800 (http://golang.org/)'],
   'ml' => [apt['ocaml']],
-  'hs' => [apt['ghc6']],
+  'hs' => [apt['ghc']],
   'adb' => [apt['gnat']],
   'm' => [apt['gobjc']],
   'java' => [apt['sun-java6-jdk']],
