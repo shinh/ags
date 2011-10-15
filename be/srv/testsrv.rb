@@ -338,6 +338,7 @@ while true
       timeout += 1 if ext == 'ly'
       timeout += 4 if ext == 'cy'
       timeout += 1 if ext == 'io'
+      timeout += 3 if ext == 'com'
       timeout += 1 if ext == 'erl'
       timeout += 1 if ext == 'r'
       timeout += 7 if ext == 'pl6'
