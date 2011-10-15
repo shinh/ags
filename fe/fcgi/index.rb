@@ -115,6 +115,15 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>The golf server has migrated to a VPS (http://vps.sakura.ad.jp/).
+<pre>
+Debian squeeze (with sid packages) => Debian wheezy/sid (with squeeze/lenny)
+linux-2.6.26-2 => linux-3.0.0-1
+Intel(R) Core(TM)2 CPU T5600 @ 1.83GHz => Intel(R) Core(TM)2 Duo CPU T7700 @ 2.40GHz (2 virtual CPUs)
+1GB/256MB => 1GB/256MB (web server / execution server)
+</pre>
+I've upgraded several languages, and fixed a few broken languages (e.g., com).
+Please let me know if you see some issues.
 <li>Added octave and ucblogo. Updated the version of scala (2.8.1) and gauche (0.9.1). Thanks KirarinSnow, gengar68, and m_satyr for these suggestions!
 <li>Due to <a href="http://en.wikipedia.org/wiki/2011_Sendai_earthquake_and_tsunami">the big earthquake</a>, we will have planned power outages several times. I think this site may be down occasionally. Sorry for inconvenience. Update: they say the power company is planning not to stop power for my area. So, maybe this site won't be down.
 <li>Added scala, finally. Thanks for folks who suggested this language to me.
