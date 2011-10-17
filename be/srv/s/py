@@ -1,2 +1,2 @@
 #!/bin/sh
-exec python $1
+exec python2.5 $1
