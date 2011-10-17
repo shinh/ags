@@ -2,6 +2,8 @@ require 'io/nonblock'
 require 'socket'
 require 'open4'
 
+ENV['LC_ALL'] = 'C'
+
 # The default process number limit is 793, so we don't need to update this.
 begin
   Process.setrlimit(Process::RLIMIT_NPROC, 1000)
