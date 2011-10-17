@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Downgraded python 2.7 => 2.5.5 as 2.7 is not backward compatible with the previous version (2.5.4).
 <li>The golf server has migrated to a VPS (http://vps.sakura.ad.jp/).
 <pre>
 Debian squeeze (with sid packages) => Debian wheezy/sid (with squeeze/lenny)
