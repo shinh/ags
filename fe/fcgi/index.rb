@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>For PHP golfers: visit <a href="http://www.phpgolf.org/">phpGolf.org</a> for more competitive golf courses!
 <li>Now PHP doesn't report E_NOTICE error so you may see less annoying timeouts.
 <li>Downgraded python 2.7 => 2.5.5 as 2.7 is not backward compatible with the previous version (2.5.4).
 <li>The golf server has migrated to a VPS (http://vps.sakura.ad.jp/).
