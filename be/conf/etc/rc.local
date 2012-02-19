@@ -11,6 +11,9 @@
 #
 # By default this script does nothing.
 
+chmod 755 /run/lock
+umount /run/shm
+
 chown -R root:root /golf/*
 chown -R golf:golf /golf/test
 chmod +s /golf/remount
