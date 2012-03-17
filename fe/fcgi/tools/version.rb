@@ -109,11 +109,13 @@ LANGS = {
   'scala' => [apt['scala']],
   'logo' => [apt['ucblogo']],
   'oct' => [apt['octave3.2']],
+  'exu' => ['Euphoria Interpreter 3.1.1 for Linux (http://www.rapideuphoria.com/31/euphor31.tar)'],
+  'k' => ['81e95b395144f4b02fe8782ad87c1f218b511c43 (https://github.com/kevinlawler/kona/)'],
 }
 
 LANGS.each do |l, info|
   version = info[0]
-  version.gsub!(/http:\/\/[^)]+/, '<a href="\&">\&</a>')
+  version.gsub!(/https?:\/\/[^)]+/, '<a href="\&">\&</a>')
   version += "<br>#{info[1]}" if info[1]
   puts "#{l} #{version}"
 end

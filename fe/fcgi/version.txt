@@ -43,6 +43,7 @@ lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cw
 py Debian package: python-2.7.2-8 (<a href="http://www.python.org/">http://www.python.org/</a>)
 arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
+exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
 dc Debian package: dc-1.06.95-2
 zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
 out Linux 2.6.32-5-xen-686 #1 SMP Mon Oct 3 09:00:14 UTC 2011 i686 GNU/Linux
@@ -61,6 +62,7 @@ ms <a href="http://www.golfscript.com/minus/">http://www.golfscript.com/minus/</
 java Debian package: sun-java6-jdk-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 qcl qcl-0.6.3 (<a href="http://tph.tuwien.ac.at/~oemer/qcl.html">http://tph.tuwien.ac.at/~oemer/qcl.html</a>)
 adb Debian package: gnat-4.4+1.1 (<a href="http://gcc.gnu.org">http://gcc.gnu.org</a>)
+k 81e95b395144f4b02fe8782ad87c1f218b511c43 (<a href="https://github.com/kevinlawler/kona/">https://github.com/kevinlawler/kona/</a>)
 fish Debian package: fish-1.23.1-2 (<a href="http://fishshell.org/">http://fishshell.org/</a>)
 kt This is kite, version 1.0.3 (<a href="http://www.kite-language.org/">http://www.kite-language.org/</a>)
 xgawk Extensible GNU Awk 3.1.6 (build 20080101) with dynamic loading, and with statically-linked extensions (<a href="http://sourceforge.net/projects/xmlgawk">http://sourceforge.net/projects/xmlgawk</a>)
