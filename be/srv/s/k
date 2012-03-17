@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/kona/k $1

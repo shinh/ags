@@ -65,3 +65,6 @@ all: $(TARGETS)
 
 /golf/local/euphoria/bin/exu:
 	fetcher/exu
+
+/golf/local/kona/k: fetcher/k
+	fetcher/k
