@@ -12,6 +12,7 @@ TARGETS = \
 /golf/local/FlogScript.php \
 /golf/local/wake/wake \
 /golf/local/dosemu.tgz \
+/golf/local/euphoria/bin/exu \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -61,3 +62,6 @@ all: $(TARGETS)
 
 /golf/local/dosemu.tgz: fetcher/dosemu.tgz
 	cp $^ $@
+
+/golf/local/euphoria/bin/exu:
+	fetcher/exu

@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+cd /golf/local
+EXU=euphor31.tar
+rm -fr $EXU euphoria
+wget http://www.rapideuphoria.com/31/euphor31.tar
+tar -xvzf $EXU
