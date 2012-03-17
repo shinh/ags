@@ -8,6 +8,8 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.exu', 'v', /Success/],
+ ['v.k', 'v', /Success/],
  ['v.oct', 'v', /Success/],
  ['v.logo', 'v', /Success/],
  ['v.scala', 'v', /Success/],
