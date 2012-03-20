@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cd /golf/local
+wget http://www.bertnase.de/npiet/npiet-1.3a.tar.gz
+tar -xvzf npiet-1.3a.tar.gz
+cd npiet-1.3a
+./configure
+make

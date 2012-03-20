@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/npiet-1.3a/piet $1

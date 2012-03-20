@@ -13,6 +13,8 @@ TARGETS = \
 /golf/local/wake/wake \
 /golf/local/dosemu.tgz \
 /golf/local/euphoria/bin/exu \
+/golf/local/kona/k \
+/golf/local/npiet-1.3a/npiet \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -68,3 +70,6 @@ all: $(TARGETS)
 
 /golf/local/kona/k: fetcher/k
 	fetcher/k
+
+/golf/local/npiet-1.3a/npiet: fetcher/piet
+	fetcher/piet
