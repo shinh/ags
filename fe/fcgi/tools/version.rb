@@ -111,6 +111,7 @@ LANGS = {
   'oct' => [apt['octave3.2']],
   'exu' => ['Euphoria Interpreter 3.1.1 for Linux (http://www.rapideuphoria.com/31/euphor31.tar)'],
   'k' => ['81e95b395144f4b02fe8782ad87c1f218b511c43 (https://github.com/kevinlawler/kona/)'],
+  'piet' => ['npiet-1.3a (http://www.bertnase.de/npiet/)'],
 }
 
 LANGS.each do |l, info|

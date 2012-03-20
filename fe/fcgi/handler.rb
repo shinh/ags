@@ -147,7 +147,7 @@ class Handler
      'xgawk','m4','ps','r','vhdl','qcl',
      'bf','ws','bef', 'pef', 'ms', 'gs', 'flog', 'nand',
      'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
-     's','out','z8b','com','class','vi','grb',
+     's','out','z8b','com','class','piet','vi','grb',
      'groovy', 'scala', 'logo',
     ]
   end
@@ -166,7 +166,7 @@ class Handler
      'xgawk','m4','Postscript','R','VHDL','QCL',
      'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript', 'FlogScript', 'FerNANDo',
      'Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
-     'gas','x86','z80','DOS','JVM','vi','goruby',
+     'gas','x86','z80','DOS','JVM','Piet','vi','goruby',
      'Groovy', 'Scala', 'Logo',
     ]
   end
