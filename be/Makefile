@@ -68,8 +68,8 @@ all: $(TARGETS)
 /golf/local/euphoria/bin/exu:
 	fetcher/exu
 
-/golf/local/kona/k: fetcher/k
+/golf/local/kona/k:
 	fetcher/k
 
-/golf/local/npiet-1.3a/npiet: fetcher/piet
+/golf/local/npiet-1.3a/npiet:
 	fetcher/piet

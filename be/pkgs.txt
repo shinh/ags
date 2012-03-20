@@ -61,3 +61,4 @@ dc
 ucblogo
 octave3.2
 sudo
+libgif-dev

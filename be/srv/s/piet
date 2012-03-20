@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /golf/local/npiet-1.3a/piet $1
+exec /golf/local/npiet-1.3a/npiet $1
