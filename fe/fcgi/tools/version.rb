@@ -113,6 +113,7 @@ LANGS = {
   'k' => ['81e95b395144f4b02fe8782ad87c1f218b511c43 (https://github.com/kevinlawler/kona/)'],
   'piet' => ['npiet-1.3a (http://www.bertnase.de/npiet/)'],
   'clci' => [apt['clc-intercal']],
+  'mal' => ['The C implementation (http://esoteric.sange.fi/orphaned/malbolge/)'],
 }
 
 LANGS.each do |l, info|
