@@ -1,2 +1,2 @@
 #!/bin/sh
-exec gnuplot $1
+exec gnuplot $1 2>&1
