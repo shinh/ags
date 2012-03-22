@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/snobol4-1.4.1/snobol4 $1
