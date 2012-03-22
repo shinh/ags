@@ -16,6 +16,7 @@ TARGETS = \
 /golf/local/kona/k \
 /golf/local/npiet-1.3a/npiet \
 /golf/local/malbolge \
+/golf/local/snobol4-1.4.1/snobol4 \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -77,4 +78,7 @@ all: $(TARGETS)
 
 /golf/local/malbolge:
 	fetcher/mb
+
+/golf/local/snobol4-1.4.1/snobol4:
+	fetcher/sno
 

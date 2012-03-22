@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cd /golf/local
+wget ftp://ftp.ultimate.com/snobol/snobol4-1.4.1.tar.gz
+tar -xvzf snobol4-1.4.1.tar.gz
+cd snobol4-1.4.1
+./configure
+make

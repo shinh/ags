@@ -64,4 +64,7 @@ sudo
 libgif-dev
 regina-rexx
 clc-intercal
+iconc
+icont
+iconx
 
