@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+gcc -O -g fetcher/malbolge.c -o /golf/local/malbolge

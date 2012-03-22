@@ -15,6 +15,7 @@ TARGETS = \
 /golf/local/euphoria/bin/exu \
 /golf/local/kona/k \
 /golf/local/npiet-1.3a/npiet \
+/golf/local/malbolge \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -73,3 +74,7 @@ all: $(TARGETS)
 
 /golf/local/npiet-1.3a/npiet:
 	fetcher/piet
+
+/golf/local/malbolge:
+	fetcher/mb
+
