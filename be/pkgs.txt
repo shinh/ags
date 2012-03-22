@@ -67,4 +67,5 @@ clc-intercal
 iconc
 icont
 iconx
+pari-gp
 
