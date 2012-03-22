@@ -45,6 +45,7 @@ arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 piet npiet-1.3a (<a href="http://www.bertnase.de/npiet/">http://www.bertnase.de/npiet/</a>)
 exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
+mal The C implementation (<a href="http://esoteric.sange.fi/orphaned/malbolge/">http://esoteric.sange.fi/orphaned/malbolge/</a>)
 dc Debian package: dc-1.06.95-2
 zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
 out Linux 2.6.32-5-xen-686 #1 SMP Mon Oct 3 09:00:14 UTC 2011 i686 GNU/Linux
