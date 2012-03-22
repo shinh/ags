@@ -118,6 +118,7 @@ LANGS = {
   'sno' => ['snobol4-1.4.1 (http://www.snobol4.org/)'],
   'rexx' => [apt['regina-rexx']],
   'gp' => [apt['pari-gp']],
+  'gplot' => [apt['gnuplot']],
 }
 
 LANGS.each do |l, info|
