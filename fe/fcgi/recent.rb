@@ -9,7 +9,10 @@ class Recent < Handler
 )
     db =get_db('recent')
     db.get('root').each do |pn, un, ext, cs, time, now, rank, score|
-      puts %Q(<tr><td><a href="#{problem_url(pn)}">#{pn}</td><td>#{rank}</td><td>#{CGI.escapeHTML(un)}</td><td><a href="#{lang_url(ext)}">#{file_langs[file_types.index(ext)]}</a></td><td>#{cs}</td><td>#{score}</td><td>#{"%.4f"%time}</td><td>#{now.strftime('%y/%m/%d %H:%M:%S')}</td></tr>)
+      # for removed language
+      ft = file_types.index(ext)
+      ft = ft ? file_langs[ft] : '???'
+      puts %Q(<tr><td><a href="#{problem_url(pn)}">#{pn}</td><td>#{rank}</td><td>#{CGI.escapeHTML(un)}</td><td><a href="#{lang_url(ext)}">#{ft}</a></td><td>#{cs}</td><td>#{score}</td><td>#{"%.4f"%time}</td><td>#{now.strftime('%y/%m/%d %H:%M:%S')}</td></tr>)
     end
     puts %Q(</table>)
     foot
