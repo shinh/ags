@@ -68,4 +68,5 @@ iconc
 icont
 iconx
 pari-gp
+gnuplot
 
