@@ -62,3 +62,6 @@ ucblogo
 octave3.2
 sudo
 libgif-dev
+regina-rexx
+clc-intercal
+
