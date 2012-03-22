@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.rexx', 'v', /Success/],
  ['v.sno', 'v', /Success/],
  ['v.icn', 'v', /Success/],
  ['v.mal', 'v', /Success/],

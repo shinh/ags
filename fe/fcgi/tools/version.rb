@@ -116,6 +116,7 @@ LANGS = {
   'mal' => ['The C implementation (http://esoteric.sange.fi/orphaned/malbolge/)'],
   'icn' => [apt['iconc']],
   'sno' => ['snobol4-1.4.1 (http://www.snobol4.org/)'],
+  'rexx' => [apt['regina-rexx']],
 }
 
 LANGS.each do |l, info|
