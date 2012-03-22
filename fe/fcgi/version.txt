@@ -53,12 +53,13 @@ ly Debian package: lilypond-2.14.2-2 (<a href="http://lilypond.org/">http://lily
 class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
 st Debian package: gnu-smalltalk-3.2.4-1 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
+clci Debian package: clc-intercal-1.0~4pre1.-94.-2-2
 logo Debian package: ucblogo-5.5-2.1
 bc Debian package: bc-1.06.95-2
 go go changeset-4015:cb140bac9ab0 Nov 12 14:55:26 2009 -0800 (<a href="http://golang.org/">http://golang.org/</a>)
 grb ruby 1.9.1p243 (2009-07-16 revision 24175) (<a href="http://ruby-lang.org/">http://ruby-lang.org/</a>)
 com Debian package: dosemu-1.4.0+svn.2010-1 (<a href="http://www.dosemu.org/">http://www.dosemu.org/</a>)
-pl Debian package: perl-5.12.4-4
+pl Debian package: perl-5.14.2-9 (<a href="http://dev.perl.org/perl5/">http://dev.perl.org/perl5/</a>)
 ms <a href="http://www.golfscript.com/minus/">http://www.golfscript.com/minus/</a><br>Minus is an esoteric language, with only 1 instruction operator, invented by flagitious.
 java Debian package: sun-java6-jdk-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 qcl qcl-0.6.3 (<a href="http://tph.tuwien.ac.at/~oemer/qcl.html">http://tph.tuwien.ac.at/~oemer/qcl.html</a>)
