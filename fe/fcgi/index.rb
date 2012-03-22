@@ -115,7 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
-<li>Added CLC-INTERCAL, Icon, SNOBOL, REXX, and Malbolge (thanks again for KirarinSnow)
+<li>Added CLC-INTERCAL, Icon, SNOBOL, REXX, PARI/GP, and Malbolge (thanks again for KirarinSnow)
 <li>Added Euphoria, K, and Piet (thanks joel, twobit, and KirarinSnow, for suggestion).
 <li>For PHP golfers: visit <a href="http://www.phpgolf.org/">phpGolf.org</a> for more competitive golf courses!
 <li>Now PHP doesn't report E_NOTICE error so you may see less annoying timeouts.
