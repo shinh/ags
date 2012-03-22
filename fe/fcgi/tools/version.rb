@@ -115,6 +115,7 @@ LANGS = {
   'clci' => [apt['clc-intercal']],
   'mal' => ['The C implementation (http://esoteric.sange.fi/orphaned/malbolge/)'],
   'icn' => [apt['iconc']],
+  'sno' => ['snobol4-1.4.1 (http://www.snobol4.org/)'],
 }
 
 LANGS.each do |l, info|
