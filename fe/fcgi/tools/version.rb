@@ -114,6 +114,7 @@ LANGS = {
   'piet' => ['npiet-1.3a (http://www.bertnase.de/npiet/)'],
   'clci' => [apt['clc-intercal']],
   'mal' => ['The C implementation (http://esoteric.sange.fi/orphaned/malbolge/)'],
+  'icn' => [apt['iconc']],
 }
 
 LANGS.each do |l, info|

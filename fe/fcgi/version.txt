@@ -35,6 +35,7 @@ cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
 hs Debian package: ghc-7.0.4-6 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
+icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://www.mokehehe.com/z80golf/">http://www.mokehehe.com/z80golf/</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
 ws <a href="http://compsoc.dur.ac.uk/whitespace/">http://compsoc.dur.ac.uk/whitespace/</a><br>We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.
