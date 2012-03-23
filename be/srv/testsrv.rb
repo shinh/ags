@@ -194,7 +194,7 @@ def run(exe, i = nil, timeout = 60)
     ret = [@n-start, status.exitstatus, o, e]
   else
     setup_sandbox
-    `pgrep -P #{pid}`.each do |l|
+    `pgrep -P #{pid}`.each_line do |l|
       puts "kill #{l}"
       Process.kill(:KILL, l.to_i) rescue puts "already died? #{l}"
     end
