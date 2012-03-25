@@ -153,11 +153,11 @@ def run(exe, i = nil, timeout = 60)
             if o.size > 1000000
               eof = true
             end
-            eof = true if stdout.eof?
+            #eof = true if stdout.eof?
           end
           if sel.include?(stderr)
             e += stderr.readpartial(65536)
-            if e.size > 1000000
+            if e.size > 10000000
               eof = true
             end
           end
