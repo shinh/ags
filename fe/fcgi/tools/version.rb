@@ -79,7 +79,7 @@ LANGS = {
            'GolfScript is a stack oriented esoteric language invented by flagitious.'],
   'flog' => ['http://esolangs.org/wiki/FlogScript'],
   'nand' => ['http://esolangs.org/wiki/FerNANDo',
-            'We are using the Haskell implementation.'],
+            'We are using the Python implementation 0.5.'],
   'unl' => ['http://www.madore.org/~david/programs/unlambda/',
             'We are using <a href="http://www.math.cas.cz/~jerabek/unlambda/unl.c">the C interpreter</a> written by Emil Jerabek.'],
   'lazy' => ['http://homepages.cwi.nl/~tromp/cl/lazy-k.html',

@@ -83,7 +83,7 @@ xtal xtal 0.9.7.0 (<a href="http://code.google.com/p/xtal-language/">http://code
 l Debian package: clisp-2.49-8 (<a href="http://www.clisp.org/">http://www.clisp.org/</a>)
 gs <a href="http://www.golfscript.com/golfscript/">http://www.golfscript.com/golfscript/</a><br>GolfScript is a stack oriented esoteric language invented by flagitious.
 sh Debian package: bash-4.1-3 (<a href="http://tiswww.case.edu/php/chet/bash/bashtop.html">http://tiswww.case.edu/php/chet/bash/bashtop.html</a>)
-nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNANDo</a><br>We are using the Haskell implementation.
+nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNANDo</a><br>We are using the Python implementation 0.5.
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
 m Debian package: gobjc-4.6.1-2

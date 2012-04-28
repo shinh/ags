@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Updated FerNANDo interpreter from 0.2 to 0.5. Removed <a href="http://golf.shinh.org/p.rb?Empty+program">Empty program</a> as people seem to dislike duplication.
 <li>Added CLC-INTERCAL, Icon, SNOBOL, REXX, PARI/GP, gnuplot, and Malbolge (thanks again for KirarinSnow)
 <li>Added Euphoria, K, and Piet (thanks joel, twobit, and KirarinSnow, for suggestion).
 <li>For PHP golfers: visit <a href="http://www.phpgolf.org/">phpGolf.org</a> for more competitive golf courses!
