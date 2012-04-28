@@ -1,2 +1,3 @@
 #!/bin/sh
-exec /golf/local/fernando $1
+#exec /golf/local/fernando $1
+exec python /golf/local/fernando.py $1

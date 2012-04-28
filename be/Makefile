@@ -8,7 +8,7 @@ TARGETS = \
 /usr/local/bin/kite \
 /golf/local/arc3/as2.scm \
 /golf/local/gobin/8l \
-/golf/local/fernando \
+/golf/local/fernando.py \
 /golf/local/FlogScript.php \
 /golf/local/wake/wake \
 /golf/local/dosemu.tgz \
@@ -54,8 +54,9 @@ all: $(TARGETS)
 /golf/local/gobin/8l:
 	fetcher/go
 
-/golf/local/fernando: fetcher/fernando.hs
-	ghc --make -o $@ $<
+/golf/local/fernando.py: fetcher/fernando.py
+	cp $< $@
+	chmod 755 $@
 
 /golf/local/FlogScript.php: fetcher/FlogScript.php
 	cp $< $@
