@@ -88,7 +88,7 @@ nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNAN
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
 m Debian package: gobjc-4.6.1-2
-ijs j602 (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
+ijs j701a (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
 cs Debian package: mono-gmcs-2.6.7-5 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
 pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="http://github.com/downloads/rakudo/star/rakudo-star-2010.07.tar.gz">this version</a>.
 n Debian package: nemerle-0.9.3+dfsg-2
