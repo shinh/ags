@@ -1,0 +1,59 @@
+diff --git a/main.hs b/main.hs
+index 9d446c5..df07429 100644
+--- a/main.hs
++++ b/main.hs
+@@ -5,8 +5,8 @@ import Burlesque.Display
+ 
+ import System.Environment
+ import System.IO
+-import System.Console.Haskeline
+-import System.Console.Haskeline.Completion
++--import System.Console.Haskeline
++--import System.Console.Haskeline.Completion
+ import Data.List
+ 
+ runProgram :: String -> String -> String
+@@ -38,7 +38,7 @@ main = do
+      prog <- readFile file
+      putStr $ runProgramNoStdin prog
+    ["--no-stdin",prog] -> putStr $ runProgramNoStdin prog
+-   ["--shell"] -> runInputT settings burlesqueShell
++--   ["--shell"] -> runInputT settings burlesqueShell
+    ["--version"] -> putStrLn "burlesque v1.6.9!"
+    ["--stdin",prog] -> interact $ runProgram prog
+    _ -> do putStrLn $ "Invalid usage"
+@@ -51,20 +51,20 @@ main = do
+            putStrLn "  --stdin <code>          Read code from argv (incl. STDIN)"
+            putStrLn ""
+            putStrLn "\tBurlesque\tRoman Muentener, 2012"
+- where settings :: Settings IO
+-       settings = Settings { 
+-                   complete = completeWord Nothing " \t" $ return . search,
+-                   historyFile = Nothing,
+-                   autoAddHistory = True
+-                  }
+-       search s = map simpleCompletion . filter (s `isPrefixOf`) $ map fst builtins
++-- where settings :: Settings IO
++--       settings = Settings { 
++--                   complete = completeWord Nothing " \t" $ return . search,
++--                   historyFile = Nothing,
++--                   autoAddHistory = True
++--                  }
++--       search s = map simpleCompletion . filter (s `isPrefixOf`) $ map fst builtins
+  
+ 
+ 
+-burlesqueShell = do
+- line <- getInputLine "blsq ) "
+- case line of 
+-   Nothing     -> outputStrLn "* Abort..." >> return ()
+-   Just "exit!" -> outputStrLn "* Exit!" >> return()
+-   Just q -> do outputStr $ runProgramNoStdin q
+-                burlesqueShell
++--burlesqueShell = do
++-- line <- getInputLine "blsq ) "
++-- case line of 
++--   Nothing     -> outputStrLn "* Abort..." >> return ()
++--   Just "exit!" -> outputStrLn "* Exit!" >> return()
++--   Just q -> do outputStr $ runProgramNoStdin q
++--                burlesqueShell
