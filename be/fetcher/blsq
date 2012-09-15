@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+dir=$(pwd)
+
+cabal install split web-encodings mtl regex-compat parsec
+
+cd /golf/local
+git clone git://github.com/FMNSSun/Burlesque.git
+cd Burlesque
+git apply ${dir}/fetcher/blsq.patch
+ghc main.hs
+
+
