@@ -2,7 +2,7 @@ TARGETS = \
 /golf/local/dmd2/bin/dmd \
 /golf/local/dmd/linux/bin/dmd \
 /usr/local/bin/goruby-1.9 \
-/golf/local/j601 \
+/golf/local/j701 \
 /usr/local/bin/xgawk \
 /usr/local/bin/cyc \
 /usr/local/bin/kite \
@@ -37,7 +37,7 @@ all: $(TARGETS)
 /usr/local/bin/goruby-1.9:
 	fetcher/grb
 
-/golf/local/j601:
+/golf/local/j701:
 	fetcher/j
 
 /usr/local/bin/xgawk:
