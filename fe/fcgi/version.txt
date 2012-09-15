@@ -31,6 +31,7 @@ m4 Debian package: m4-1.4.16-2 (<a href="http://www.gnu.org/software/m4/">http:/
 pef <a href="http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge">http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge</a><br>Pefunge is an esoteric language proposed by mame. There is only Japanese documentation about this language. <a href="http://dame.dyndns.org/misc/pefunge/2dpi.rb">The reference implementation</a>.
 lmn lmntal-20080828 (<a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal</a>)
 cy cyan-1.0.3.tgz (<a href="http://www.geocities.jp/takt0_h/cyan/index.html">http://www.geocities.jp/takt0_h/cyan/index.html</a>)
+blsq Burlesque 1d7ddba3923bddbcbea6a1e558b1663918776e2e in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
 bas Debian package: yabasic-2.763-4
 sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
 wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
@@ -77,7 +78,7 @@ xgawk Extensible GNU Awk 3.1.6 (build 20080101) with dynamic loading, and with s
 bf <a href="http://en.wikipedia.org/wiki/Brainfuck">http://en.wikipedia.org/wiki/Brainfuck</a><br>I think we are using <a href="http://esoteric.sange.fi/brainfuck/impl/interp/BFI.c">this C interpreter</a>, but I'm not sure...
 grass <a href="http://www.blue.sky.or.jp/grass/">http://www.blue.sky.or.jp/grass/</a><br>We are using <a href="http://panathenaia.halfmoon.jp/alang/grass/grass.ml">the OCaml interpreter</a> written by YT.
 curry cyc version 0.9.11 (built on Mon Jun 11 10:35:49 CEST 2007) (<a href="http://www.curry-language.org/">http://www.curry-language.org/</a>)
-scm Debian package: gauche-0.9.1-5 (<a href="http://practical-scheme.net/gauche/">http://practical-scheme.net/gauche/</a>)
+scm Debian package: gauche-0.9.1-5.1 (<a href="http://practical-scheme.net/gauche/">http://practical-scheme.net/gauche/</a>)
 tcl Debian package: tcl8.5-8.5.10-1 (<a href="http://www.tcl.tk/">http://www.tcl.tk/</a>)
 xtal xtal 0.9.7.0 (<a href="http://code.google.com/p/xtal-language/">http://code.google.com/p/xtal-language/</a>)
 l Debian package: clisp-2.49-8 (<a href="http://www.clisp.org/">http://www.clisp.org/</a>)

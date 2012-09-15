@@ -119,6 +119,7 @@ LANGS = {
   'rexx' => [apt['regina-rexx']],
   'gp' => [apt['pari-gp']],
   'gplot' => [apt['gnuplot']],
+  'blsq' => ['Burlesque 1d7ddba3923bddbcbea6a1e558b1663918776e2e in github (https://github.com/FMNSSun/Burlesque)'],
 }
 
 LANGS.each do |l, info|
