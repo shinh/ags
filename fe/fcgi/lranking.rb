@@ -30,7 +30,7 @@ class Lranking < Handler
           min = a[0][0]
           a.each do |x|
             lr[x[1]] = [0, 0] if !lr[x[1]]
-            lr[x[1]][0] += 10000 * min / x[0]
+            lr[x[1]][0] += (10000 * min / x[0]).to_i
             lr[x[1]][1] += 1
           end
         end

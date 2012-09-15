@@ -115,7 +115,7 @@ Open <a href="bas.html">code-statistics</a>: <input type="checkbox" name="reveal
       lr = lr.sort_by{|x|x[1]}
       min = lr[0][1][0]
       lr.each do |k, v|
-        puts %Q(<tr><td>#{i+=1}</td><td>#{ext2lang(k)}</td><td>#{CGI.escapeHTML(v[2])}</td><td>#{v[0]}</td><td>#{10000*min/v[0]}</td></tr>)
+        puts %Q(<tr><td>#{i+=1}</td><td>#{ext2lang(k)}</td><td>#{CGI.escapeHTML(v[2])}</td><td>#{v[0]}</td><td>#{(10000*min/v[0]).to_i}</td></tr>)
       end
       puts %Q(</table>)
     end

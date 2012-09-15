@@ -28,7 +28,7 @@ class U < Handler
       um[un] = User.new if !um[un]
 
       um[un].count += 1
-      score = best * 10000 / v[1]
+      score = (best * 10000 / v[1]).to_i
       um[un].score += score
       um[un].no1_count += 1 if score == 10000
     end

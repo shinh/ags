@@ -72,7 +72,7 @@ class Submit < Handler
     end
 
     if should_add && pn != 'testing'
-      r = [pn, un, ext, cs, time, now, rank, 10000*max/cs]
+      r = [pn, un, ext, cs, time, now, rank, (10000*max/cs).to_i]
       rdb = PStore.new('db/recent.db')
       rdb.transaction do
         rdb['root'] = [] if !rdb.root?('root')
@@ -290,7 +290,11 @@ status: #{status}<br>
       puts '<p>Failed!</p>'
     else
       puts '<p>Success!'
-      if add_record(pn, un, ext, fb.size, all_time, fb, dl)
+      score = fb.size
+      if / broken keyboard$/ =~ pn
+        score = fb.chars.sort.uniq.size + fb.size * 0.001
+      end
+      if add_record(pn, un, ext, score, all_time, fb, dl)
         puts "And it's new record!"
       end
       puts '</p>'
