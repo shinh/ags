@@ -2,7 +2,9 @@
 
 export HOME=/tmp
 
-exec /golf/local/j701/bin/jconsole $1
+exec /golf/local/j602/bin/jconsole $1
+
+#exec /golf/local/j701/bin/jconsole $1
 
 #export HOME=/golf/local
 #export LD_LIBRARY_PATH=$HOME/j601
