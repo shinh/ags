@@ -50,7 +50,7 @@ arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 piet npiet-1.3a (<a href="http://www.bertnase.de/npiet/">http://www.bertnase.de/npiet/</a>)
 exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
-mal The C implementation (<a href="http://esoteric.sange.fi/orphaned/malbolge/">http://esoteric.sange.fi/orphaned/malbolge/</a>)
+mal Slightly modified reference implementation in C (<a href="https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c">https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c</a>)
 dc Debian package: dc-1.06.95-2
 zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
 out Linux 2.6.32-5-xen-686 #1 SMP Mon Oct 3 09:00:14 UTC 2011 i686 GNU/Linux
@@ -88,7 +88,7 @@ nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNAN
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
 m Debian package: gobjc-4.6.1-2
-ijs j701a (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
+ijs j602a (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
 cs Debian package: mono-gmcs-2.6.7-5 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
 pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="http://github.com/downloads/rakudo/star/rakudo-star-2010.07.tar.gz">this version</a>.
 n Debian package: nemerle-0.9.3+dfsg-2
