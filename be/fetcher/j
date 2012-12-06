@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
 cd /golf/local
-wget http://www.jsoftware.com/download/j601c_linux.tar.gz
-tar -xvzf j601c_linux.tar.gz
+#wget http://www.jsoftware.com/download/j601c_linux.tar.gz
+#tar -xvzf j601c_linux.tar.gz
 
-#wget http://www.jsoftware.com/download/j602a_linux32.sh
-#sh ./j602a_linux32.sh -install /golf/local
+wget http://www.jsoftware.com/download/j701a_linux32.sh
+sh ./j701a_linux32.sh -install /golf/local
 
