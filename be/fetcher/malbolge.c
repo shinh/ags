@@ -83,6 +83,13 @@ int main( int argc, char **argv )
         return ( 1 );
       }
     }
+    else
+    {
+      fputs( "invalid character in source file\n", stderr );
+      free( mem );
+      fclose( f );
+      return ( 1 );
+    }
     if ( i == 59049 )
     {
       fputs( "input file too long\n", stderr );
