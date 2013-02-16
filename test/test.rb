@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.py3', 'v', /Success/],
  ['v.blsq', 'v', /Success/],
  ['v.gplot', 'v', /Success/],
  ['v.gp', 'v', /Success/],

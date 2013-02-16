@@ -12,6 +12,7 @@ LANGS = {
   'rb' => [apt['ruby1.8']],
   'pl' => [apt['perl']],
   'py' => [apt['python']],
+  'py3' => [apt['python3']],
   'php' => [apt['php5-cli']],
   'scm' => [apt['gauche']],
   'l' => [apt['clisp']],
