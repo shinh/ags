@@ -69,4 +69,5 @@ icont
 iconx
 pari-gp
 gnuplot
+python3
 
