@@ -32,9 +32,9 @@ pef <a href="http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge">http://d.h
 lmn lmntal-20080828 (<a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal</a>)
 cy cyan-1.0.3.tgz (<a href="http://www.geocities.jp/takt0_h/cyan/index.html">http://www.geocities.jp/takt0_h/cyan/index.html</a>)
 blsq Burlesque 1d7ddba3923bddbcbea6a1e558b1663918776e2e in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
+wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
 bas Debian package: yabasic-2.763-4
 sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
-wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
 cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
@@ -88,6 +88,7 @@ nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNAN
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
 m Debian package: gobjc-4.6.1-2
+py3 Debian package: python3-3.2.3-5 (<a href="http://www.python.org/">http://www.python.org/</a>)
 ijs j602a (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
 cs Debian package: mono-gmcs-2.6.7-5 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
 pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="http://github.com/downloads/rakudo/star/rakudo-star-2010.07.tar.gz">this version</a>.
