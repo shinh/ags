@@ -17,7 +17,7 @@ TARGETS = \
 /golf/local/npiet-1.3a/npiet \
 /golf/local/malbolge \
 /golf/local/snobol4-1.4.1/snobol4 \
-/golf/local/Burlesque/main \
+/golf/local/Burlesque/main_golf \
 /golf/local/rust/bin/rust \
 
 #/golf/local/dmd2/linux/bin/dmd \
@@ -85,7 +85,7 @@ all: $(TARGETS)
 /golf/local/snobol4-1.4.1/snobol4:
 	fetcher/sno
 
-/golf/local/Burlesque/main:
+/golf/local/Burlesque/main_golf:
 	fetcher/blsq
 
 /golf/local/rust/bin/rust:
