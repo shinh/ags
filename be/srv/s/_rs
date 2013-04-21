@@ -1,0 +1,2 @@
+#!/bin/sh
+$PATH=/golf/local/rust/bin:$PATH /golf/local/rust/bin/rust build $1 -o a.out

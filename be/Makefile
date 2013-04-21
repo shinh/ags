@@ -18,7 +18,7 @@ TARGETS = \
 /golf/local/malbolge \
 /golf/local/snobol4-1.4.1/snobol4 \
 /golf/local/Burlesque/main \
-#/golf/local/rust \
+/golf/local/rust/bin/rust \
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -88,5 +88,5 @@ all: $(TARGETS)
 /golf/local/Burlesque/main:
 	fetcher/blsq
 
-/golf/local/rust:
+/golf/local/rust/bin/rust:
 	fetcher/rust
