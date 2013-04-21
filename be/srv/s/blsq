@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /golf/local/Burlesque/main --file $1
+exec /golf/local/Burlesque/main_golf --file $1

@@ -70,4 +70,4 @@ iconx
 pari-gp
 gnuplot
 python3
-
+curl
