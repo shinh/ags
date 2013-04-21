@@ -120,7 +120,8 @@ LANGS = {
   'rexx' => [apt['regina-rexx']],
   'gp' => [apt['pari-gp']],
   'gplot' => [apt['gnuplot']],
-  'blsq' => ['Burlesque 1d7ddba3923bddbcbea6a1e558b1663918776e2e in github (https://github.com/FMNSSun/Burlesque)'],
+  'blsq' => ['Burlesque afc0a9bed9dbeec5239323d7e1eadf0bc5adaad6 in github (https://github.com/FMNSSun/Burlesque)'],
+  'rs' => ['Rust 0.6 (http://www.rust-lang.org/)'],
 }
 
 LANGS.each do |l, info|

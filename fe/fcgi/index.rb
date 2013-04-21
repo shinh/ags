@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added Rust 0.6 and upgraded Burlesque.
 <li>Added Python 3, and upgrade Python 2.5 to 2.7.
 <li>Added <a href="http://mroman.ch/burlesque/">Burlesque</a>. Updated J from 601c to 602a.
 <li>Updated FerNANDo interpreter from 0.2 to 0.5. Removed <a href="http://golf.shinh.org/p.rb?Empty+program">Empty program</a> as people seem to dislike duplication.

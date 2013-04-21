@@ -1,6 +1,7 @@
 flog <a href="http://esolangs.org/wiki/FlogScript">http://esolangs.org/wiki/FlogScript</a>
 mind Mind Version 7 for UNIX mind7u06.tar.gz (<a href="http://www.scripts-lab.co.jp/mind/whatsmind.html">http://www.scripts-lab.co.jp/mind/whatsmind.html</a>)
 lamb <a href="http://www.golfscript.com/lam/">http://www.golfscript.com/lam/</a><br>Universal Lambda is proposed by flagitious. We are using <a href="http://kiritanpo.dyndns.org/clamb.c">the C interpreter written by irori</a>.
+rs Rust 0.6 (<a href="http://www.rust-lang.org/">http://www.rust-lang.org/</a>)
 oct Debian package: octave3.2-3.2.4-12 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
 cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
 clj Clojure 1.1.0 with clojure-contrib 1.1.0 (<a href="http://code.google.com/p/clojure/downloads/list">http://code.google.com/p/clojure/downloads/list</a>)
@@ -31,14 +32,14 @@ m4 Debian package: m4-1.4.16-2 (<a href="http://www.gnu.org/software/m4/">http:/
 pef <a href="http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge">http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge</a><br>Pefunge is an esoteric language proposed by mame. There is only Japanese documentation about this language. <a href="http://dame.dyndns.org/misc/pefunge/2dpi.rb">The reference implementation</a>.
 lmn lmntal-20080828 (<a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal</a>)
 cy cyan-1.0.3.tgz (<a href="http://www.geocities.jp/takt0_h/cyan/index.html">http://www.geocities.jp/takt0_h/cyan/index.html</a>)
-blsq Burlesque 1d7ddba3923bddbcbea6a1e558b1663918776e2e in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
+blsq Burlesque afc0a9bed9dbeec5239323d7e1eadf0bc5adaad6 in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
 wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
 bas Debian package: yabasic-2.763-4
 sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
 cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
-hs Debian package: ghc-7.0.4-6 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
+hs Debian package: ghc-7.4.1-4 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
 icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://www.mokehehe.com/z80golf/">http://www.mokehehe.com/z80golf/</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
