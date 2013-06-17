@@ -201,7 +201,7 @@ class Submit < Handler
       else
         all_time += time
 
-        if pn == 'Quine'
+        if pn == 'Quine' || pn == 'Not Quine'
           output = fb
         elsif pn == 'Palindromic Quine'
           output = fb
@@ -255,6 +255,15 @@ class Submit < Handler
           end
           if ok && pn == 'Helloworldless Hello world'
             ok = false if fb =~ /[Hello, world!]/
+          end
+          if pn == 'Not Quine'
+            x = fb.chars.to_a
+            y = o.chars.to_a
+            if x.sort == y.sort && x.zip(y).all?{|x, y|x != y}
+              ok = true
+            else
+              ok = false
+            end
           end
           if ok
             puts tag('p', 'success!')
