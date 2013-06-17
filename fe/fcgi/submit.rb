@@ -201,8 +201,9 @@ class Submit < Handler
       else
         all_time += time
 
-        if pn == 'Quine' || pn == 'Not Quine'
+        if pn == 'Quine'
           output = fb
+        elsif pn == 'Not Quine'
         elsif pn == 'Palindromic Quine'
           output = fb
         elsif pn == 'Timeout'
