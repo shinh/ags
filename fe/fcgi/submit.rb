@@ -119,7 +119,7 @@ class Submit < Handler
       fb = q.file.read
       fn = q.file.original_filename[/[^\/\\]+$/]
     rescue
-      fb = q.code.read
+      fb = q.code.read.gsub("\r\n", "\n")
       fn = 'test.' + q.ext.read
     end
 
