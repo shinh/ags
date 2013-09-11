@@ -204,6 +204,7 @@ class Submit < Handler
         if pn == 'Quine'
           output = fb
         elsif pn == 'Not Quine'
+        elsif pn == 'Inverse Quine'
         elsif pn == 'Palindromic Quine'
           output = fb
         elsif pn == 'Timeout'
@@ -256,6 +257,11 @@ class Submit < Handler
           end
           if ok && pn == 'Helloworldless Hello world'
             ok = false if fb =~ /[Hello, world!]/
+          end
+          if pn == 'Inverse Quine'
+            x = [*0..127].map{|_|_.chr} - fb.chars.sort.uniq
+            y = o.chars.sort
+            ok = x == y
           end
           if pn == 'Not Quine'
             x = fb.chars.to_a
