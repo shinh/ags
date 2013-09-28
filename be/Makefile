@@ -19,6 +19,8 @@ TARGETS = \
 /golf/local/snobol4-1.4.1/snobol4 \
 /golf/local/Burlesque/main_golf \
 /golf/local/rust/bin/rust \
+/golf/local/chapel-1.7.0/bin/linux32/chpl \
+/golf/local/SQUIRREL3/bin/sq
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -90,3 +92,9 @@ all: $(TARGETS)
 
 /golf/local/rust/bin/rust:
 	fetcher/rust
+
+/golf/local/chapel-1.7.0/bin/linux32/chpl:
+	fetcher/chpl
+
+/golf/local/SQUIRREL3/bin/sq:
+	fetcher/nut

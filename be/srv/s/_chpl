@@ -1,0 +1,2 @@
+#!/bin/sh
+/golf/local/chapel-1.7.0/bin/linux32/chpl $1

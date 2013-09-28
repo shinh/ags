@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+CHPL=chapel-1.7.0
+
+cd /golf/local
+wget http://downloads.sourceforge.net/project/chapel/chapel/1.7.0/$CHPL.tar.gz
+tar -xvzf $CHPL.tar.gz
+cd $CHPL

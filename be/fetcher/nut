@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+SQ=squirrel_3_1_beta1.tar.gz
+
+cd /golf/local
+wget http://squirrel.googlecode.com/files/squirrel_3_1_beta1.tar.gz
+#wget http://code.google.com/p/squirrel/downloads/detail?name=$SQ -O $SQ
+tar -xvzf $SQ
+cd SQUIRREL3
+make
