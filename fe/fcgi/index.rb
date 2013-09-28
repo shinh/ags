@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added Squirrel-3.1 beta and Chapel-1.7.0. Thanks Nova and flagitious for suggestions!
 <li>Added Rust 0.6 and upgraded Burlesque. Also upgraded GHC from 7.0.4-6 to 7.4.1-4.
 <li>Added Python 3, and upgrade Python 2.5 to 2.7.
 <li>Added <a href="http://mroman.ch/burlesque/">Burlesque</a>. Updated J from 601c to 602a.

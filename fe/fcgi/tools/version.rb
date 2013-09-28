@@ -122,6 +122,8 @@ LANGS = {
   'gplot' => [apt['gnuplot']],
   'blsq' => ['Burlesque afc0a9bed9dbeec5239323d7e1eadf0bc5adaad6 in github (https://github.com/FMNSSun/Burlesque)'],
   'rs' => ['Rust 0.6 (http://www.rust-lang.org/)'],
+  'nut' => ['Squirrel 3.1 beta (http://squirrel-lang.org/)'],
+  'chpl' => ['Chapel 1.7.0 (http://chapel.cray.com/)'],
 }
 
 LANGS.each do |l, info|

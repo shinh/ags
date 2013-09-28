@@ -8,6 +8,8 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.nut', 'v', /Success/],
+ ['v.chpl', 'v', /Success/],
  ['v.rs', 'v', /Success/],
  ['v.py3', 'v', /Success/],
  ['v.blsq', 'v', /Success/],
