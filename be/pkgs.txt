@@ -71,3 +71,4 @@ pari-gp
 gnuplot
 python3
 curl
+pike7.6-core
