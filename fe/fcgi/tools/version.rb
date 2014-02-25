@@ -124,6 +124,7 @@ LANGS = {
   'rs' => ['Rust 0.6 (http://www.rust-lang.org/)'],
   'nut' => ['Squirrel 3.1 beta (http://squirrel-lang.org/)'],
   'chpl' => ['Chapel 1.7.0 (http://chapel.cray.com/)'],
+  'pike' => [apt['pike7.6-core']],
 }
 
 LANGS.each do |l, info|

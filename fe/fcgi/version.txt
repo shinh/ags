@@ -49,6 +49,7 @@ lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cw
 py Debian package: python-2.7.2-8 (<a href="http://www.python.org/">http://www.python.org/</a>)
 arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
+pike Debian package: pike7.6-core-7.6.112-dfsg-1+b1 (<a href="http://pike.ida.liu.se/">http://pike.ida.liu.se/</a>)
 nut Squirrel 3.1 beta (<a href="http://squirrel-lang.org/">http://squirrel-lang.org/</a>)
 piet npiet-1.3a (<a href="http://www.bertnase.de/npiet/">http://www.bertnase.de/npiet/</a>)
 exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
