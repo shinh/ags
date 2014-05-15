@@ -170,7 +170,7 @@ class Handler
      'xgawk','m4','Postscript','R','VHDL','QCL',
      'Brainfuck','Whitespace','Befunge','Pefunge','Minus','GolfScript', 'FlogScript', 'Burlesque', 'FerNANDo','CLC-INTERCAL','Malbolge',
      'Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
-     'gas','x86','z80','DOS','JVM','Piet','vi','goruby',
+     'gas','x86','z80','DOS','JVM','Piet','Vim','goruby',
      'Groovy', 'Scala', 'Logo',
     ]
   end
