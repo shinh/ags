@@ -20,7 +20,8 @@ TARGETS = \
 /golf/local/Burlesque/main_golf \
 /golf/local/rust/bin/rust \
 /golf/local/chapel-1.7.0/bin/linux32/chpl \
-/golf/local/SQUIRREL3/bin/sq
+/golf/local/SQUIRREL3/bin/sq \
+/golf/local/ccbi-2.1/ccbi
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -98,3 +99,6 @@ all: $(TARGETS)
 
 /golf/local/SQUIRREL3/bin/sq:
 	fetcher/nut
+
+/golf/local/ccbi-2.1/ccbi:
+	fetcher/bef98

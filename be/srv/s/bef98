@@ -1,0 +1,3 @@
+#!/bin/sh
+export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/libSegFault.so
+exec /golf/local/ccbi-2.1/ccbi $1
