@@ -72,6 +72,8 @@ LANGS = {
            'We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.'],
   'bef' => ['http://catseye.tc/projects/bef/',
             'We are using <a href="http://catseye.tc/projects/bef-2.21.zip">the reference implementation</a>.'],
+  'bef98' => ['http://users.tkk.fi/~mniemenm/befunge/ccbi.html',
+            'We are using CBBI-2.1.'],
   'pef' => ['http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge',
             'Pefunge is an esoteric language proposed by mame. There is only Japanese documentation about this language. <a href="http://dame.dyndns.org/misc/pefunge/2dpi.rb">The reference implementation</a>.'],
   'ms' => ['http://www.golfscript.com/minus/',

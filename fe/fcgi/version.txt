@@ -1,6 +1,6 @@
+lamb <a href="http://www.golfscript.com/lam/">http://www.golfscript.com/lam/</a><br>Universal Lambda is proposed by flagitious. We are using <a href="http://kiritanpo.dyndns.org/clamb.c">the C interpreter written by irori</a>.
 flog <a href="http://esolangs.org/wiki/FlogScript">http://esolangs.org/wiki/FlogScript</a>
 mind Mind Version 7 for UNIX mind7u06.tar.gz (<a href="http://www.scripts-lab.co.jp/mind/whatsmind.html">http://www.scripts-lab.co.jp/mind/whatsmind.html</a>)
-lamb <a href="http://www.golfscript.com/lam/">http://www.golfscript.com/lam/</a><br>Universal Lambda is proposed by flagitious. We are using <a href="http://kiritanpo.dyndns.org/clamb.c">the C interpreter written by irori</a>.
 rs Rust 0.6 (<a href="http://www.rust-lang.org/">http://www.rust-lang.org/</a>)
 oct Debian package: octave3.2-3.2.4-12 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
 cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
@@ -36,6 +36,7 @@ blsq Burlesque afc0a9bed9dbeec5239323d7e1eadf0bc5adaad6 in github (<a href="http
 wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
 bas Debian package: yabasic-2.763-4
 sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
+bef98 <a href="http://users.tkk.fi/~mniemenm/befunge/ccbi.html">http://users.tkk.fi/~mniemenm/befunge/ccbi.html</a><br>We are using CBBI-2.1.
 cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
