@@ -21,7 +21,8 @@ TARGETS = \
 /golf/local/rust/bin/rust \
 /golf/local/chapel-1.7.0/bin/linux32/chpl \
 /golf/local/SQUIRREL3/bin/sq \
-/golf/local/ccbi-2.1/ccbi
+/golf/local/ccbi-2.1/ccbi \
+/golf/local/MNNBFSL/mnnbfsl
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -102,3 +103,6 @@ all: $(TARGETS)
 
 /golf/local/ccbi-2.1/ccbi:
 	fetcher/bef98
+
+/golf/local/MNNBFSL/mnnbfsl:
+	fetcher/bfsl
