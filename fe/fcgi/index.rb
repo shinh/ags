@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added MNNBFSL.
 <li>Added Befunge-98. Thanks Damon for suggestion!
 <li>Added Pike-7.6. Thanks hallvabo for the suggestion!
 <li>Added Squirrel-3.1 beta and Chapel-1.7.0. Thanks Nova and flagitious for suggestions!

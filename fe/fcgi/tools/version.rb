@@ -68,6 +68,7 @@ LANGS = {
   'qcl' => ['qcl-0.6.3 (http://tph.tuwien.ac.at/~oemer/qcl.html)'],
   'bf' => ['http://en.wikipedia.org/wiki/Brainfuck',
            'I think we are using <a href="http://esoteric.sange.fi/brainfuck/impl/interp/BFI.c">this C interpreter</a>, but I\'m not sure...'],
+  'bfsl' => ['c6820766108596ba522d64b6d8581f5bbb4e526b (https://github.com/yshl/MNNBFSL)'],
   'ws' => ['http://compsoc.dur.ac.uk/whitespace/',
            'We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.'],
   'bef' => ['http://catseye.tc/projects/bef/',
