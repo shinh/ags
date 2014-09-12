@@ -330,7 +330,7 @@ class Handler
       if pm == 1
         un = %Q(<a href="reveal.rb?#{CGI.escape(pn)}/#{CGI.escape(v[0])}_#{v[3].to_i}&#{ext}">#{un != '' ? un : '_'}</a>)
       end
-      date = v[3].strftime('%y/%m/%d %H:%M:%S')
+      date = v[3].strftime('%Y/%m/%d %H:%M:%S')
       if v[5] == 1
         date = %Q(<em class="pm">#{date}</em>)
       end
