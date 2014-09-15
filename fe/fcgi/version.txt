@@ -32,7 +32,7 @@ m4 Debian package: m4-1.4.16-2 (<a href="http://www.gnu.org/software/m4/">http:/
 pef <a href="http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge">http://d.hatena.ne.jp/ku-ma-me/searchdiary?word=pefunge</a><br>Pefunge is an esoteric language proposed by mame. There is only Japanese documentation about this language. <a href="http://dame.dyndns.org/misc/pefunge/2dpi.rb">The reference implementation</a>.
 lmn lmntal-20080828 (<a href="http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal">http://www.ueda.info.waseda.ac.jp/lmntal/pukiwiki.php?LMNtal</a>)
 cy cyan-1.0.3.tgz (<a href="http://www.geocities.jp/takt0_h/cyan/index.html">http://www.geocities.jp/takt0_h/cyan/index.html</a>)
-blsq Burlesque afc0a9bed9dbeec5239323d7e1eadf0bc5adaad6 in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
+blsq Burlesque e4e7ff873e2f7a9d99ca658a78a5cf3de60fe9b0 in github (<a href="https://github.com/FMNSSun/Burlesque">https://github.com/FMNSSun/Burlesque</a>)
 wr <a href="http://bigzaphod.org/whirl/">http://bigzaphod.org/whirl/</a><br>We are using <a href="http://bigzaphod.org/whirl/whirl.cpp">the C++ interpreter</a>.
 bas Debian package: yabasic-2.763-4
 sed Debian package: sed-4.2.1-9 (<a href="http://www.gnu.org/software/sed/">http://www.gnu.org/software/sed/</a>)
