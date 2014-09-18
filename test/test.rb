@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.gs2', 'v', /Success/],
  ['hello.bfsl', 'hello+world', /Success/],
  ['v.bef98', 'v', /Success/],
  ['v.pike', 'v', /Success/],

@@ -69,6 +69,7 @@ LANGS = {
   'bf' => ['http://en.wikipedia.org/wiki/Brainfuck',
            'I think we are using <a href="http://esoteric.sange.fi/brainfuck/impl/interp/BFI.c">this C interpreter</a>, but I\'m not sure...'],
   'bfsl' => ['c6820766108596ba522d64b6d8581f5bbb4e526b (https://github.com/yshl/MNNBFSL)'],
+  'gs2' => ['88a11824c6a07f814ce999f71f9e93c7a606e676 (https://github.com/nooodl/gs2)'],
   'ws' => ['http://compsoc.dur.ac.uk/whitespace/',
            'We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.'],
   'bef' => ['http://catseye.tc/projects/bef/',
