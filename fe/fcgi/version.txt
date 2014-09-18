@@ -44,9 +44,9 @@ hs Debian package: ghc-7.4.1-4 (<a href="http://haskell.org/ghc/">http://haskell
 icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://www.mokehehe.com/z80golf/">http://www.mokehehe.com/z80golf/</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
+lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cwi.nl/~tromp/cl/lazy-k.html</a><br>We are using <a href="http://kiritanpo.dyndns.org/lazyk.c">the C interpreter</a> written by irori.
 ws <a href="http://compsoc.dur.ac.uk/whitespace/">http://compsoc.dur.ac.uk/whitespace/</a><br>We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.
 c Debian package: gcc-4.6.1-2
-lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cwi.nl/~tromp/cl/lazy-k.html</a><br>We are using <a href="http://kiritanpo.dyndns.org/lazyk.c">the C interpreter</a> written by irori.
 py Debian package: python-2.7.2-8 (<a href="http://www.python.org/">http://www.python.org/</a>)
 arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
@@ -62,6 +62,7 @@ bef <a href="http://catseye.tc/projects/bef/">http://catseye.tc/projects/bef/</a
 ly Debian package: lilypond-2.14.2-2 (<a href="http://lilypond.org/">http://lilypond.org/</a>)
 class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
+gs2 88a11824c6a07f814ce999f71f9e93c7a606e676 (<a href="https://github.com/nooodl/gs2">https://github.com/nooodl/gs2</a>)
 st Debian package: gnu-smalltalk-3.2.4-1 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
 clci Debian package: clc-intercal-1.0~4pre1.-94.-2-2
 logo Debian package: ucblogo-5.5-2.1
