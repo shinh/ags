@@ -1,0 +1,3 @@
+#!/bin/sh
+exec python /golf/local/gs2/gs2.py $1
+

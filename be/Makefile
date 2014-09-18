@@ -22,7 +22,8 @@ TARGETS = \
 /golf/local/chapel-1.7.0/bin/linux32/chpl \
 /golf/local/SQUIRREL3/bin/sq \
 /golf/local/ccbi-2.1/ccbi \
-/golf/local/MNNBFSL/mnnbfsl
+/golf/local/MNNBFSL/mnnbfsl \
+/golf/local/gs2/gs2.py
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -106,3 +107,6 @@ all: $(TARGETS)
 
 /golf/local/MNNBFSL/mnnbfsl:
 	fetcher/bfsl
+
+/golf/local/gs2/gs2.py:
+	fetcher/gs2
