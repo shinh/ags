@@ -43,7 +43,7 @@ f95 Debian package: gfortran-4.6.1-2
 hs Debian package: ghc-7.4.1-4 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
 icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
-z8b Modified fMSX (<a href="http://www.mokehehe.com/z80golf/">http://www.mokehehe.com/z80golf/</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
+z8b Modified fMSX (<a href="http://golf.shinh.org/z80golf.tgz">http://golf.shinh.org/z80golf.tgz</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
 lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cwi.nl/~tromp/cl/lazy-k.html</a><br>We are using <a href="http://kiritanpo.dyndns.org/lazyk.c">the C interpreter</a> written by irori.
 ws <a href="http://compsoc.dur.ac.uk/whitespace/">http://compsoc.dur.ac.uk/whitespace/</a><br>We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.
 c Debian package: gcc-4.6.1-2
