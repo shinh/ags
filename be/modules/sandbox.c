@@ -14,6 +14,7 @@ DECLARE_HOOK(setsid)
 DECLARE_HOOK(socketcall)
 DECLARE_HOOK(getpriority)
 DECLARE_HOOK(setpriority)
+DECLARE_HOOK(syslog)
 
 #define DECLARE_HOOK_32(name)                   \
     DECLARE_HOOK(name)                          \
@@ -220,6 +221,8 @@ DEFINE_DISABLE_HOOK_32(setresgid, (gid_t gid, gid_t egid, gid_t sgid),
                        "%d, %d, %d", gid, egid, sgid);
 DEFINE_DISABLE_HOOK_32(setfsgid, (uid_t uid),
                        CHECK_ID_1(uid), "%d", uid)
+DEFINE_DISABLE_HOOK(syslog, (int type, char* bufp, int len),
+                    1, "%d, %p, %d", type, bufp, len)
 
 DEFINE_HOOK(getpriority, (int which, int who)) {
     if (which == SANDBOX_MAGIC_PRIORITY) {
