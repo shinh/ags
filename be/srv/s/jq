@@ -1,0 +1,2 @@
+#!/bin/sh
+exec jq -r -R $1
