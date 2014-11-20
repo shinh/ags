@@ -15,6 +15,7 @@ vhdl Debian package: ghdl-0.29+gcc4.3.4+dfsg-1+b2 (<a href="http://ghdl.free.fr"
 rb Debian package: ruby1.8-1.8.7.352-2 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
 ps Debian package: ghostscript-9.02~dfsg-3 (<a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a>)
 pas Debian package: gpc-2.1-4.1.2-46
+jq Debian package: jq-1.4-2.1 (<a href="https://github.com/stedolan/jq">https://github.com/stedolan/jq</a>)
 sno snobol4-1.4.1 (<a href="http://www.snobol4.org/">http://www.snobol4.org/</a>)
 wake <a href="http://shinh.skr.jp/wake/">http://shinh.skr.jp/wake/</a><br>We are using the C++ implementation.
 r Debian package: r-base-2.13.1-1 (<a href="http://www.r-project.org/">http://www.r-project.org/</a>)

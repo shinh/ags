@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added jq.
 <li>Wrote <a href="http://shinhoge.blogspot.jp/2014/10/sandbox-of-my-golf-server.html">a document for the sandbox of this server</a>.
 <li>Added <a href="https://github.com/nooodl/gs2">gs2</a>.
 <li>Added <a href="https://github.com/yshl/MNNBFSL">MNNBFSL</a>.

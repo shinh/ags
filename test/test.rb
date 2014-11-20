@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.jq', 'v', /Success/],
  ['syslog.c', 'v', /SYSLOG_ACTION_SIZE_BUFFER: Operation not permitted/],
  ['v.gs2', 'v', /Success/],
  ['hello.bfsl', 'hello+world', /Success/],

@@ -145,7 +145,7 @@ class Handler
      'ml',
      'hs','adb','m','java','pas','f95','cs','n','cob','curry','lmn','chpl',
      'max','gplot','oct','reb','asy','exu',
-     'awk','sed','sh','zsh','fish','wake','bc','dc',
+     'awk','sed','jq','sh','zsh','fish','wake','bc','dc',
      'xgawk','m4','ps','r','vhdl','qcl',
      'bf','bfsl','ws','bef', 'bef98', 'pef',
      'ms', 'gs', 'gs2', 'flog', 'blsq', 'nand','clci','mal',
@@ -167,7 +167,7 @@ class Handler
      'Haskell',
      'Ada','ObjC','Java','Pascal','Fortran','C#','Nemerle','COBOL','Curry','LMNtal','Chapel',
      'Maxima','gnuplot','Octave','REBOL','Asymptote','Euphoria',
-     'AWK','sed','Bash','Zsh','fish','wake','bc','dc',
+     'AWK','sed','jq','Bash','Zsh','fish','wake','bc','dc',
      'xgawk','m4','Postscript','R','VHDL','QCL',
      'Brainfuck','MNNBFSL','Whitespace','Befunge','Befunge-98','Pefunge',
      'Minus','GolfScript', 'gs2', 'FlogScript', 'Burlesque', 'FerNANDo','CLC-INTERCAL','Malbolge',
@@ -501,7 +501,7 @@ class Handler
 
   def execute2(filename, code, inputs, testing=false)
     modified_inputs = inputs.map do |input|
-      if /\.sed$/ =~ filename && (!input || input.size == 0)
+      if /\.(sed|jq)$/ =~ filename && (!input || input.size == 0)
         input = "\n"
       end
       if input
