@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Now we pass -s flag to jq. I may remove some entries which don't pass without -s flag anymore.
 <li>Added jq.
 <li>Wrote <a href="http://shinhoge.blogspot.jp/2014/10/sandbox-of-my-golf-server.html">a document for the sandbox of this server</a>.
 <li>Added <a href="https://github.com/nooodl/gs2">gs2</a>.
