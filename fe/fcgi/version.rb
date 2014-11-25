@@ -1,6 +1,10 @@
 require 'handler'
 
 class Version < Handler
+  def strip_script(s)
+    s.gsub(/#.*/, '').sub('export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/libSegFault.so', '').gsub(/\n+/, "\n")
+  end
+
   def handle_
     html_header
     title("anarchy golf - Version info of languages")
@@ -14,8 +18,17 @@ class Version < Handler
 
     puts "<dl>"
     sorted_langs.each do |ext, lang|
-      puts "<dt>#{lang} (#{ext})</dt>"
-      puts "<dd>#{m[ext]}</dd>"
+      puts "<dt>#{lang} (#{ext}): #{m[ext]}</dt>"
+      puts "<dd>"
+      puts "<p>How your program is executed:"
+      puts "<pre>" + strip_script(File.read("../../be/srv/s/#{ext}")) + "</pre>"
+      c = "../../be/srv/s/_#{ext}"
+      if File.exist?(c)
+        puts "<p>How your program is compiled:"
+        puts "<pre>" + strip_script(File.read(c)) + "</pre>"
+      end
+      puts "</p>"
+      puts "</dd>"
     end
     puts "</dl>"
 
