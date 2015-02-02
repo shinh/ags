@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added <a href="http://esolangs.org/wiki/Aheui">Aheui</a>.
 <li>Now we pass -s flag to jq. I may remove some entries which don't pass without -s flag anymore.
 <li>Added jq.
 <li>Wrote <a href="http://shinhoge.blogspot.jp/2014/10/sandbox-of-my-golf-server.html">a document for the sandbox of this server</a>.

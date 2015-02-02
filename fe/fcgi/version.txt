@@ -4,6 +4,7 @@ mind Mind Version 7 for UNIX mind7u06.tar.gz (<a href="http://www.scripts-lab.co
 rs Rust 0.6 (<a href="http://www.rust-lang.org/">http://www.rust-lang.org/</a>)
 oct Debian package: octave3.2-3.2.4-12 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
 cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
+aheui 6766ed4da9d1a2b6b79d50b8ef5fd27e241cd639 (<a href="https://github.com/aheui/caheui">https://github.com/aheui/caheui</a>)
 clj Clojure 1.1.0 with clojure-contrib 1.1.0 (<a href="http://code.google.com/p/clojure/downloads/list">http://code.google.com/p/clojure/downloads/list</a>)
 groovy Debian package: groovy-1.8.2-1 (<a href="http://groovy.codehaus.org/">http://groovy.codehaus.org/</a>)
 a+ Debian package: aplus-fsf-4.22.1-4

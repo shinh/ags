@@ -130,6 +130,7 @@ LANGS = {
   'chpl' => ['Chapel 1.7.0 (http://chapel.cray.com/)'],
   'pike' => [apt['pike7.6-core']],
   'jq' => [apt['jq']],
+  'aheui' => ['6766ed4da9d1a2b6b79d50b8ef5fd27e241cd639 (https://github.com/aheui/caheui)'],
 }
 
 LANGS.each do |l, info|
