@@ -23,7 +23,8 @@ TARGETS = \
 /golf/local/SQUIRREL3/bin/sq \
 /golf/local/ccbi-2.1/ccbi \
 /golf/local/MNNBFSL/mnnbfsl \
-/golf/local/gs2/gs2.py
+/golf/local/gs2/gs2.py \
+/golf/local/caheui/aheui
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -110,3 +111,7 @@ all: $(TARGETS)
 
 /golf/local/gs2/gs2.py:
 	fetcher/gs2
+
+/golf/local/caheui/aheui:
+	fetcher/aheui
+

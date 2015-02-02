@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/caheui/aheui $1
