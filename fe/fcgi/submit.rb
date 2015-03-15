@@ -258,6 +258,9 @@ class Submit < Handler
           if ok && pn == 'Helloworldless Hello world'
             ok = false if fb =~ /[Hello, world!]/
           end
+          if ok && pn == 'Hello transposable world'
+            ok = false if fb.chomp != fb.chomp.split("\n").map{|_|_.chars.to_a}.transpose.map{|_|_*""}*"\n"
+          end
           if pn == 'Inverse Quine'
             x = [*0..127].map{|_|_.chr} - fb.chars.sort.uniq
             y = o.chars.sort
