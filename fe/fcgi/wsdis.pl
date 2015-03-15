@@ -1,5 +1,5 @@
 #!/usr/bin/perl
- 
+
 use bigint;
 use re 'eval';
  
@@ -36,7 +36,7 @@ sub parseb
 {
   my $str = shift;
   my $blen = length($str) - 2;
-  my $sign = substr $str, 0, 1, "0b";
+  my $sign = substr $str, 0, 1, "0b0";
   $sign =~ y/st/+-/;
   $str =~ y/stn/01/d;
   return " $sign" . oct($str) . "(${blen}b)";
@@ -51,9 +51,8 @@ $_=join'|',@$_ for values %cregex;
  
 my $impregex=join '|',do{my%tmp;@tmp{map$_->{imp},values%ops}=();keys%tmp};
 undef $/;
-#my $enc=<>=~y/ \t\n\0-\xff/stn/dr;
-my $enc;
-($enc=<>)=~y/ \t\n\0-\xff/stn/d;
+my $enc = <>;
+$enc=~y/ \t\n\0-\xff/stn/d;
 my $iref;
 while ( $enc=~/\G($impregex)((??{$cregex{$1}}))((??{$iref=$idic{"$1$2"};$vregex{$iref->{arg}}}))/g )
 {
