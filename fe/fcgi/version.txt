@@ -100,5 +100,5 @@ m Debian package: gobjc-4.6.1-2
 py3 Debian package: python3-3.2.3-5 (<a href="http://www.python.org/">http://www.python.org/</a>)
 ijs j602a (<a href="http://www.jsoftware.com/">http://www.jsoftware.com/</a>)
 cs Debian package: mono-gmcs-2.6.7-5 (<a href="http://www.mono-project.com/">http://www.mono-project.com/</a>)
-pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="http://github.com/downloads/rakudo/star/rakudo-star-2010.07.tar.gz">this version</a>.
+pl6 This is Rakudo Perl 6. (<a href="http://rakudo.org/">http://rakudo.org/</a>)<br>We are using <a href="https://github.com/rakudo/rakudo/commit/7a9a4cadeb3704b659505bc5c12c3e115797a4d4">this version</a>.
 n Debian package: nemerle-0.9.3+dfsg-2
