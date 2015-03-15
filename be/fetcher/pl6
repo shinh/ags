@@ -3,7 +3,7 @@
 # cd /golf/local
 # git clone git://github.com/rakudo/rakudo.git
 # cd rakudo
-# perl Configure.pl --gen-parrot
+# perl Configure.pl --gen-moar
 # make
 # make install
 
