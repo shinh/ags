@@ -53,6 +53,12 @@ class Reveal < Handler
 #          puts pipe.read
 #        end
 #        puts '</pre>'
+      elsif lang == 'ws'
+        puts '<p>Disassemble:<pre>'
+        IO.popen("perl wsdis.pl '#{f}'") do |pipe|
+          puts pipe.read
+        end
+        puts '</pre>'
       elsif lang == 'z8b'
         puts '<p>Disassemble:<pre>'
         IO.popen("/usr/bin/z80dasm -a -t -g 0 '#{f}'") do |pipe|
