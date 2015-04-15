@@ -131,6 +131,7 @@ LANGS = {
   'pike' => [apt['pike7.6-core']],
   'jq' => [apt['jq']],
   'aheui' => ['f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (https://github.com/aheui/caheui)'],
+  'mk' => [apt['make']],
 }
 
 LANGS.each do |l, info|
