@@ -65,7 +65,7 @@ bef <a href="http://catseye.tc/projects/bef/">http://catseye.tc/projects/bef/</a
 ly Debian package: lilypond-2.14.2-2 (<a href="http://lilypond.org/">http://lilypond.org/</a>)
 class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
-gs2 88a11824c6a07f814ce999f71f9e93c7a606e676 (<a href="https://github.com/nooodl/gs2">https://github.com/nooodl/gs2</a>)
+gs2 827ade5d5f7ed8c690bb23724dd13df613fbf702 (<a href="https://github.com/nooodl/gs2">https://github.com/nooodl/gs2</a>)
 st Debian package: gnu-smalltalk-3.2.4-1 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
 clci Debian package: clc-intercal-1.0~4pre1.-94.-2-2
 logo Debian package: ucblogo-5.5-2.1
