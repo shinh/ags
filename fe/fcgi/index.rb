@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Updated <a href="https://github.com/nooodl/gs2">gs2</a>.
 <li>Added Make.
 <li>Updated the interpreter of Perl6 (2015-03-15). Old solutions may stop working but the preious version was way too old.
 <li>Updated the interpreter of Aheui, so you should be able to solve problems with inputs now.
