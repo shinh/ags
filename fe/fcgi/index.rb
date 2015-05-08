@@ -103,7 +103,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts '<br>'
     puts a("l.rb", "Results by a language")
     puts '<br>'
-    puts a("checker.html", "Performance checker")
+    puts a("check.rb", "Performance checker")
     puts '<br>'
     puts a("setpid.html", "A tool to change the PID")
     puts '<br>'

@@ -22,8 +22,13 @@ class Checker < Handler
     err('over 10K') if (clen > 10000)
     q = read_multipart(boundary, clen)
 
-    fb = q.file.read
-    fn = q.file.original_filename[/[^\/\\]+$/]
+    begin
+      fb = q.file.read
+      fn = q.file.original_filename[/[^\/\\]+$/]
+    rescue
+      fb = q.code.read.gsub("\r\n", "\n")
+      fn = 'test.' + q.ext.read
+    end
 
     err("empty file") if fn == '' || fb == ''
 
