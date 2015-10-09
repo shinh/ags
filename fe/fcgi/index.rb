@@ -103,7 +103,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts '<br>'
     puts a("l.rb", "Results by a language")
     puts '<br>'
-    puts a("checker.html", "Performance checker")
+    puts a("check.rb", "Performance checker")
     puts '<br>'
     puts a("setpid.html", "A tool to change the PID")
     puts '<br>'
@@ -115,6 +115,8 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Updated <a href="https://github.com/nooodl/gs2">gs2</a>.
+<li>Added Make.
 <li>Updated the interpreter of Perl6 (2015-03-15). Old solutions may stop working but the preious version was way too old.
 <li>Updated the interpreter of Aheui, so you should be able to solve problems with inputs now.
 <li>Added <a href="http://esolangs.org/wiki/Aheui">Aheui</a>.
