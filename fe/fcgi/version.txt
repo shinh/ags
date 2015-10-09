@@ -50,6 +50,7 @@ z8b Modified fMSX (<a href="http://golf.shinh.org/z80golf.tgz">http://golf.shinh
 lazy <a href="http://homepages.cwi.nl/~tromp/cl/lazy-k.html">http://homepages.cwi.nl/~tromp/cl/lazy-k.html</a><br>We are using <a href="http://kiritanpo.dyndns.org/lazyk.c">the C interpreter</a> written by irori.
 ws <a href="http://compsoc.dur.ac.uk/whitespace/">http://compsoc.dur.ac.uk/whitespace/</a><br>We are using <a href="http://compsoc.dur.ac.uk/whitespace/downloads/wspace-0.3.tgz">the Haskell interpreter</a>.
 c Debian package: gcc-4.6.1-2
+fsh 3b16018cb47f2f9ad1fa085c155cc5c0dc448b2d (<a href="https://gist.github.com/anonymous/6392418">https://gist.github.com/anonymous/6392418</a>)
 py Debian package: python-2.7.2-8 (<a href="http://www.python.org/">http://www.python.org/</a>)
 arc arc3.tar (<a href="http://arclanguage.org/">http://arclanguage.org/</a>)
 d Digital Mars D Compiler v2.019 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)

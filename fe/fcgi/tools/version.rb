@@ -132,6 +132,7 @@ LANGS = {
   'jq' => [apt['jq']],
   'aheui' => ['f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (https://github.com/aheui/caheui)'],
   'mk' => [apt['make']],
+  'fsh' => ['3b16018cb47f2f9ad1fa085c155cc5c0dc448b2d (https://gist.github.com/anonymous/6392418)'],
 }
 
 LANGS.each do |l, info|
