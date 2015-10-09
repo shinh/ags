@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python /golf/local/fish/fish.py $1
