@@ -10,6 +10,7 @@ apt = proc{|package|
 
 LANGS = {
   'rb' => [apt['ruby1.8']],
+  'rb2' => [apt['ruby2.2']],
   'pl' => [apt['perl']],
   'py' => [apt['python']],
   'py3' => [apt['python3']],

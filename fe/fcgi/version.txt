@@ -7,10 +7,10 @@ cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http:/
 aheui f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (<a href="https://github.com/aheui/caheui">https://github.com/aheui/caheui</a>)
 clj Clojure 1.1.0 with clojure-contrib 1.1.0 (<a href="http://code.google.com/p/clojure/downloads/list">http://code.google.com/p/clojure/downloads/list</a>)
 groovy Debian package: groovy-1.8.2-1 (<a href="http://groovy.codehaus.org/">http://groovy.codehaus.org/</a>)
+unl <a href="http://www.madore.org/~david/programs/unlambda/">http://www.madore.org/~david/programs/unlambda/</a><br>We are using <a href="http://www.math.cas.cz/~jerabek/unlambda/unl.c">the C interpreter</a> written by Emil Jerabek.
 a+ Debian package: aplus-fsf-4.22.1-4
 for Debian package: gforth-0.7.0+ds1-6 (<a href="http://www.complang.tuwien.ac.at/projects/forth.html">http://www.complang.tuwien.ac.at/projects/forth.html</a>)
 erl Debian package: erlang-14.b.3-dfsg-2 (<a href="http://www.erlang.org/">http://www.erlang.org/</a>)
-unl <a href="http://www.madore.org/~david/programs/unlambda/">http://www.madore.org/~david/programs/unlambda/</a><br>We are using <a href="http://www.math.cas.cz/~jerabek/unlambda/unl.c">the C interpreter</a> written by Emil Jerabek.
 asy Debian package: asymptote-2.13-2 (<a href="http://asymptote.sourceforge.net/">http://asymptote.sourceforge.net/</a>)
 vhdl Debian package: ghdl-0.29+gcc4.3.4+dfsg-1+b2 (<a href="http://ghdl.free.fr">http://ghdl.free.fr</a>)
 rb Debian package: ruby1.8-1.8.7.352-2 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
@@ -21,6 +21,7 @@ sno snobol4-1.4.1 (<a href="http://www.snobol4.org/">http://www.snobol4.org/</a>
 wake <a href="http://shinh.skr.jp/wake/">http://shinh.skr.jp/wake/</a><br>We are using the C++ implementation.
 r Debian package: r-base-2.13.1-1 (<a href="http://www.r-project.org/">http://www.r-project.org/</a>)
 reb rebol-276 (<a href="http://www.rebol.com/">http://www.rebol.com/</a>)
+rb2 Debian package: ruby2.2-2.2.3-1 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
 mk Debian package: make-3.81-8.1 (<a href="http://www.gnu.org/software/make/">http://www.gnu.org/software/make/</a>)
 rexx Debian package: regina-rexx-3.5-4 (<a href="http://regina-rexx.sourceforge.net/">http://regina-rexx.sourceforge.net/</a>)
 s Debian package: binutils-2.21.52.20110606-2

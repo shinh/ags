@@ -115,6 +115,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added Ruby 2.
 <li>Added <a href="https://esolangs.org/wiki/Fish">&gt;&lt;&gt;</a>.
 <li>Updated <a href="https://github.com/nooodl/gs2">gs2</a>.
 <li>Added Make.
