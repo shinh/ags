@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'handler'
 
 class Index < Handler
@@ -115,6 +116,8 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Problems for Code Festival have been modified several times. Thanks a lot for feedbacks. Especially, mitchs gave me a lot, thanks!
+<li>Added four problems for a golfing event called 短縮王 in <a href="http://codefestival.jp/">Code Festival</a>.
 <li>Added Ruby 2.
 <li>Added <a href="https://esolangs.org/wiki/Fish">&gt;&lt;&gt;</a>.
 <li>Updated <a href="https://github.com/nooodl/gs2">gs2</a>.
