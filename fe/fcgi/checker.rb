@@ -19,7 +19,7 @@ class Checker < Handler
     boundary = $1.dup
     @multipart = true
     clen = Integer(@e['CONTENT_LENGTH'])
-    err('over 10K') if (clen > 10000)
+    err('over 10M') if (clen > 10000*1000)
     q = read_multipart(boundary, clen)
 
     begin
