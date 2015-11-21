@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /golf/local/crystal/bin/crystal build $1 -o a.out

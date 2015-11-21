@@ -1,2 +1,3 @@
 #!/bin/sh
-exec /golf/local/crystal/bin/crystal $1
+export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/libSegFault.so
+exec ./a.out
