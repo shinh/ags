@@ -137,7 +137,7 @@ class Handler
   def file_types
     [
      'rb','rb2','pl','py','py3','php','pike','scm','l','arc','clj',
-     'ly','io','js','lua','tcl','xtal',
+     'ly','io','js','lua','tcl','xtal','cr',
      'kt','sno','icn','rexx','gp','cy','nut',
      'st', 'pro','for','bas',
      'pl6', 'erl', 'ijs', 'a+', 'k', 'mind',
@@ -158,7 +158,7 @@ class Handler
     [
      'Ruby','Ruby2','Perl','Python','Python3','PHP','Pike','Scheme',
      'Common LISP','Arc','Clojure',
-     'LilyPond','Io','JavaScript','Lua','Tcl','Xtal',
+     'LilyPond','Io','JavaScript','Lua','Tcl','Xtal','Crystal',
      'Kite','SNOBOL','Icon','REXX','PARI/GP','Cyan','Squirrel',
      'Smalltalk', 'Prolog','Forth','BASIC',
      'Perl6', 'Erlang', 'J', 'A+', 'K', 'Mind',

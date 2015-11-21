@@ -73,6 +73,7 @@ clci Debian package: clc-intercal-1.0~4pre1.-94.-2-2
 logo Debian package: ucblogo-5.5-2.1
 bc Debian package: bc-1.06.95-2
 go go changeset-4015:cb140bac9ab0 Nov 12 14:55:26 2009 -0800 (<a href="http://golang.org/">http://golang.org/</a>)
+crystal Crystal 0.9.1 [b3b1223] (Fri Oct 30 03:36:50 UTC 2015)
 gp Debian package: pari-gp-2.5.1-1 (<a href="http://pari.math.u-bordeaux.fr">http://pari.math.u-bordeaux.fr</a>)
 grb ruby 1.9.1p243 (2009-07-16 revision 24175) (<a href="http://ruby-lang.org/">http://ruby-lang.org/</a>)
 com Debian package: dosemu-1.4.0+svn.2010-1 (<a href="http://www.dosemu.org/">http://www.dosemu.org/</a>)
