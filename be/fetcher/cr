@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+cd /golf/local
+wget https://github.com/manastech/crystal/releases/download/0.9.1/crystal-0.9.1-1-linux-i686.tar.gz
+tar -xvzf crystal-0.9.1-1-linux-i686.tar.gz
+ln -s crystal-0.9.1-1 crystal

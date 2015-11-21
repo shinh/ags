@@ -1,4 +1,4 @@
-TARGETS = \
+TARGETS := \
 /golf/local/dmd2/bin/dmd \
 /golf/local/dmd/linux/bin/dmd \
 /usr/local/bin/goruby-1.9 \
@@ -25,7 +25,8 @@ TARGETS = \
 /golf/local/MNNBFSL/mnnbfsl \
 /golf/local/gs2/gs2.py \
 /golf/local/caheui/aheui \
-/golf/local/fish
+/golf/local/fish \
+/golf/local/crystal/bin/crystal
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -119,3 +120,5 @@ all: $(TARGETS)
 /golf/local/fish:
 	fetcher/fsh
 
+/golf/local/crystal/bin/crystal:
+	fetcher/cr
