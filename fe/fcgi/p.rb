@@ -37,11 +37,10 @@ use_form = function() {
              'input2', 'output2', 'input3', 'output3',
              'dexec', 'deadline', 'rejudge')
     de = de == 'on' ? 1 : de.to_i
-    rejudge = rejudge.to_i
-
     dl = dl.to_i
     now = Time.now.to_i
     pm = (dl > 0 && dl < now) ? 1 : 0
+    rejudge = dl == 0 ? 0 : rejudge.to_i
 
     if dl > 0 && pm == 0 && dl - 60*60*24 < now
       if !db.get('announced')
