@@ -29,7 +29,7 @@ class Reveal < Handler
 
     un = CGI.escapeHTML(un)
 
-    if plain
+    if plain && pm == 1
       text_header
       print code
     else
@@ -79,6 +79,15 @@ class Reveal < Handler
 #        end
 #        puts '</pre>'
       end
+
+      puts %Q(
+<form action="rejudge.rb" method="POST">To protect the system from spam, please input your favorite sport (hint: I believe its name must start with 'g', case insensitive)
+<input name="sport"><input type="submit" value="rejudge">
+<input type="hidden" name="pn" value="#{CGI.escapeHTML(pn)}">
+<input type="hidden" name="un" value="#{CGI.escapeHTML(un)}">
+<input type="hidden" name="lang" value="#{lang}">
+<input type="hidden" name="time" value="#{time}">
+</form>)
 
       puts %Q(<p><a href="/reveal.rb?#{query}/plain">download</a></p>)
 

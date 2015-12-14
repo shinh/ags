@@ -3,12 +3,8 @@
 require './handler'
 
 class Rejudge < Handler
-  def rejudge(pn, lang, rank)
-    ldb = PStore.new("db/#{pn}/_ranks.db")
-    record = ldb.transaction(true) do
-      ldb[lang][rank.to_i]
-    end
-    record_key = "#{record[0]}_#{record[3].to_i}"
+  def rejudge_impl(pn, lang, un, time)
+    record_key = "#{un}_#{time.to_i}"
     code = File.read("../code/#{pn}/#{record_key}")
 
     db = PStore.new("db/#{pn}.db")
@@ -41,20 +37,64 @@ class Rejudge < Handler
       output = output.gsub("\r\n","\n").rstrip
       o = o.gsub("\r\n","\n").rstrip
       if o != output
-        STDERR.puts "#{record_key}: FAIL"
+        #STDERR.puts "#{record_key}: FAIL"
         ok = false
       else
-        STDERR.puts "#{record_key}: OK"
+        #STDERR.puts "#{record_key}: OK"
       end
     end
+
+    ok
+  end
+
+  def rejudge(pn, lang, rank)
+    ldb = PStore.new("db/#{pn}/_ranks.db")
+    record = ldb.transaction(true) do
+      ldb[lang][rank.to_i]
+    end
+
+    ok = rejudge_impl(pn, lang, record[0], record[3])
 
     if !ok
       ldb.transaction do
         STDERR.puts ldb[lang].delete_at(rank)
       end
     end
-
   end
+
+  def handle_
+    q = query
+
+    if q.sport.to_s.downcase != 'golf'
+      raise 'Your access was denied. Please mail me if you don\'t know the name of your favorite sport.'
+    end
+
+    pn = CGI.unescapeHTML(q.pn)
+    un = CGI.unescapeHTML(q.un)
+    lang = q.lang
+    time = q.time.to_i
+
+    html_header
+    title("anarchy golf - rejudge for #{pn}")
+
+    if rejudge_impl(pn, lang, un, time)
+      puts 'Challenge failed'
+    else
+      ldb = PStore.new("db/#{pn}/_ranks.db")
+      ldb.transaction do
+        found_index = nil
+        ldb[lang].each_with_index{|r, i|
+          if r[3].to_i == time
+            found_index = i
+            break
+          end
+        }
+        ldb[lang].delete_at(found_index)
+      end
+      puts 'Challenge succeeded'
+    end
+  end
+
 end
 
 if $0 == __FILE__

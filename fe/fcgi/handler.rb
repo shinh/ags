@@ -309,7 +309,7 @@ class Handler
     end
   end
 
-  def lranking(ext, l, pn, del=nil, pm=0)
+  def lranking(ext, l, pn, del=nil, pm=0, rejudge=0)
     ret = %Q(<table border="1"><tr><th>Rank</th><th>User</th><th>Size</th><th>Time</th><th>Date</th><th><a href="bas.html">Statistics</a></th>)
     if del
       ret += del[0]
@@ -327,7 +327,7 @@ class Handler
         st = ['?','?','?']
       end
       un = CGI.escapeHTML(v[0])
-      if pm == 1
+      if pm == 1 || rejudge == 1
         un = %Q(<a href="reveal.rb?#{CGI.escape(pn)}/#{CGI.escape(v[0])}_#{v[3].to_i}&#{ext}">#{un != '' ? un : '_'}</a>)
       end
       date = v[3].strftime('%Y/%m/%d %H:%M:%S')
@@ -361,7 +361,7 @@ class Handler
     puts "</p>"
   end
 
-  def ranking(pn, del, pm)
+  def ranking(pn, del, pm, rejudge)
     ret=''
     lr = {}
     ret += tag('h2', 'Ranking')
@@ -377,7 +377,7 @@ class Handler
         lr[ext] = [min[1],min[3],min[0]]
         #lr[ext] = [l[0][1],l[0][0]]
 
-        ret += lranking(ext, l, pn, del, pm)
+        ret += lranking(ext, l, pn, del, pm, rejudge)
       end
     end
     [ret, lr]

@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added <a href="http://golf.shinh.org/rejudge.html">the experimental rejudge feature</a>.
 <li>Added <a href="https://github.com/manastech/crystal/">Crystal</a>.
 <li>Problems for Code Festival have been modified several times. Thanks a lot for feedbacks. Especially, mitchs gave me a lot, thanks!
 <li>Added four problems for a golfing event called 短縮王 in <a href="http://codefestival.jp/">Code Festival</a>.

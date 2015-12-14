@@ -32,10 +32,12 @@ use_form = function() {
 )
 
     db = get_db(pn)
-    t, d, i, o, i2, o2, i3, o3, de, dl =
+    t, d, i, o, i2, o2, i3, o3, de, dl, rejudge =
       db.get('title', 'desc', 'input', 'output',
-             'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline')
+             'input2', 'output2', 'input3', 'output3',
+             'dexec', 'deadline', 'rejudge')
     de = de == 'on' ? 1 : de.to_i
+    rejudge = rejudge.to_i
 
     dl = dl.to_i
     now = Time.now.to_i
@@ -82,6 +84,9 @@ Open <a href="bas.html">code-statistics</a>: <input type="checkbox" name="reveal
     elsif de == 1
       puts %Q(<p>exec is denied</p>)
     end
+    if rejudge == 1
+      puts %Q(<p><a href="rejudge.html">rejudge feature</a> is enabled</p>)
+    end
 
     if dl > 0
       dl = (dlorig=dl) - now
@@ -105,7 +110,7 @@ Open <a href="bas.html">code-statistics</a>: <input type="checkbox" name="reveal
       show_output(o3)
     end
 
-    html, lr = *ranking(pn, nil, pm)
+    html, lr = *ranking(pn, nil, pm, rejudge)
     puts html
 
     if lr.size > 0
