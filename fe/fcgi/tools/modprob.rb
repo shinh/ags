@@ -39,7 +39,7 @@ db.transaction do
 #  puts db['rejudge'] = 1
   db['desc'] = %Q(See <a href="https://github.com/tric/trick2015/blob/master/ksk_2/remarks.markdown">this description for detail</a>. If there are multiple solutions, output the one which have as many leading positive numbers as possible.
 
-This problem is a test for <a href="rejudge.html">the rejudge feature</a>. Hopefully luck-depend solutions won\'t work anymore, though this proble itself would be exploitable by embeded solutions.)
+This problem is a test for <a href="rejudge.html">the rejudge feature</a>. Hopefully luck-depend solutions won\'t work anymore, though this problem itself wouldn\'t be a good problem because this could be exploitable by embeded solutions.)
 
 
 #   puts db['deadline']+=1100000
