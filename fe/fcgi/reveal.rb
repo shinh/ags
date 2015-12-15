@@ -17,6 +17,7 @@ class Reveal < Handler
     dl = db.get('deadline')
     dl = dl.to_i
     pm = (dl > 0 && dl < Time.now.to_i) ? 1 : 0
+    rejudge = dl == 0 ? 0 : db.get('rejudge').to_i
 
     #f = "../code/#{q.tr('/','_').sub('_','/')}"
     f = "../code/#{pn}/#{un.gsub('/','%2F')}_#{time}"
@@ -80,7 +81,8 @@ class Reveal < Handler
 #        puts '</pre>'
       end
 
-      puts %Q(
+      if rejudge == 1
+        puts %Q(
 <form action="rejudge.rb" method="POST">To protect the system from spam, please input your favorite sport (hint: I believe its name must start with 'g', case insensitive)
 <input name="sport"><input type="submit" value="rejudge">
 <input type="hidden" name="pn" value="#{CGI.escapeHTML(pn)}">
@@ -88,6 +90,7 @@ class Reveal < Handler
 <input type="hidden" name="lang" value="#{lang}">
 <input type="hidden" name="time" value="#{time}">
 </form>)
+      end
 
       puts %Q(<p><a href="/reveal.rb?#{query}/plain">download</a></p>)
 

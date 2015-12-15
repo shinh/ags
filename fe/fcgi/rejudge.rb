@@ -3,15 +3,22 @@
 require './handler'
 
 class Rejudge < Handler
-  def rejudge_impl(pn, lang, un, time)
+  def rejudge_impl(pn, lang, un, time, rejudge=nil)
     record_key = "#{un}_#{time.to_i}"
     code = File.read("../code/#{pn}/#{record_key}")
 
     db = PStore.new("db/#{pn}.db")
     title, desc, input, output, i2, o2, i3, o3, dexec, dl =
       db.get('title', 'desc', 'input', 'output',
-             'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline')
+             'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline',
+             'rejudge')
     dexec = dexec == 'on' ? 1 : dexec.to_i
+    if !rejudge
+      rejudge = dexec == 0 ? 0 : rejudge.to_i
+    end
+    if rejudge == 0
+      return nil
+    end
 
     inputs = [input]
     outputs = [output]
@@ -77,7 +84,10 @@ class Rejudge < Handler
     html_header
     title("anarchy golf - rejudge for #{pn}")
 
-    if rejudge_impl(pn, lang, un, time)
+    res = rejudge_impl(pn, lang, un, time)
+    if res.nil?
+      puts 'Rejudge is not enabled for this problem'
+    elsif res
       puts 'Challenge failed'
     else
       ldb = PStore.new("db/#{pn}/_ranks.db")
