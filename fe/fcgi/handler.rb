@@ -369,9 +369,9 @@ class Handler
     ldb.transaction(true) do
       file_types.zip(file_langs).each do |ext, lang|
         next if !ldb.root?(ext)
-        ret += tag('h3', a(lang_url(ext),lang)+' '+a("##{lang}",'_',"#{lang}"))
         l = ldb[ext]
         next if l.empty?
+        ret += tag('h3', a(lang_url(ext),lang)+' '+a("##{lang}",'_',"#{lang}"))
 
         min = l.sort{|a,b|a[1]<=>b[1]}[0]
         lr[ext] = [min[1],min[3],min[0]]
