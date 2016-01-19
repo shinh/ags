@@ -8,13 +8,13 @@ class Rejudge < Handler
     code = File.read("../code/#{pn}/#{record_key}")
 
     db = PStore.new("db/#{pn}.db")
-    title, desc, input, output, i2, o2, i3, o3, dexec, dl =
+    title, desc, input, output, i2, o2, i3, o3, dexec, dl, rj =
       db.get('title', 'desc', 'input', 'output',
              'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline',
              'rejudge')
     dexec = dexec == 'on' ? 1 : dexec.to_i
     if !rejudge
-      rejudge = dexec == 0 ? 0 : rejudge.to_i
+      rejudge = rj.to_i
     end
     if rejudge == 0
       return nil
