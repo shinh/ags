@@ -7,6 +7,11 @@ class Rejudge < Handler
     record_key = "#{un}_#{time.to_i}"
     code = File.read("../code/#{pn}/#{record_key}")
 
+    fn = "test.#{lang}"
+    if File.exist? "../code/#{pn}/#{record_key}_fn"
+      fn = File.read("../code/#{pn}/#{record_key}_fn")
+    end
+
     db = PStore.new("db/#{pn}.db")
     title, desc, input, output, i2, o2, i3, o3, dexec, dl, rj =
       db.get('title', 'desc', 'input', 'output',
@@ -32,7 +37,7 @@ class Rejudge < Handler
     end
 
     ok = true
-    s = execute2("test.#{lang}", code, inputs)
+    s = execute2(fn, code, inputs)
     outputs.each do |output|
       payload = Marshal.load(s.read(s.gets.to_i))
       time = payload[:time]

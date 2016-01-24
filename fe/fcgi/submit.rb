@@ -15,7 +15,7 @@ class Submit < Handler
     a
   end
 
-  def add_record(pn, un, ext, cs, time, code, dl)
+  def add_record(pn, un, ext, cs, time, code, dl, fn)
 #    udb = PStore.new("db/#{pn}/#{un}.udb")
 
     st = get_statistics(code)
@@ -46,8 +46,12 @@ class Submit < Handler
 
         if (dl > 0)
           FileUtils.mkdir_p("../code/#{pn}")
-          File.open("../code/#{pn}/#{un.gsub('/','%2F')}_#{now.to_i}", 'w') do |o|
+          record_key = "#{un.gsub('/','%2F')}_#{now.to_i}"
+          File.open("../code/#{pn}/#{record_key}", 'w') do |o|
             o.print(code)
+          end
+          File.open("../code/#{pn}/#{record_key}_fn", 'w') do |o|
+            o.print(fn)
           end
         end
 
@@ -314,7 +318,7 @@ status: #{status}<br>
       if / broken keyboard$/ =~ pn
         score = fb.chars.sort.uniq.size + fb.size * 0.001
       end
-      if add_record(pn, un, ext, score, all_time, fb, dl)
+      if add_record(pn, un, ext, score, all_time, fb, dl, fn)
         puts "And it's new record!"
       end
       puts '</p>'
