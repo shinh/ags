@@ -1,2 +1,2 @@
 #!/bin/sh
-exec make -f $1
+exec /golf/ag_launcher -i /usr/bin/make -f $1
