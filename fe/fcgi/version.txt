@@ -65,6 +65,7 @@ zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.o
 out Linux 2.6.32-5-xen-686 #1 SMP Mon Oct 3 09:00:14 UTC 2011 i686 GNU/Linux
 bef <a href="http://catseye.tc/projects/bef/">http://catseye.tc/projects/bef/</a><br>We are using <a href="http://catseye.tc/projects/bef-2.21.zip">the reference implementation</a>.
 ly Debian package: lilypond-2.14.2-2 (<a href="http://lilypond.org/">http://lilypond.org/</a>)
+bash Debian package: bash-4.1-3 (<a href="http://tiswww.case.edu/php/chet/bash/bashtop.html">http://tiswww.case.edu/php/chet/bash/bashtop.html</a>)
 class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net/">http://jdk-distros.java.net/</a>)
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
 gs2 827ade5d5f7ed8c690bb23724dd13df613fbf702 (<a href="https://github.com/nooodl/gs2">https://github.com/nooodl/gs2</a>)
@@ -96,8 +97,8 @@ tcl Debian package: tcl8.5-8.5.10-1 (<a href="http://www.tcl.tk/">http://www.tcl
 xtal xtal 0.9.7.0 (<a href="http://code.google.com/p/xtal-language/">http://code.google.com/p/xtal-language/</a>)
 l Debian package: clisp-2.49-8 (<a href="http://www.clisp.org/">http://www.clisp.org/</a>)
 gs <a href="http://www.golfscript.com/golfscript/">http://www.golfscript.com/golfscript/</a><br>GolfScript is a stack oriented esoteric language invented by flagitious.
-sh Debian package: bash-4.1-3 (<a href="http://tiswww.case.edu/php/chet/bash/bashtop.html">http://tiswww.case.edu/php/chet/bash/bashtop.html</a>)
 nand <a href="http://esolangs.org/wiki/FerNANDo">http://esolangs.org/wiki/FerNANDo</a><br>We are using the Python implementation 0.5.
+sh Debian package: bash-4.1-3 (<a href="http://tiswww.case.edu/php/chet/bash/bashtop.html">http://tiswww.case.edu/php/chet/bash/bashtop.html</a>)
 di Digital Mars D Compiler v1.047 (<a href="http://www.digitalmars.com/d/">http://www.digitalmars.com/d/</a>)
 pro Debian package: swi-prolog-5.10.4-1.1 (<a href="http://www.swi-prolog.org">http://www.swi-prolog.org</a>)
 m Debian package: gobjc-4.6.1-2

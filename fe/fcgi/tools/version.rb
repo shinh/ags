@@ -61,6 +61,7 @@ LANGS = {
   'awk' => [apt['mawk']],
   'sed' => [apt['sed']],
   'sh' => [apt['bash']],
+  'bash' => [apt['bash']],
   'xgawk' => ['Extensible GNU Awk 3.1.6 (build 20080101) with dynamic loading, and with statically-linked extensions (http://sourceforge.net/projects/xmlgawk)'],
   'm4' => [apt['m4']],
   'ps' => [apt['ghostscript']],

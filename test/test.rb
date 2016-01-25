@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['v.bash', 'v', /Success/],
  ['v.cr', 'v', /Success/],
  ['v.rb2', 'v', /Success/],
  ['v.fsh', 'v', /Success/],
