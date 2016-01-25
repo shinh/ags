@@ -8,6 +8,7 @@ test_cnt = 0
 fail_cnt = 0
 
 [
+ ['hello_shell.out', 'hello+world', /Exec format error/],
  ['v.out', 'v', /Success/],
  ['echo.mk', 'echo', /Success/],
  ['v.mk', 'v', /Success/],
