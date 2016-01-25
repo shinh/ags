@@ -21,7 +21,11 @@ class Version < Handler
       puts "<dt>#{lang} (#{ext}): #{m[ext]}</dt>"
       puts "<dd>"
       puts "<p>How your program is executed:"
-      puts "<pre>" + strip_script(File.read("../../be/srv/s/#{ext}")) + "</pre>"
+      ss = strip_script(File.read("../../be/srv/s/#{ext}"))
+      if ss =~ /ag_launcher/
+        puts %Q((note "ag_launcher" below is <a href="https://github.com/shinh/ags/blob/master/be/srv/ag_launcher.c">this script</a>.))
+      end
+      puts "<pre>" + ss + "</pre>"
       c = "../../be/srv/s/_#{ext}"
       if File.exist?(c)
         puts "<p>How your program is compiled:"
