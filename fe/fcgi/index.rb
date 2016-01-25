@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Now you should be able to use $(STDIN) in GNU make. Also shell scripts won't run as "x86" (aka ELF) anymore.
 <li>Added Bash again as Bash (builtins). This is the same as the previous Bash, but in problems where exec is denied, you cannot use any external commands.
 <li>Added <a href="http://golf.shinh.org/rejudge.html">the experimental rejudge feature</a>.
 <li>Added <a href="https://github.com/manastech/crystal/">Crystal</a>.
