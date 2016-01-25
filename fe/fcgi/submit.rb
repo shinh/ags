@@ -225,7 +225,7 @@ class Submit < Handler
             (ext != 'cy' || execnt > 4) &&
             (ext != 'wake' || execnt > 3) &&
             (ext != 'vhdl' || execnt > 3) &&
-            (ext != 'out' || execnt > 3) &&
+            (ext != 'out' || execnt > 4) &&
             (ext != 'vi' || execnt > 8) &&
             (ext != 'l' || execnt > 3) &&
             (ext != 'r' || execnt > 7) &&
@@ -237,6 +237,7 @@ class Submit < Handler
             (ext != 'max' || execnt > 12) &&
             (ext != 'groovy' || execnt > 19) &&
             (ext != 'pl6' || execnt > 3) &&
+            (ext != 'mk' || execnt > 3) &&
             (ext != 'scala' || execnt > 6))
           puts tag('p', "exec is denied! (#{execnt})")
           failed = true
