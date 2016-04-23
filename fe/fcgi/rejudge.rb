@@ -104,6 +104,11 @@ class Rejudge < Handler
             break
           end
         }
+        if !found_index
+          puts 'Already challenged?'
+          return
+        end
+
         ldb[lang].delete_at(found_index)
       end
       puts 'Challenge succeeded'
