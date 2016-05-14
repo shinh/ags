@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+RUST=rust-1.8.0-i686-unknown-linux-gnu
+
+cd /golf/local
+wget http://static.rust-lang.org/dist/$RUST.tar.gz
+tar -xvzf $RUST.tar.gz
+cd $RUST
+./install.sh --prefix=/golf/local/rust

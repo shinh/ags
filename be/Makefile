@@ -18,7 +18,7 @@ TARGETS := \
 /golf/local/malbolge \
 /golf/local/snobol4-1.4.1/snobol4 \
 /golf/local/Burlesque/main_golf \
-/golf/local/rust/bin/rust \
+/golf/local/rust/bin/rustc \
 /golf/local/chapel-1.7.0/bin/linux32/chpl \
 /golf/local/SQUIRREL3/bin/sq \
 /golf/local/ccbi-2.1/ccbi \
@@ -96,7 +96,7 @@ all: $(TARGETS)
 /golf/local/Burlesque/main_golf:
 	fetcher/blsq
 
-/golf/local/rust/bin/rust:
+/golf/local/rust/bin/rustc:
 	fetcher/rust
 
 /golf/local/chapel-1.7.0/bin/linux32/chpl:
