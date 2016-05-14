@@ -1,7 +1,7 @@
 lamb <a href="http://www.golfscript.com/lam/">http://www.golfscript.com/lam/</a><br>Universal Lambda is proposed by flagitious. We are using <a href="http://kiritanpo.dyndns.org/clamb.c">the C interpreter written by irori</a>.
 flog <a href="http://esolangs.org/wiki/FlogScript">http://esolangs.org/wiki/FlogScript</a>
 mind Mind Version 7 for UNIX mind7u06.tar.gz (<a href="http://www.scripts-lab.co.jp/mind/whatsmind.html">http://www.scripts-lab.co.jp/mind/whatsmind.html</a>)
-rs Rust 0.6 (<a href="http://www.rust-lang.org/">http://www.rust-lang.org/</a>)
+rs Rust 1.8.0 (<a href="http://www.rust-lang.org/">http://www.rust-lang.org/</a>)
 oct Debian package: octave3.2-3.2.4-12 (<a href="http://www.octave.org/">http://www.octave.org/</a>)
 cob Debian package: open-cobol-1.0-5 (<a href="http://www.opencobol.org/">http://www.opencobol.org/</a>)
 aheui f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (<a href="https://github.com/aheui/caheui">https://github.com/aheui/caheui</a>)
