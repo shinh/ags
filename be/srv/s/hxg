@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ruby1.9.1 /golf/local/hexagony/hexagony.rb $1
+exec ruby1.9.1 /golf/local/hexagony/interpreter.rb $1
