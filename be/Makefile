@@ -26,7 +26,8 @@ TARGETS := \
 /golf/local/gs2/gs2.py \
 /golf/local/caheui/aheui \
 /golf/local/fish \
-/golf/local/crystal/bin/crystal
+/golf/local/crystal/bin/crystal \
+/golf/local/hexagony/hexagony.rb
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -122,3 +123,6 @@ all: $(TARGETS)
 
 /golf/local/crystal/bin/crystal:
 	fetcher/cr
+
+/golf/local/hexagony/hexagony.rb:
+	fetcher/hxg
