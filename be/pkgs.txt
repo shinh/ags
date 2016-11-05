@@ -74,3 +74,4 @@ curl
 pike7.6-core
 jq
 ruby2.2
+julia
