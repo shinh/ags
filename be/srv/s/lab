@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ruby /golf/local/labyrinth/interpreter.rb $1
+exec ruby2.2 /golf/local/labyrinth/interpreter.rb $1

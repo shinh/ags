@@ -27,7 +27,8 @@ TARGETS := \
 /golf/local/caheui/aheui \
 /golf/local/fish \
 /golf/local/crystal/bin/crystal \
-/golf/local/hexagony/hexagony.rb
+/golf/local/hexagony/hexagony.rb \
+/golf/local/labyrinth/interpreter.rb
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -126,3 +127,6 @@ all: $(TARGETS)
 
 /golf/local/hexagony/hexagony.rb:
 	fetcher/hxg
+
+/golf/local/labyrinth/interpreter.rb:
+	fetcher/lab
