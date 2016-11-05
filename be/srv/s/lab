@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ruby /golf/local/labyrinth/interpreter.rb $1

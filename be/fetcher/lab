@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+cd /golf/local
+git clone https://github.com/m-ender/labyrinth
