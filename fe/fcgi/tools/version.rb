@@ -66,7 +66,8 @@ LANGS = {
   'm4' => [apt['m4']],
   'ps' => [apt['ghostscript']],
   'r' => [apt['r-base']],
-  'vhdl' => [apt['ghdl']],
+  #'vhdl' => [apt['ghdl']],
+  'vhdl' => ['broken probably :('],
   'qcl' => ['qcl-0.6.3 (http://tph.tuwien.ac.at/~oemer/qcl.html)'],
   'bf' => ['http://en.wikipedia.org/wiki/Brainfuck',
            'I think we are using <a href="http://esoteric.sange.fi/brainfuck/impl/interp/BFI.c">this C interpreter</a>, but I\'m not sure...'],
@@ -136,6 +137,8 @@ LANGS = {
   'mk' => [apt['make']],
   'fsh' => ['3b16018cb47f2f9ad1fa085c155cc5c0dc448b2d (https://gist.github.com/anonymous/6392418)'],
   'crystal' => ['Crystal 0.9.1 [b3b1223] (Fri Oct 30 03:36:50 UTC 2015)'],
+#  'hxg' => ['522012d75e340343c5f097e9c2f2aec37a49629e (https://github.com/m-ender/hexagony)'],
+#  'lab' => ['f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (https://github.com/m-ender/labyrinth)'],
 }
 
 LANGS.each do |l, info|

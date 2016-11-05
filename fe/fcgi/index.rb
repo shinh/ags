@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added <a href="https://github.com/m-ender/labyrinth">Labyrinth</a>.
 <li>Added <a href="https://github.com/m-ender/hexagony">Hexagony</a>.
 <li>Updated rust.
 <li>Now you should be able to use $(STDIN) in GNU make. Also shell scripts won't run as "x86" (aka ELF) anymore.

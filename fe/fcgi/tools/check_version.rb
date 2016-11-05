@@ -17,4 +17,5 @@ s.close_write
 payload = Marshal.load(s.read(s.gets.to_i))
 puts payload[:stdout]
 
+STDERR.puts payload[:stderr]
 

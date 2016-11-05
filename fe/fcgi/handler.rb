@@ -147,7 +147,7 @@ class Handler
      'max','gplot','oct','reb','asy','exu',
      'awk','sed','jq','sh','bash','zsh','fish','mk','wake','bc','dc',
      'xgawk','m4','ps','r','vhdl','qcl',
-     'bf','bfsl','ws','bef', 'bef98', 'pef', 'aheui', 'hxg', 'fsh',
+     'bf','bfsl','ws','bef', 'bef98', 'pef', 'aheui', 'lab', 'hxg', 'fsh',
      'ms', 'gs', 'gs2', 'flog', 'blsq', 'nand','clci','mal',
      'unl', 'lazy', 'grass', 'lamb', 'wr', 'di',
      's','out','z8b','com','class','piet','vi','grb',
@@ -169,7 +169,7 @@ class Handler
      'Maxima','gnuplot','Octave','REBOL','Asymptote','Euphoria',
      'AWK','sed','jq','Bash','Bash (builtins)','Zsh','Fish','make','wake','bc','dc',
      'xgawk','m4','Postscript','R','VHDL','QCL',
-     'Brainfuck','MNNBFSL','Whitespace','Befunge','Befunge-98','Pefunge', 'Aheui', 'Hexagony', '><>',
+     'Brainfuck','MNNBFSL','Whitespace','Befunge','Befunge-98','Pefunge', 'Aheui', 'Labyrinth', 'Hexagony', '><>',
      'Minus','GolfScript', 'gs2', 'FlogScript', 'Burlesque', 'FerNANDo','CLC-INTERCAL','Malbolge',
      'Unlambda','Lazy-K','Grass','Universal Lambda','Whirl','D-compile-time',
      'gas','x86','z80','DOS','JVM','Piet','Vim','goruby',
@@ -269,7 +269,7 @@ class Handler
   def page
     q = @e['QUERY_STRING']
     err('no page') if !q
-    [q.tr('+',' '), q]
+    [q.tr('+',' ').gsub('%20',' '), q]
   end
 
   def time_diff(dl)

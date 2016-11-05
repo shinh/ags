@@ -12,7 +12,7 @@ a+ Debian package: aplus-fsf-4.22.1-4
 for Debian package: gforth-0.7.0+ds1-6 (<a href="http://www.complang.tuwien.ac.at/projects/forth.html">http://www.complang.tuwien.ac.at/projects/forth.html</a>)
 erl Debian package: erlang-14.b.3-dfsg-2 (<a href="http://www.erlang.org/">http://www.erlang.org/</a>)
 asy Debian package: asymptote-2.13-2 (<a href="http://asymptote.sourceforge.net/">http://asymptote.sourceforge.net/</a>)
-vhdl Debian package: ghdl-0.29+gcc4.3.4+dfsg-1+b2 (<a href="http://ghdl.free.fr">http://ghdl.free.fr</a>)
+vhdl broken probably :(
 rb Debian package: ruby1.8-1.8.7.352-2 (<a href="http://www.ruby-lang.org/">http://www.ruby-lang.org/</a>)
 ps Debian package: ghostscript-9.02~dfsg-3 (<a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a>)
 pas Debian package: gpc-2.1-4.1.2-46
