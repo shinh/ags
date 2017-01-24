@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# We use 8bit cells and 0 EOF to maximize diff from the other
+exec /golf/local/Brainfuck/tritium/bfi -b -z $1

@@ -28,7 +28,8 @@ TARGETS := \
 /golf/local/fish \
 /golf/local/crystal/bin/crystal \
 /golf/local/hexagony/hexagony.rb \
-/golf/local/labyrinth/interpreter.rb
+/golf/local/labyrinth/interpreter.rb \
+/golf/local/Brainfuck/tritium/bfi
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -130,3 +131,6 @@ all: $(TARGETS)
 
 /golf/local/labyrinth/interpreter.rb:
 	fetcher/lab
+
+/golf/local/Brainfuck/tritium/bfi:
+	fetcher/bf8
