@@ -44,7 +44,7 @@ bef98 <a href="http://users.tkk.fi/~mniemenm/befunge/ccbi.html">http://users.tkk
 cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
-hs Debian package: ghc-7.4.1-4 (<a href="http://haskell.org/ghc/">http://haskell.org/ghc/</a>)
+hs The Glorious Glasgow Haskell Compilation System, version 8.0.2
 icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://golf.shinh.org/z80golf.tgz">http://golf.shinh.org/z80golf.tgz</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
