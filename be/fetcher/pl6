@@ -6,4 +6,5 @@
 # perl Configure.pl --gen-moar
 # make
 # make install
+exit 1
 

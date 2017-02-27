@@ -1,0 +1,10 @@
+# Run the following commands in BE
+#
+# cd
+# wget http://downloads.haskell.org/~ghc/8.0.2/ghc-8.0.2-i386-deb7-linux.tar.xz
+# tar -xvf ghc-8.0.2-i386-deb7-linux.tar.xz 
+# cd ghc-8.0.2
+# ./configure
+# make install
+exit 1
+

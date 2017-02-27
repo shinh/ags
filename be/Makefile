@@ -29,7 +29,8 @@ TARGETS := \
 /golf/local/crystal/bin/crystal \
 /golf/local/hexagony/hexagony.rb \
 /golf/local/labyrinth/interpreter.rb \
-/golf/local/Brainfuck/tritium/bfi
+/golf/local/Brainfuck/tritium/bfi \
+/usr/local/bin/ghc-8.0.2
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -134,3 +135,6 @@ all: $(TARGETS)
 
 /golf/local/Brainfuck/tritium/bfi:
 	fetcher/bf8
+
+/usr/local/bin/ghc-8.0.2:
+	fetcher/hs

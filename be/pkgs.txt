@@ -21,7 +21,6 @@ yabasic
 erlang
 gdc
 ocaml
-ghc
 gnat
 sun-java6-jdk
 gpc
