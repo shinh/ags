@@ -1,2 +1,2 @@
 #!/bin/sh
-ghc -O $1 -o a.out
+ghc-8.0.2 -O $1 -o a.out
