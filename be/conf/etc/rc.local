@@ -22,7 +22,8 @@ chmod +s /golf/remount
 sysctl -w vm.mmap_min_addr=0
 
 insmod /root/ags/be/modules/sandbox.ko
-sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
+#sudo -u golf sh -c 'cd /; /golf/run 2>&1' > /root/golf.log &
+/bin/bash -c 'while true; do sudo -u golf /usr/bin/ruby1.9.1 /golf/testsrv.rb 2>&1; done' > /root/golf.log &
 
 echo 0 > /proc/sys/kernel/msgmax
 echo 0 > /proc/sys/kernel/msgmni

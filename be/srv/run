@@ -1,9 +1,0 @@
-#!/bin/sh
-cd /golf/test
-#LD_PRELOAD=/usr/lib/wine/ntdll.dll.so
-#ulimit -v 100000
-for i in `seq 1 95`; do
-  echo $i
-  ruby1.9.1 /golf/testsrv.rb
-done
-
