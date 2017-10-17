@@ -320,7 +320,7 @@ status: #{status}<br>
         score = fb.chars.sort.uniq.size + fb.size * 0.001
       end
       if add_record(pn, un, ext, score, all_time, fb, dl, fn)
-        puts "And it's new record!"
+        puts "And it's a new record!"
       end
       puts '</p>'
     end
