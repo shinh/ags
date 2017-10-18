@@ -297,7 +297,7 @@ class Handler
   end
 
   def foot
-    print %Q(<p><a href="/">return top</a></p></body></html>)
+    print %Q(<p><a href="/">return to the top page</a></p></body></html>)
   end
 
   def mircbot(msg)
