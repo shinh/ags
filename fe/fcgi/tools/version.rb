@@ -41,7 +41,7 @@ LANGS = {
   'd' => ['Digital Mars D Compiler v2.019 (http://www.digitalmars.com/d/)'],
   'di' => ['Digital Mars D Compiler v1.047 (http://www.digitalmars.com/d/)'],
   # cd /golf/local/go && hg log | head -4
-  'go' => ['go changeset-4015:cb140bac9ab0 Nov 12 14:55:26 2009 -0800 (http://golang.org/)'],
+  'go' => ['go version go1.9.2 linux/386 (http://golang.org/)'],
   'ml' => [apt['ocaml']],
   'hs' => [`ghc-8.0.2 --version`],
   'adb' => [apt['gnat']],
