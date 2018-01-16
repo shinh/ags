@@ -78,6 +78,9 @@ class Reveal < Handler
 #            puts pipe.read
 #          end
 #          puts '</pre>'
+        elsif lang == 'gs2'
+          url = "http://www.tailsteam.com/cgi-bin/gs2dag/disas.pl?#{q.tr(' ','+')}"
+          puts %Q(<p><a href="#{url}">Disassemble it</a> with <a href="http://www.tailsteam.com/cgi-bin/gs2dag/index.pl">gs2 Decompiler</a>)
         end
       end
 
