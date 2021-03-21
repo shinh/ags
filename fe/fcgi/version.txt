@@ -45,6 +45,7 @@ cpp Debian package: g++-4.6.1-2
 lua Debian package: lua5.1-5.1.4-10 (<a href="http://www.lua.org">http://www.lua.org</a>)
 f95 Debian package: gfortran-4.6.1-2
 hs The Glorious Glasgow Haskell Compilation System, version 8.0.2
+jelly 2f7103853033b2f04a419ca737011dc4c4c22196 (<a href="https://github.com/shinh/jellylanguage/">https://github.com/shinh/jellylanguage/</a>)
 icn Debian package: iconc-9.4.3-2
 vi Debian package: vim-7.3.315-1+b1 (<a href="http://www.vim.org/">http://www.vim.org/</a>)
 z8b Modified fMSX (<a href="http://golf.shinh.org/z80golf.tgz">http://golf.shinh.org/z80golf.tgz</a>)<br>See <a href="http://sites.google.com/site/codegolfingtips/Home/z80">this site</a> for more detail.
