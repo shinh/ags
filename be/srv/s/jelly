@@ -1,0 +1,3 @@
+#!/bin/sh
+export PYTHONPATH=/golf/local/jellylanguage
+exec python3 /golf/local/jellylanguage/jelly f $1

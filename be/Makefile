@@ -30,7 +30,8 @@ TARGETS := \
 /golf/local/hexagony/hexagony.rb \
 /golf/local/labyrinth/interpreter.rb \
 /golf/local/Brainfuck/tritium/bfi \
-/usr/local/bin/ghc-8.0.2
+/usr/local/bin/ghc-8.0.2 \
+/golf/local/jellylanguage/jelly/__main__.py
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -138,3 +139,6 @@ all: $(TARGETS)
 
 /usr/local/bin/ghc-8.0.2:
 	fetcher/hs
+
+/golf/local/jellylanguage/jelly/__main__.py:
+	fetcher/jelly

@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /golf/local
+git clone https://github.com/shinh/jellylanguage && cd jellylanguage && git checkout 3a5d3e5f2c3f0464412341de935bbc159d5d7c08
+
