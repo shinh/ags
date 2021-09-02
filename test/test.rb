@@ -179,6 +179,8 @@ fail_cnt = 0
 ].each do |s, u, r|
   test_cnt += 1
 
+  next if ARGV[0] && !s.index(ARGV[0])
+
   print "Testing #{s}... "
   #c = `./ag.rb t/#{s} http://localhost/p.rb?#{u}`
   c = `./ag.rb t/#{s} http://golf.shinh.org/p.rb?#{u}`
