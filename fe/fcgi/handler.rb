@@ -499,7 +499,7 @@ class Handler
     end
   end
 
-  def execute2(filename, code, inputs, testing=false)
+  def execute2(filename, code, inputs, testing=false, rejudge=false)
     modified_inputs = inputs.map do |input|
       if /\.(sed|jq)$/ =~ filename && (!input || input.size == 0)
         input = "\n"
@@ -519,6 +519,9 @@ class Handler
     }
     if testing
       payload[:testing] = true
+    end
+    if rejudge
+      payload[:rejudge] = true
     end
 
     encoded_payload = Marshal.dump(payload)

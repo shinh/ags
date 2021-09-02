@@ -37,7 +37,7 @@ class Rejudge < Handler
     end
 
     ok = true
-    s = execute2(fn, code, inputs)
+    s = execute2(fn, code, inputs, false, true)
     outputs.each do |output|
       payload = Marshal.load(s.read(s.gets.to_i))
       time = payload[:time]

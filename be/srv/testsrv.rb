@@ -365,6 +365,7 @@ while true
     t = File.extname(fn).tr('.','')
     c = payload[:code]
     testing = payload[:testing]
+    rejudge = payload[:rejudge]
     inputs = payload[:inputs]
 
     File.open(f="test."+t, 'w') do |of|
@@ -405,6 +406,9 @@ while true
         timeout = 10
       else
         timeout = timeout * 3.0 / inputs.size
+      end
+      if rejudge
+        timeout += 0.5
       end
       timeout += 0.5 if ext == 'java'
       timeout += 1 if ext == 'clj'
