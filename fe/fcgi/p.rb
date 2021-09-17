@@ -76,7 +76,8 @@ Open <a href="bas.html">code-statistics</a>: <input type="checkbox" name="reveal
     puts '<p>Language is selected by the extension of the file. See <a href="version.rb">the list of supported languages</a> to know the extension of your language.</p>'
 
     puts tag('h2', 'Problem')
-    puts tag('p', d.gsub(/\r\n|\n/,"<br>"))
+    puts tag('p', CGI.escapeHTML(d).gsub(/\r\n|\n/,"<br>"))
+    #puts tag('p', d.gsub(/\r\n|\n/,"<br>"))
     puts tag('h2', 'Options')
     if de == 2
       puts %Q(<p>exec is denied (using strict filter)</p>)
