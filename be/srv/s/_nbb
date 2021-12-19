@@ -1,0 +1,4 @@
+#!/bin/sh
+/golf/local/nibbles/nibbles -hs $1
+cd /golf/local/nibbles
+ghc-8.0.2 -O /tmp/out.hs -o /tmp/a.out

@@ -425,6 +425,7 @@ while true
       timeout += 3 if ext == 'groovy'
       timeout += 7 if ext == 'scala'
       timeout += 4 if ext == 'arc'
+STDERR.puts timeout
 
       payload = run(cmd, i, timeout)
 

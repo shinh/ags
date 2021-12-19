@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /golf/local
+wget https://nibbles.golf/nibbles-latest.tgz
+tar -xvzf nibbles-latest.tgz
+cd nibbles
+ghc -package ghc -O -Wno-tabs nibbles

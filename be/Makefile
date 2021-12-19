@@ -31,7 +31,8 @@ TARGETS := \
 /golf/local/labyrinth/interpreter.rb \
 /golf/local/Brainfuck/tritium/bfi \
 /usr/local/bin/ghc-8.0.2 \
-/golf/local/jellylanguage/jelly/__main__.py
+/golf/local/jellylanguage/jelly/__main__.py \
+/golf/local/nibbles/nibbles
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -142,3 +143,6 @@ all: $(TARGETS)
 
 /golf/local/jellylanguage/jelly/__main__.py:
 	fetcher/jelly
+
+/golf/local/nibbles/nibbles:
+	fetcher/nbb
