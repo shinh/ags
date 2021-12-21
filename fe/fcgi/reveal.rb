@@ -66,6 +66,17 @@ class Reveal < Handler
             puts pipe.read.upcase
           end
           puts '</pre>'
+        elsif lang == 'nbb'
+          require 'tempfile'
+          tmp = Tempfile.new(["nibbles",".nbb"])
+          tmp.write(code)
+          tmp.close
+
+          puts '<p>Disassemble:<pre>'
+          IO.popen("./nibbles -e '#{tmp.path}'") do |pipe|
+            puts pipe.read
+          end
+          puts '</pre>'
         elsif lang == 'out'
           puts '<p>Disassemble:<pre>'
           IO.popen("objdump -D -b binary -m i386 '#{f}'") do |pipe|
