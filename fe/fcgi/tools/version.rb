@@ -140,6 +140,7 @@ LANGS = {
 #  'hxg' => ['522012d75e340343c5f097e9c2f2aec37a49629e (https://github.com/m-ender/hexagony)'],
 #  'lab' => ['f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (https://github.com/m-ender/labyrinth)'],
   'jelly' => ['2f7103853033b2f04a419ca737011dc4c4c22196 (https://github.com/shinh/jellylanguage/)'],
+  'nbb' => ['0.2 (https://nibbles.golf/)'],
 }
 
 LANGS.each do |l, info|

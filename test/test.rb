@@ -9,6 +9,7 @@ fail_cnt = 0
 
 [
  ['v.lab', 'v', /Success/],
+ ['v.nbb', 'v', /Success/],
  ['v.hxg', 'v', /Success/],
  ['hello_shell.out', 'hello+world', /Exec format error/],
  ['v.out', 'v', /Success/],
