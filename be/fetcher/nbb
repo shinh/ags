@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /golf/local
-wget https://nibbles.golf/nibbles-0.2.tgz
-tar -xvzf nibbles-0.2.tgz
+wget https://nibbles.golf/nibbles-0.23.tgz --no-check-certificate
+tar -xvzf nibbles-0.23.tgz
 cd nibbles
 ghc -package ghc -O -Wno-tabs nibbles
