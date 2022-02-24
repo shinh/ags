@@ -60,7 +60,7 @@ pike Debian package: pike7.6-core-7.6.112-dfsg-1+b1 (<a href="http://pike.ida.li
 nut Squirrel 3.1 beta (<a href="http://squirrel-lang.org/">http://squirrel-lang.org/</a>)
 piet npiet-1.3a (<a href="http://www.bertnase.de/npiet/">http://www.bertnase.de/npiet/</a>)
 exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
-nbb 0.21 (<a href="https://nibbles.golf/">https://nibbles.golf/</a>)
+nbb 0.24 (<a href="https://nibbles.golf/">https://nibbles.golf/</a>)
 mal Slightly modified reference implementation in C (<a href="https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c">https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c</a>)
 dc Debian package: dc-1.06.95-2
 zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
