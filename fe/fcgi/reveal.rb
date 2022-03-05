@@ -77,6 +77,8 @@ class Reveal < Handler
             puts pipe.read
           end
           puts '</pre>'
+          url = "http://www.tailsteam.com/cgi-bin/nbbdag/commenter.pl?#{query}"
+          puts %Q(<p><a href="#{url}">Disassemble it</a> with <a href="http://www.tailsteam.com/cgi-bin/nbbdag/index.pl">Nibbles Commenter</a>)
         elsif lang == 'out'
           puts '<p>Disassemble:<pre>'
           IO.popen("objdump -D -b binary -m i386 '#{f}'") do |pipe|
