@@ -32,7 +32,8 @@ TARGETS := \
 /golf/local/Brainfuck/tritium/bfi \
 /usr/local/bin/ghc-8.0.2 \
 /golf/local/jellylanguage/jelly/__main__.py \
-/golf/local/nibbles/nibbles
+/golf/local/nibbles/nibbles \
+/golf/local/jq16
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -146,3 +147,6 @@ all: $(TARGETS)
 
 /golf/local/nibbles/nibbles:
 	fetcher/nbb
+
+/golf/local/jq16: fetcher/jq16
+	cp $< $@
