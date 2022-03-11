@@ -141,6 +141,7 @@ LANGS = {
 #  'lab' => ['f1376d776b9a3940c6ead0b34e54b0dd07e6a2c1 (https://github.com/m-ender/labyrinth)'],
   'jelly' => ['2f7103853033b2f04a419ca737011dc4c4c22196 (https://github.com/shinh/jellylanguage/)'],
   'nbb' => ['0.25 (http://golfscript.com/nibbles/)'],
+  'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
 }
 
 LANGS.each do |l, info|

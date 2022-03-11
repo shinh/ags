@@ -72,6 +72,7 @@ class Debian package: sun-java6-jre-6.26-3 (<a href="http://jdk-distros.java.net
 io Io 20080209 (<a href="http://iolanguage.com/">http://iolanguage.com/</a>)
 gs2 827ade5d5f7ed8c690bb23724dd13df613fbf702 (<a href="https://github.com/nooodl/gs2">https://github.com/nooodl/gs2</a>)
 st Debian package: gnu-smalltalk-3.2.4-1 (<a href="http://smalltalk.gnu.org">http://smalltalk.gnu.org</a>)
+jq16 jq-1.6-145-ga9f97e9-dirty
 clci Debian package: clc-intercal-1.0~4pre1.-94.-2-2
 logo Debian package: ucblogo-5.5-2.1
 bc Debian package: bc-1.06.95-2
