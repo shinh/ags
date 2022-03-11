@@ -79,7 +79,7 @@ class Reveal < Handler
 
           puts '<p>Disassemble:<pre>'
           IO.popen("./nibbles -e '#{tmp.path}'") do |pipe|
-            puts pipe.read
+            puts CGI.escapeHTML(pipe.read)
           end
           puts '</pre>'
           url = "http://www.tailsteam.com/cgi-bin/nbbdag/commenter.pl?#{query}"
