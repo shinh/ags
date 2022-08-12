@@ -116,8 +116,8 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
-<li>Updated <a href="https://nibbles.golf/">Nibbles</a> to 0.24.
-<li>Added <a href="https://nibbles.golf/">Nibbles</a>.
+<li>Updated <a href="http://golfscript.com/nibbles/">Nibbles</a> to 1.00.
+<li>Added <a href="http://golfscript.com/nibbles/">Nibbles</a>.
 <li>Added <a href="https://github.com/DennisMitchell/jellylanguage">Jelly</a>.
 <li>Updated Go to 1.9.2
 <li>Added <a href="https://github.com/m-ender/labyrinth">Labyrinth</a>.
