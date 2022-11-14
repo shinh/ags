@@ -142,6 +142,7 @@ LANGS = {
   'jelly' => ['2f7103853033b2f04a419ca737011dc4c4c22196 (https://github.com/shinh/jellylanguage/)'],
   'nbb' => ['1.00 (http://golfscript.com/nibbles/)'],
   'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
+  'vy' => ['Vyxal 2.18.2 (https://github.com/Vyxal/Vyxal)'],
 }
 
 LANGS.each do |l, info|
