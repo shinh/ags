@@ -151,3 +151,6 @@ all: $(TARGETS)
 
 /golf/local/jq16: fetcher/jq16
 	cp $< $@
+
+/golf/local/vyxal/vyxal/__main__.py:
+	fetcher/vy
