@@ -136,10 +136,15 @@ class Submit < Handler
     err('not ELF binary') if ext=='out' && (fb.size<3||fb[0,4]!="\x7fELF")
 
     db = get_db(pn)
-    title, desc, input, output, i2, o2, i3, o3, dexec, dl =
+    title, desc, input, output, i2, o2, i3, o3, dexec, dl, rejudge =
       db.get('title', 'desc', 'input', 'output',
-             'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline')
+             'input2', 'output2', 'input3', 'output3', 'dexec', 'deadline', 'rejudge')
     dexec = dexec == 'on' ? 1 : dexec.to_i
+
+    rejudge = dl == 0 ? 0 : rejudge.to_i
+    if rejudge != 1 && ext == "atl"
+      err("Atlas is in alpha and currently available for problems rejudge feature enabled")
+    end
 
     inputs = [input]
     outputs = [output]
