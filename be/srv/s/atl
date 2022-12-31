@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ruby3.2 /golf/local/atlas/atlas.rb $1

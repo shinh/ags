@@ -150,3 +150,9 @@ all: $(TARGETS)
 
 /golf/local/jq16: fetcher/jq16
 	cp $< $@
+
+/usr/local/bin/ruby3.2: fetcher/rb3
+	fetcher/rb3
+
+/golf/local/atlas/atlas.rb: fetcher/atl /usr/local/bin/ruby3.2
+	fetcher/atl
