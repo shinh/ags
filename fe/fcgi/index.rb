@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>Added <a href="https://github.com/darrenks/atlas">Atlas</a> as alpha release. You can use Atlas only for problems with <a href="http://golf.shinh.org/rejudge.html">the rejudge feature</a> enabled. As per the author of the language, many things will be changed before the language is officially released. Your solutions may be invalid in future and removed from the ranking by rejudge.
 <li>Updated <a href="http://golfscript.com/nibbles/">Nibbles</a> to 1.00.
 <li>Added <a href="http://golfscript.com/nibbles/">Nibbles</a>.
 <li>Added <a href="https://github.com/DennisMitchell/jellylanguage">Jelly</a>.
