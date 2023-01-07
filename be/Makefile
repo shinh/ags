@@ -154,3 +154,9 @@ all: $(TARGETS)
 
 /golf/local/vyxal/vyxal/__main__.py:
 	fetcher/vy
+  
+/usr/local/bin/ruby3.2: fetcher/rb3
+	fetcher/rb3
+
+/golf/local/atlas/atlas.rb: fetcher/atl /usr/local/bin/ruby3.2
+	fetcher/atl

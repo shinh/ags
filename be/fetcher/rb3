@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /golf/local
+curl -kO https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.0.tar.xz
+tar -xvf ruby-3.2.0.tar.xz
+cd ruby-3.2.0
+./configure --program-suffix=3.2 --disable-install-doc && make && make install
