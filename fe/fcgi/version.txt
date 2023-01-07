@@ -61,7 +61,7 @@ nut Squirrel 3.1 beta (<a href="http://squirrel-lang.org/">http://squirrel-lang.
 piet npiet-1.3a (<a href="http://www.bertnase.de/npiet/">http://www.bertnase.de/npiet/</a>)
 exu Euphoria Interpreter 3.1.1 for Linux (<a href="http://www.rapideuphoria.com/31/euphor31.tar">http://www.rapideuphoria.com/31/euphor31.tar</a>)
 nbb 1.00 (<a href="http://golfscript.com/nibbles/">http://golfscript.com/nibbles/</a>)
-vy 2.18.2 (<a href="https://github.com/Vyxal/Vyxal">Official Vyxal repository on Github</a>)
+vy 2.18.5 (<a href="https://github.com/Vyxal/Vyxal">Official Vyxal repository on Github</a>)
 mal Slightly modified reference implementation in C (<a href="https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c">https://github.com/shinh/ags/blob/master/be/fetcher/malbolge.c</a>)
 dc Debian package: dc-1.06.95-2
 zsh Debian package: zsh-4.3.12-1 (<a href="http://www.zsh.org/">http://www.zsh.org/</a>)
