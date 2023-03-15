@@ -142,7 +142,7 @@ LANGS = {
   'jelly' => ['2f7103853033b2f04a419ca737011dc4c4c22196 (https://github.com/shinh/jellylanguage/)'],
   'nbb' => ['1.00 (http://golfscript.com/nibbles/)'],
   'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
-  'atl' => ['28320e7670cebd4b16e4548893b621f0c8340a30 (https://github.com/darrenks/atlas/)'],
+  'atl' => ['6652d4bb26a971aaa81878808c924d04cb36a81c (https://github.com/darrenks/atlas/)'],
 }
 
 LANGS.each do |l, info|

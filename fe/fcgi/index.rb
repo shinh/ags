@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>2023-03-14: Updated atlas to 6652d4bb26a971aaa81878808c924d04cb36a81c . Previous version was not working. Sorry for the trouble.
 <li>2023-03-12: Updated atlas to 28320e7670cebd4b16e4548893b621f0c8340a30 .
 <li>2023-01-13: Updated atlas to 35222501f7a9cea45c3e54cdc0e83bee3cc159c4 .
 <li>Added <a href="https://github.com/darrenks/atlas">Atlas</a> as alpha release. You can use Atlas only for problems with <a href="http://golf.shinh.org/rejudge.html">the rejudge feature</a> enabled. As per the author of the language, many things will be changed before the language is officially released. Your solutions may be invalid in future and removed from the ranking by rejudge.
