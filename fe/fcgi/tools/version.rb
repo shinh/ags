@@ -143,8 +143,8 @@ LANGS = {
   'nbb' => ['1.00 (http://golfscript.com/nibbles/)'],
   'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
   'atl' => ['c0bf5086c114278a86245d07a50ba2419cf440bf (https://github.com/darrenks/atlas/)'],
-  'vy' => ['Vyxal 2.18.5 (https://github.com/Vyxal/Vyxal)'],
-  'atl' => ['TBD. Currently Atlas in alpha state and available only for problems rejudge feature enabled'],
+  'vy' => ['Vyxal 2.21.11 (https://github.com/Vyxal/Vyxal)'],
+  'atl' => ['b09a9af7846ebe94da8f4f54312662426d44f185 (https://github.com/darrenks/atlas/)'],
 }
 
 LANGS.each do |l, info|
