@@ -142,9 +142,9 @@ class Submit < Handler
     dexec = dexec == 'on' ? 1 : dexec.to_i
 
     rejudge = dl == 0 ? 0 : rejudge.to_i
-    if rejudge != 1 && ext == "atl"
-      err("Atlas is in alpha and currently available for problems rejudge feature enabled")
-    end
+    # if rejudge != 1 && ext == "atl"
+    #   err("Atlas is in alpha and currently available for problems rejudge feature enabled")
+    # end
 
     inputs = [input]
     outputs = [output]
