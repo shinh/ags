@@ -22,7 +22,7 @@ erlang
 gdc
 ocaml
 gnat
-sun-java6-jdk
+default-jdk
 gpc
 mono-gmcs
 open-cobol
