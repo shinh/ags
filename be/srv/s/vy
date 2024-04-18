@@ -1,0 +1,3 @@
+#!/bin/sh
+export PYTHONPATH=/golf/local/vyxal
+exec python3 -m vyxal $1
