@@ -142,7 +142,7 @@ LANGS = {
   'jelly' => ['2f7103853033b2f04a419ca737011dc4c4c22196 (https://github.com/shinh/jellylanguage/)'],
   'nbb' => ['1.00 (http://golfscript.com/nibbles/)'],
   'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
-  'vy' => ['Vyxal 2.21.11 (https://github.com/Vyxal/Vyxal)'],
+  'vy' => ['Vyxal 2.22.0 (https://github.com/Vyxal/Vyxal)'],
   'atl' => ['c0bf5086c114278a86245d07a50ba2419cf440bf (https://github.com/darrenks/atlas/)'],
 }
 
