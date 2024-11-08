@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>2024-11-08: Added iogii 0.1 (alpha).
 <li>2023-12-18: Updated atlas to c0bf5086c114278a86245d07a50ba2419cf440bf and now it can be used for all problems.
 <li>2023-04-19: Updated atlas to 24bb12ae3b16658a98fe5d96e0613ea9f4dc829b .
 <li>2023-03-22: Updated atlas to b09a9af7846ebe94da8f4f54312662426d44f185 .
