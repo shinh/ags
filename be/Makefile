@@ -33,7 +33,8 @@ TARGETS := \
 /usr/local/bin/ghc-8.0.2 \
 /golf/local/jellylanguage/jelly/__main__.py \
 /golf/local/nibbles/nibbles \
-/golf/local/jq16
+/golf/local/jq16 \
+/golf/local/iogii
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -156,3 +157,6 @@ all: $(TARGETS)
 
 /golf/local/atlas/atlas.rb: fetcher/atl /usr/local/bin/ruby3.2
 	fetcher/atl
+
+/golf/local/iogii: fetcher/iog
+	fetcher/iog
