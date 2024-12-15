@@ -1,6 +1,8 @@
 #!/bin/bash
 
+name=iogii-0.2-alpha
+
 cd /golf/local
-wget https://golfscript.com/iogii/iogii-0.1-alpha --no-check-certificate
-mv iogii-0.1-alpha iogii
+wget https://golfscript.com/iogii/${name} --no-check-certificate
+mv ${name} iogii
 chmod 755 iogii
