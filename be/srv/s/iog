@@ -1,2 +1,4 @@
 #!/bin/sh
-exec ruby3.2 /golf/local/iogii $1
+export LD_PRELOAD=$LD_PRELOAD:/lib/i386-linux-gnu/libSegFault.so
+export LC_ALL=en_US.UTF-8
+exec ./a.out
