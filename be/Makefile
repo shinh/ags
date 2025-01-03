@@ -35,6 +35,7 @@ TARGETS := \
 /golf/local/nibbles/nibbles \
 /golf/local/jq16 \
 /golf/local/vyxal/vyxal/__main__.py
+/golf/local/iogii
 
 #/golf/local/dmd2/linux/bin/dmd \
 
@@ -160,3 +161,6 @@ all: $(TARGETS)
 
 /golf/local/atlas/atlas.rb: fetcher/atl /usr/local/bin/ruby3.2
 	fetcher/atl
+
+/golf/local/iogii: fetcher/iog
+	fetcher/iog

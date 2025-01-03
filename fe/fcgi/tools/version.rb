@@ -144,6 +144,7 @@ LANGS = {
   'jq16' => ['jq-1.6-145-ga9f97e9-dirty'],
   'vy' => ['Vyxal 2.22.0 (https://github.com/Vyxal/Vyxal)'],
   'atl' => ['c0bf5086c114278a86245d07a50ba2419cf440bf (https://github.com/darrenks/atlas/)'],
+  'iog' => ['iogii 0.2 (alpha) (https://golfscript.com/iogii/source.html)'],
 }
 
 LANGS.each do |l, info|
