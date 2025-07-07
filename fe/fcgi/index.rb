@@ -116,6 +116,7 @@ Mark Byers kindly prepared a <a href="http://sites.google.com/site/codegolfingti
     puts %Q(
 <h2>News</h2>
 <ul>
+<li>2025-07-07: Updated iogii to 1.1.
 <li>2025-04-30: Updated iogii to 1.0.1.
 <li>2025-03-24: Updated iogii to 0.3 (beta).
 <li>2024-12-15: Updated iogii to 0.2 (alpha).
