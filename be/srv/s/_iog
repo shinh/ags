@@ -1,3 +1,2 @@
 #!/bin/sh
-ruby3.2 /golf/local/iogii $1 -hs > /tmp/out.hs
-ghc-8.0.2 -O /tmp/out.hs -o /tmp/a.out
+ruby3.2 /golf/local/iogii $1 --engine > /tmp/out.ism

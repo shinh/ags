@@ -1,8 +1,12 @@
 #!/bin/bash
 
-name=iogii-1.1.1
+name=iogii-1.1.2
 
 cd /golf/local
-wget https://golfscript.com/iogii/${name} --no-check-certificate
-mv ${name} iogii
+wget https://golfscript.com/iogii/iogii --no-check-certificate
 chmod 755 iogii
+
+wget https://golfscript.com/iogii/${name}.tgz --no-check-certificate
+tar -xvzf ${name}.tgz
+cd ${name}/src
+ghc-8.0.2 -O engine.hs
