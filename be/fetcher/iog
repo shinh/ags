@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=iogii-1.1.2
+name=iogii-1.2.1
 
 cd /golf/local
 wget https://golfscript.com/iogii/iogii --no-check-certificate
