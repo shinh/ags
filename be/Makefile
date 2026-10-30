@@ -34,6 +34,7 @@ TARGETS := \
 /golf/local/jellylanguage/jelly/__main__.py \
 /golf/local/nibbles/nibbles \
 /golf/local/jq16 \
+/golf/local/vyxal/vyxal/__main__.py
 /golf/local/iogii
 
 #/golf/local/dmd2/linux/bin/dmd \
@@ -152,6 +153,9 @@ all: $(TARGETS)
 /golf/local/jq16: fetcher/jq16
 	cp $< $@
 
+/golf/local/vyxal/vyxal/__main__.py:
+	fetcher/vy
+  
 /usr/local/bin/ruby3.2: fetcher/rb3
 	fetcher/rb3
 
