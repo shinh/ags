@@ -4,7 +4,7 @@ require './handler'
 
 class Rejudge < Handler
   def rejudge_impl(pn, lang, un, time, rejudge=nil)
-    record_key = "#{un}_#{time.to_i}"
+    record_key = "#{un.gsub('/','%2F')}_#{time.to_i}"
     code = File.read("../code/#{pn}/#{record_key}")
 
     fn = "test.#{lang}"
